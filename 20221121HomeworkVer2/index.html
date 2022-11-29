@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 75%;
+            margin: auto;
+        }
+        .about{
+            text-align: center;
+            margin-bottom: 4em;
+        }
+        .about p{
+            width: 60%;
+            line-height: 1.5em;
+            margin: auto;
+        }
+        .wrap{
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        .wrap .box{
+            width: 33.33%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        .wrap .item{
+            display: flex;
+        }
+        .wrap .left .item{
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+        .wrap .center{
+            padding: 0 1em;
+        }
+        .wrap .center img{
+            border-radius: 10%;
+            align-self: center;
+            width: 80%;
+        }
+        .wrap .item h3{
+            margin: 0;
+            color: #ba7;
+        }
+        .wrap .item p{
+            margin: 0;
+        }
+        .wrap .item .text{
+            margin: auto;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+        .wrap .item img{
+            border-radius: 50%;
+            padding: 0 10px;
+            max-width: 70px;
+            max-height: 70px;
+        }
+        span{
+            color: #ba7;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        container包住.about（上）和.wrap（下）
+            .about分成h1和p兩部分
+                h1
+                p
+            .wrap分成3個.box，分別是.left, .center, .right
+                .box.left分成3個.item
+                    .item分成img和.text
+                        img
+                        .text分成h3和p
+                            h3
+                            p
+                .box.right分成3個.item
+                    同上
+                .box.center只有一張大圖
+                    img
+     -->
+    <div class="container">
+        <div class="about">
+            <h1>Lorem ipsum dolor <span>sit amet2.</span></h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos ratione fugit doloremque nobis et aspernatur iure nisi nesciunt quae corrupti rerum distinctio officiis beatae atque optio asperiores odio ea voluptatum, magni facilis unde! Officia quae officiis alias magnam cupiditate beatae!</p>
+        </div>
+        <div class="wrap">
+            <div class="box left">
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="box center">
+                <img src="https://picsum.photos/250/450?random1" alt="">
+            </div>
+            <div class="box right">
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="https://picsum.photos/70/70?random7" alt="">
+                    <div class="text">
+                        <h3>TITLE</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, natus?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
