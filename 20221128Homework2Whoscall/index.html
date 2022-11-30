@@ -158,12 +158,10 @@
         .propaganda .item:nth-child(even){
             flex-direction: row-reverse;
         }
-        .partner{
-            width: 960px;
-            margin: auto;
-        }
-        .partner .title{
+        .partner .title, .experience .title h2{
             text-align: center;
+            font-size: 36px;
+            font-weight: bold;
         }
         .partner .wrap{
             display: flex;
@@ -171,18 +169,45 @@
         }
         .partner .item{
             width: 320px;
-            padding: 0 87px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         .partner .item img{
             height: 145px;
             width: 145px;
+        }        
+        .partner .item .txt{
+            width: 75%;
+        }
+        .partner .item .txt h3{
+            font-size: 24px;
+            font-weight: bold;
+            padding: 20px 0 10px;
+        }
+        .partner .item .txt p{
+            font-size: 20px;
+        }
+        .partner{
+            width: 960px;
+            height: 70vh;
+            justify-content: space-evenly;
+        }
+        .partner, .experience{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
         }
         .experience{
             width: 1080px;
-            margin: auto;
+            height: 100vh;
+            justify-content: center;
         }
         .experience .title{
             text-align: center;
+            padding-bottom: 4em;
         }
         .experience .wrap{
             display: flex;
@@ -190,21 +215,77 @@
         }
         .experience .wrap .box{
             width: 320px;
+            border: #ddd .2px solid;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding: 20px;
+            box-shadow: 0 2px 5px #ddd;
+        }
+        .experience .wrap .box h3{
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 1.5em;
+            padding: .75em 0;
+        }
+        .experience .wrap .box p{
+            line-height: 1.3em;
+            font-weight: bold;
+        }
+        .experience .box .quotation img{
+            transform: rotateY(180deg);
+        }
+        .experience .company-logo{
+            position: relative;
+            padding-bottom: 70px;
+        }
+        .experience .company-logo img{
+            position: absolute;
+            right: 0;
+            bottom: 0;
         }
         footer{
-            color: #fff;
+            background-color: #334;
+            width: 100%;
         }
-        footer{
+        footer .wrap{
             display: flex;
             justify-content: space-between;
-            background-color: #334;
             height: 45vh;
+            color: #fff;
+            width: 1200px;
+            margin: auto;
         }
         footer .texts{
             display: flex;
             width: 35%;
-            justify-content: space-evenly;
+            justify-content: space-between;
             color: #fff;
+        }
+        footer .texts .item{
+            height: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        footer .texts li{
+            line-height: 2em;
+            color: #aaa;
+            font-weight: bold;
+        }
+        footer h2{
+            font-weight: 900;
+            margin-top: 10px;
+        }
+        footer .logos{
+            margin-right: 20px;
+            width: 18%;
+        }
+        footer .logos h2{
+            margin: 40px 0;
+        }
+        footer .logos .icons{
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -330,7 +411,7 @@
                         <p>申請 Whoscall 認證號碼後，業務撥打出去的未接來電，客戶更樂意回電了，保險方案的介紹與推動也比以前更即時有效！</p>
                     </div>
                     <div class="company-logo">
-                        <img src="" alt="">
+                        <img src="/20221128Homework2Whoscall/whoscall網站圖片檔/cathay.png" alt="">
                     </div>
                 </div>
                 <div class="box">
@@ -339,10 +420,10 @@
                     </div>
                     <div class="txt">
                         <h3>高接聽率讓合作更有效率！</h3>
-                        <p>設定 Whoscall 認證號碼後，店商客戶的接聽率明顯比以前高很多！和客戶討論案子的速度更順利、也更能及時給客戶完整的營運建議！</p>
+                        <p>設定 Whoscall 認證號碼後，電商客戶的接聽率明顯比以前高很多！和客戶討論案子的速度更順利、也更能及時給客戶完整的營運建議！</p>
                     </div>
                     <div class="company-logo">
-                        <img src="" alt="">
+                        <img src="/20221128Homework2Whoscall/whoscall網站圖片檔/91app.png" alt="">
                     </div>
                 </div>
                 <div class="box">
@@ -354,7 +435,7 @@
                         <p>透過 Whoscall Number 服務，讓顧客接聽意願變高，也讓我們的物流司機更容易掌握顧客的狀況，網購商品能更即時且有效率的送達。</p>
                     </div>
                     <div class="company-logo">
-                        <img src="" alt="">
+                        <img src="/20221128Homework2Whoscall/whoscall網站圖片檔/pchome.png" alt="">
                     </div>
                 </div>
             </div>
@@ -362,35 +443,44 @@
     </section>
 
     <footer>
-        <div class="texts">
-            <div class="item">
-                <h2>Whoscall</h2>
-                <p>認識 Whoscall</p>
-                <p>Whoscall 進階版</p>
-                <p>Whoscall 專欄</p>
-                <p>Whoscall 認證號碼</p>
+        <div class="wrap">
+            <div class="texts">
+                <div class="item">
+                    <h2>Whoscall</h2>
+                    <ul>
+                        <li>認識 Whoscall</li>
+                        <li>Whoscall 進階版</li>
+                        <li>Whoscall 專欄</li>
+                        <li>Whoscall 認證號碼</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h2>公司</h2>
+                    <ul>
+                        <li>工作機會</li>
+                        <li>媒體中心</li>
+                        <li>最新消息</li>
+                        <li>品牌識別</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <h2>客戶服務</h2>
+                    <ul>
+                        <li>安全性</li>
+                        <li>常見問題</li>
+                        <li>聯絡我們</li>
+                        <li>　</li>
+                    </ul>
+                </div>
             </div>
-            <div class="item">
-                <h2>公司</h2>
-                <p>工作機會</p>
-                <p>媒體中心</p>
-                <p>最新消息</p>
-                <p>品牌識別</p>
-            </div>
-            <div class="item">
-                <h2>客戶服務</h2>
-                <p>安全性</p>
-                <p>常見問題</p>
-                <p>聯絡我們</p>
-            </div>
-        </div>
-        <div class="logos">
-            <h2>追蹤我們</h2>
-            <div class="icons">
-                <i class="fa-brands fa-instagram fa-2xl"></i>
-                <i class="fa-brands fa-square-facebook fa-2xl"></i>
-                <i class="fa-brands fa-twitter fa-2xl"></i>
-                <i class="fa-brands fa-youtube fa-2xl"></i>
+            <div class="logos">
+                <h2>追蹤我們</h2>
+                <div class="icons">
+                    <i class="fa-brands fa-instagram fa-2xl"></i>
+                    <i class="fa-brands fa-square-facebook fa-2xl"></i>
+                    <i class="fa-brands fa-twitter fa-2xl"></i>
+                    <i class="fa-brands fa-youtube fa-2xl"></i>
+                </div>
             </div>
         </div>
     </footer>
