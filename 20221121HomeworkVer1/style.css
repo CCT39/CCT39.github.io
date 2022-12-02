@@ -1,0 +1,57 @@
+.container{
+    margin: auto; /*目的是置中*/
+    width: 1200px;
+}
+.about{
+    text-align: center;
+    line-height: 2em;
+    font-size: 16px;
+    width: 70%; /*寬度較.container稍窄*/
+    padding-bottom: 4em;
+    margin: auto; /*目的是置中*/
+}
+.wrap{
+    display: flex; /*變成橫排*/
+    height: 600px;
+}
+.wrap .box{
+    padding: 0 30px;
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; /*三個小段落垂直排列，且將空格環繞其之間*/
+}
+.wrap .text{
+    padding: 0 10px;
+    margin: auto; /*使每個item的文字和圖片置中對齊，消除預設的margin*/
+}
+.wrap .left .item{
+    flex-direction: row-reverse; /*使左邊與右邊對稱*/
+    text-align: right;
+}
+.wrap .center img{
+    border-radius: 10%;
+    width: auto;
+    height: 100%;
+    align-self: center; /*使圖片在.box.center置中*/
+}
+.wrap .item{
+    display: flex;
+    padding: 10px;
+}
+.wrap .item img{
+    border-radius: 50%;
+}
+.wrap .item h3{
+    margin: 0; /*使每個item的文字和圖片置中對齊，消除預設的margin*/
+    color: #ba7;
+}
+.wrap .item p{
+    margin: 0; /*使每個item的文字和圖片置中對齊，消除預設的margin*/
+    font-size: 12px;
+    line-height: 1.25em;
+}
+span{
+    color: #ba7;
+}
