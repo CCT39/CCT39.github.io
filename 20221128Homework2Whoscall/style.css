@@ -148,7 +148,7 @@ section:nth-child(even){
 .propaganda .item:nth-child(even){
     flex-direction: row-reverse;
 }
-.partner .title, .experience .title h2{
+.partner .title, .experience .title h2, .business-number > h2{
     text-align: center;
     font-size: 36px;
     font-weight: bold;
@@ -233,6 +233,23 @@ section:nth-child(even){
     right: 0;
     bottom: 0;
 }
+.business-number > h2{
+    padding-top: 25px;
+}
+.business-number strong{
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c2;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.business-number{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-evenly;
+}
 footer{
     background-color: #334;
     width: 100%;
@@ -266,9 +283,19 @@ footer h2{
     font-weight: 900;
     margin-top: 10px;
 }
-footer .logos{
+footer .right{
     margin-right: 20px;
     width: 18%;
+}
+footer .powered-by{
+    margin-top: 40px;
+}
+footer .powered-by p{
+    font-size: 12px;
+}
+footer .powered-by strong{
+    font-size: 24px;
+    line-height: 2em;
 }
 footer .logos h2{
     margin: 40px 0;
