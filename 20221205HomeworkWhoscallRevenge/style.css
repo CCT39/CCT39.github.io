@@ -1,0 +1,402 @@
+body{
+    font-family: 'Noto Sans TC', 'Roboto', 'Avenir Next', 'Microsoft JhengHei', '微軟正黑體';
+}
+.hidden{
+    display: none;
+}
+span.light-green{
+    color: #2c2;
+}
+sup#kome-mark{
+    vertical-align: super;
+    font-size: 12px;
+    color: #666;
+}
+.remark{
+    color: #666;
+    font-weight: bold;
+    padding: 20px;
+}
+.highlight{
+    background-image: linear-gradient(transparent 50%, #cfc 50%);
+}
+section:nth-of-type(odd){
+    background-color: #fff;
+}
+section:nth-of-type(even){
+    background-color: #eee;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    position: fixed;
+    box-shadow: 0 2px 5px #666;
+}
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 900px;
+}
+header nav a{
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+header nav a:hover{
+    color: #2c2;
+    transition: .3s;
+}
+header .logo img{
+    width: 150px;
+    height: auto;
+}
+.free-download, .start-right-now, .section-form .button{
+    font-size: 20px;
+    padding: 10px 35px;
+    margin: 15px;
+    height: 30px;
+    line-height: 1.5em;
+    background-color: #2c2;
+    border-radius: 40px;
+    text-align: center;
+}
+.free-download a, .start-right-now a, .section-form .button a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 115vh;
+    background-size: cover;
+    background-image: url("./whoscall網站圖片檔/valid-number-1440.jpg");
+}
+.banner .start-right-now, .section-form .button{
+    width: 100px;
+}
+.banner .start-right-now p{
+    font-size: 16px;
+}
+.banner .button{
+    margin-top: 30px;
+    width: 210px;
+}
+.banner .button .notation{
+    width: 100%;
+    color: #2c2;
+    font-weight: 900;
+    text-align: center;
+}
+.banner .radius img{
+    margin-top: 80px;
+    height: auto;
+    position: absolute;
+}
+.banner .radius.right-bottom img{
+    right: 0;
+    bottom: 0;
+}
+.banner .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 960px;
+    margin: auto;
+    height: 100%;
+}
+.banner .title img{
+    width: 500px;
+    height: auto;
+    margin-bottom: 30px;
+}
+.banner .title > p{
+    font-size: 36px;
+    line-height: 1.5em;
+    font-weight: 900;
+}
+.section-survey{
+    padding: 3em 0;
+}
+.section-survey .title{
+    width: 480px;
+    text-align: center;
+    margin: 0 auto 3em;
+}
+.section-survey .title h2{
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.8em;
+}
+.section-survey .title h2 strong{
+    font-size: 36px;
+}
+.section-survey .propaganda{
+    width: 960px;
+    margin: auto;
+}
+.propaganda .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+.propaganda .item .txt{
+    width: 450px;
+}
+.propaganda .item h3{
+    font-size: 32px;
+    font-weight: 900;
+    margin: 30px 20px;
+    color: #2c2;
+}
+.propaganda .item p:not(.remark p){
+    font-size: 24px;
+    display: block;
+    margin: 20px;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+.propaganda .item:nth-child(even){
+    flex-direction: row-reverse;
+}
+.section-partner .item{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.section-partner .item img{
+    height: auto;
+    width: 145px;
+}        
+.section-partner .item .txt{
+    width: 75%;
+}
+.section-partner .item .txt h3{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0 10px;
+}
+.section-partner .item .txt p{
+    font-size: 20px;
+}
+.section-experience .wrap{
+    width: 1080px;
+    margin: auto;
+}
+.section-partner, .section-experience{
+    padding: 90px 0;
+}
+.section-partner .title, .section-experience .title{
+    text-align: center;
+    width: 960px;
+    margin: 40px auto;
+}
+.section-partner .title h2, .section-experience .title h2{
+    font-size: 36px;
+    font-weight: bold;
+}
+.section-experience .wrap, .section-partner .wrap{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    vertical-align: bottom;
+}
+.section-experience .wrap{
+    width: 1080px;
+}
+.section-partner .wrap{
+    width: 960px;
+}
+.section-experience .wrap .box{
+    width: 320px;
+    border: #ddd .2px solid;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 20px;
+    box-shadow: 0 2px 5px #ddd;
+}
+.section-experience .wrap .box h3{
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.5em;
+    padding: .75em 0;
+}
+.section-experience .wrap .box p, .section-experience .wrap .box span{
+    line-height: 1.3em;
+    font-weight: bold;
+}
+.section-experience .box .quotation img{
+    transform: rotateY(180deg);
+    vertical-align: bottom;
+}
+.section-experience .company-logo{
+    position: relative;
+    padding-bottom: 70px;
+}
+.section-experience .company-logo img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.section-business-number h2{
+    padding-top: 25px;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
+.section-business-number strong{
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c2;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.section-business-number{
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-evenly;
+}
+.section-form{
+    padding: 80px;
+}
+.section-form h3{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.section-form h3, .section-form .wrap, .section-form .form-footer{
+    width: 960px;
+    margin: auto;
+}
+.section-form .wrap-row{
+    display: flex;
+    justify-content: space-between;
+}
+.section-form .wrap-row .item{
+    width: 400px;
+    margin: 15px;
+}
+.section-form .wrap-row .notation{
+    display: block;
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+}
+.section-form .wrap-row .item label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.section-form .wrap-row .item input, .section-form .wrap-row .item select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.section-form .wrap-row .item label, .section-form .wrap-row .item select{
+    font-size: 16px;
+}
+.section-form .form-footer .notation{
+    margin: 30px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+.section-form .form-footer .button{
+    margin: auto;
+}
+footer{
+    background-color: #334;
+    width: 100%;
+    padding: 40px 30px 0;
+    box-sizing: border-box;
+}
+footer a, footer .copyright .privacy p{
+    text-decoration: none;
+    color: #aaa;
+}
+footer .wrap{
+    display: flex;
+    justify-content: space-between;
+    height: 45vh;
+    color: #fff;
+    width: 1200px;
+    margin: auto;
+}
+footer .texts{
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    color: #fff;
+}
+footer .texts .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+footer .texts li{
+    line-height: 2em;
+    font-weight: bold;
+}
+footer h3{
+    font-weight: 900;
+    margin: 10px 0;
+}
+footer .follow{
+    margin-right: 20px;
+    width: 18%;
+}
+footer .powered-by{
+    margin-top: 40px;
+}
+footer .powered-by p{
+    font-size: 12px;
+}
+footer .powered-by strong{
+    font-size: 24px;
+    line-height: 2em;
+}
+footer .logos .icons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+footer .copyright{
+    width: 1200px;
+    margin: auto;
+}
+footer .copyright {
+    display: flex;
+    border-top: 1px solid #fff;
+    padding: 20px 0 40px;
+}
+footer .copyright .privacy{
+    display: flex;
+}
+footer .copyright .privacy a{
+    margin-left: 30px;
+}
+footer a:hover{
+    color: #fff;
+    transition: .3s;
+}
+footer .copyright .language{
+    margin-left: auto;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+footer .language select{
+    color: #fff;
+    background-color: #334;
+    font-size: 16px;
+    border: none;
+}
