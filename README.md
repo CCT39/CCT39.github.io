@@ -8,29 +8,29 @@
   <li>
     <h2>2022.11.21</h2> 
     <ol>  
-      <li>HTML/CSS 作業一（網頁頁面基本切版）：2 小時</li>
+      <li>HTML/CSS 作業（網頁頁面基本切版）：2 小時</li>
     </ol>
   </li>  
 
   <li>
     <h2>2022.11.28</h2>  
     <ol>  
-      <li>HTML/CSS 作業一（表格練習：國小課表）：1 小時</li>
-      <li>HTML/CSS 作業二（Whoscall指定頁面切版）：11 小時</li>
+      <li>HTML/CSS 作業1（表格練習：國小課表）：1 小時</li>
+      <li>HTML/CSS 作業2（Whoscall指定頁面切版）：11 小時</li>
     </ol>
   </li>  
 
   <li>
     <h2>2022.12.05</h2>  
     <ol>  
-      <li>HTML/CSS 作業一（Whoscall指定頁面再次切版）：6 小時</li>
+      <li>HTML/CSS 作業（Whoscall指定頁面再次切版）：6 小時</li>
     </ol>
   </li>  
   
   <li>
     <h2>2022.12.06</h2>  
     <ol>  
-      <li>JavaScript 作業一（猜數字遊戲）：尚未完成</li>
+      <li>JavaScript 作業（猜數字遊戲）：尚未完成</li>
     </ol>
   </li> 
 </ol>
