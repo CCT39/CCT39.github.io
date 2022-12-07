@@ -26,4 +26,11 @@
       <li>HTML/CSS 作業一（Whoscall指定頁面再次切版）：6 小時</li>
     </ol>
   </li>  
+  
+  <li>
+    <h2>2022.12.06</h2>  
+    <ol>  
+      <li>JavaScript 作業一（猜數字遊戲）：尚未完成</li>
+    </ol>
+  </li> 
 </ol>
