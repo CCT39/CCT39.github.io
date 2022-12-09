@@ -37,7 +37,7 @@
   <li>
     <h2>2022.12.08</h2>  
     <ul>  
-      <li>HTML/CSS 作業（Toyota指定頁面切版）：尚未完成</li>
+      <li>HTML/CSS 作業（Toyota指定頁面切版）：6 小時</li>
     </ul>
   </li> 
 </ul>
