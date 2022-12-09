@@ -30,7 +30,14 @@
   <li>
     <h2>2022.12.06</h2>  
     <ol>  
-      <li>JavaScript 作業（猜數字遊戲）：尚未完成</li>
+      <li>JavaScript 作業（猜數字遊戲）：12 小時</li>
+    </ol>
+  </li> 
+  
+  <li>
+    <h2>2022.12.08</h2>  
+    <ol>  
+      <li>HTML/CSS 作業（Toyota指定頁面切版）：尚未完成</li>
     </ol>
   </li> 
 </ol>
