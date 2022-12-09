@@ -27,7 +27,7 @@ h2, h3{
 a{
     color: #344;
     display: block;
-    width: 250px;
+    width: 220px;
     margin: 15px;
     text-decoration: none;
     text-align: center;
@@ -81,14 +81,24 @@ p{
     color: #fffeec;
 }
 
-.sider-decoration{
+.outer-sider-decoration{
     position: absolute;
     top: -200px;
     height: 200%;
+    width: 50px;
+    background-color: #39c5bb;
+    border-bottom: #39c5bb 1px solid;
+    z-index: 2;
+}
+.sider-decoration{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 100%;
     width: 30px;
     background-color: #344;
     border-bottom: #344 1px solid;
-    z-index: 1;
+    z-index: 2;
 }
 .inner-sider-decoration{
     position: absolute;
@@ -98,7 +108,7 @@ p{
     width: 10px;
     background-color: #e38;
     border-bottom: #e38 1px solid;
-    z-index: 2;
+    z-index: 3;
 }
 .right-deco{
     right: -50px;
