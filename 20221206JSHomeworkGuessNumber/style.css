@@ -1,6 +1,6 @@
 
 :root{
-    --main-color: #39c5bb;
+    --miku-color: #39c5bb;
 }
 body{
     font-family:'Times New Roman', 'Microsoft JhengHei', Times, serif;
@@ -12,17 +12,17 @@ body{
     margin: 30px auto 0;
     padding: 40px;
     box-sizing: border-box;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--miku-color);
     background-color: #39c5bb06;
     box-shadow: 5px 5px 10px #3442;
 }
 .main-title{
     text-align: center;
     font-size: 32px;
-    border-bottom: 3px double var(--main-color);
+    border-bottom: 3px double var(--miku-color);
     padding: 40px;
-    color: var(--main-color);
-    background-image: linear-gradient(to top, transparent 80%, var(--main-color) 100%);
+    color: var(--miku-color);
+    background-image: linear-gradient(to top, transparent 80%, var(--miku-color) 100%);
 }
 .main-title h1 > span{
     background-image: linear-gradient(transparent 50%, #39c5bb32 50%);
@@ -61,7 +61,7 @@ body{
 }
 button.btn{
     margin: 8px;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--miku-color);
     background-color: #39c5bb1a;
     height: 50px;
     font-size: 20px;
@@ -86,7 +86,7 @@ button.btn:hover{
 }
 button.btn:active{
     cursor: pointer;
-    background-color: #39c5bb;
+    background-color: var(--miku-color);
 }
 
 /*  <裝飾性物件區>  */
@@ -101,7 +101,7 @@ button.btn:active{
     justify-content: center;
     align-items: center;
     z-index: 8;
-    border: 30px solid var(--main-color);
+    border: 30px solid var(--miku-color);
 }
 .intro .content{
     position: relative;
@@ -151,8 +151,8 @@ button.btn:active{
     font-size: 28px;
 }
 .intro .content .intro-txt p .mikatio{
-    background-image: linear-gradient(transparent 80%, var(--main-color) 100%);
-    color: var(--main-color)
+    background-image: linear-gradient(transparent 80%, var(--miku-color) 100%);
+    color: var(--miku-color)
 }
 .intro .content .get-start{
     position: absolute;
@@ -163,9 +163,9 @@ button.btn:active{
     text-align: center;
     bottom: 50px;
     padding: 15px;
-    background-color: var(--main-color);
+    background-color: var(--miku-color);
     color: #334;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--miku-color);
     font-size: 24px;
     font-weight: bold;
     border-radius: 5px;
@@ -195,7 +195,7 @@ button.btn:active{
     align-items: center;
     background-color: #fffeec;
     z-index: 8;
-    border: 3px solid var(--main-color);
+    border: 3px solid var(--miku-color);
 }
 .victory-msg{
     padding: 30px 0;
@@ -299,9 +299,9 @@ button.btn:active{
     border-left: 20px solid transparent;
 }
 .under-bar{
-    background-color: var(--main-color);
+    background-color: var(--miku-color);
     height: 1px;
-    box-shadow: 0 -9px .1px var(--main-color), 0 3px .1px var(--main-color), 0 12px .1px var(--main-color);
+    box-shadow: 0 -9px .1px var(--miku-color), 0 3px .1px var(--miku-color), 0 12px .1px var(--miku-color);
 }
 
 /*  </裝飾性物件區>  */
