@@ -147,7 +147,7 @@ button.btn:active{
     to {color: #fffeec; }
 }
 .intro .content .intro-txt h2{
-    -webkit-text-stroke: #334 1px;
+    -webkit-text-stroke: var(--miku-black) 1px;
     font-size: 40px;
 }
 .intro .content .intro-txt p{
@@ -167,7 +167,7 @@ button.btn:active{
     bottom: 50px;
     padding: 15px;
     background-color: var(--miku-color);
-    color: #334;
+    color: var(--miku-black);
     border: 1px solid var(--miku-color);
     font-size: 24px;
     font-weight: bold;
@@ -175,7 +175,7 @@ button.btn:active{
     text-decoration: none;
 }
 .intro .content .get-start:hover{
-    box-shadow: 0 0 5px #334;
+    box-shadow: 0 0 5px var(--miku-black);
     cursor: pointer;
     transition: .3s;
     background-color: #7ee;
@@ -191,7 +191,7 @@ button.btn:active{
     width: 300px;
     height: 200px;
     font-size: 24px;
-    color: #334;
+    color: var(--miku-black);
     font-weight: bold;
     display: none;
     justify-content: center;
