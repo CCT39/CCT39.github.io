@@ -6,120 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./reset.css">
-    <style>
-        .container{
-            width: 768px;
-            margin: auto;
-            padding: 40px;
-            box-sizing: border-box;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container">
-        <label for="input">
-            <p>請輸入數字</p>
+        <div class="main-title">
+            <h1>MICATIO KUDOS 終極<span>榮耀</span>密碼</h1>
+        </div>
+        <div class="input-area">
+            <label for="guess-number">輸入數字</label>
             <input type="text" placeholder="" id="guess-number" class="inputs">
-        </label>
-        <p>範圍：<strong><span class="lower-bound">1</span> - <span class="upper-bound">100</span></strong></p>
+            <p>範圍：<strong><span class="lower-bound">1</span> - <span class="upper-bound">100</span></strong></p>
+        </div>
 
-        <div class="btn-row">
-            <button class="inputs num">1</button>
-            <button class="inputs num">2</button>
-            <button class="inputs num">3</button>
-            <button class="inputs num">4</button>
-            <button class="inputs num">5</button>
+        <div class="btn-area">
+            <div class="btn-row">
+                <button class="btn inputs num">1</button>
+                <button class="btn inputs num">2</button>
+                <button class="btn inputs num">3</button>
+                <button class="btn inputs num">4</button>
+                <button class="btn inputs num">5</button>
+            </div>
+            <div class="btn-row">
+                <button class="btn inputs num">6</button>
+                <button class="btn inputs num">7</button>
+                <button class="btn inputs num">8</button>
+                <button class="btn inputs num">9</button>
+                <button class="btn inputs num">0</button>
+            </div>
+            <div class="btn-row">
+                <button class="btn inputs enter">猜！</button>
+                <button class="btn return">重來</button>
+            </div>
         </div>
-        <div class="btn-row">
-            <button class="inputs num">6</button>
-            <button class="inputs num">7</button>
-            <button class="inputs num">8</button>
-            <button class="inputs num">9</button>
-            <button class="inputs num">0</button>
+
+
+        <!-- <裝飾性物件區> -->
+
+        <div class="intro">
+            <div class="content">
+                <img src="./Gierymski_Game_of_Morra.jpg" alt="">
+                <div class="intro-txt">
+                    <h2>MICATIO KUDOS 終極榮耀密碼</h2>
+                    <p>相傳在古羅馬時代，市井小民之間流行著一種被稱為 <span class="mikatio">Micatio</span> 的猜數字遊戲，類似古中國的酒拳<br><br>
+                    歷史悠久的猜數字遊戲，現代版變體經典重現</p>
+                </div>
+                <div class="reference">
+                    <p>'Gra w mora' source: (Public domain) Aleksander Gierymski (1874), <a href="cyfrowe.mnw.art.pl">National Museum in Warsaw.</a></p>
+                </div>
+                <a href="#" class="get-start" onclick="getStart()">開始遊戲</a>
+            </div>
         </div>
-        <div class="btn-row">
-            <button class="inputs enter">猜！</button>
-            <button class="return">重新開始</button>
+
+        <div class="decoration deco-r-t">
+            <div class="inner-decoration deco-r-t"></div>
         </div>
+        <div class="triangle tri-l"></div>
+        <div class="triangle tri-b"></div>
+
+        <div class="decoration deco-l-b">
+            <div class="inner-decoration deco-l-b"></div>
+        </div>
+        <div class="triangle tri-r"></div>
+        <div class="triangle tri-t"></div>
+        
+        <div class="sider-decoration">
+            <div class="inner-sider-decoration"></div>
+        </div>
+
+        <div class="under-bar"></div>
+
+        <div class="victory">
+            <div class="victory-msg"></div>
+            <button class="btn return" id="win-return">重來</button>
+        </div>
+
+        <!-- </裝飾性物件區> -->
+
+
     </div>
 
+    
 
-    <!-- 輸入100、再輸入1、再輸入範圍內的數字會壞掉，why？ -->
-
-    <script>
-        const initMin = 1;
-        const initMax = 100;
-
-        let min = initMin;
-        let max = initMax;
-        let answer = getRandomIntInclusive(1, 100);
-
-        let inputText = document.querySelector('#guess-number');
-
-        let inputsNum = document.querySelectorAll('.num');
-        inputsNum.forEach(x => x.addEventListener('click', function(){
-            inputText.value += x.innerHTML;
-        }));
-        
-        let enter = document.querySelector('.enter');
-        enter.addEventListener('click', function(){
-            checkBound(inputText.value);
-        });
-
-        let upperBound = document.querySelector('.upper-bound');
-        let lowerBound = document.querySelector('.lower-bound');
-        let btnsAndInputs = document.querySelectorAll('.inputs');
-
-        function checkBound(num){
-            if (isNaN(parseInt(num)) || num < min || num > max){
-                alert('請輸入範圍內的數字！');
-            } else if (num == answer){
-                alert('你贏了！');
-                setDisabled(true);
-            } else {
-                if (num > answer){
-                    setMax(num);
-                } else if (num < answer){
-                    setMin(num);
-                }
-            }
-            inputText.value = '';
-        }
-
-        let btnReturn = document.querySelector('.return');
-        btnReturn.addEventListener('click', function(){
-            initialize();
-        })
-
-        function initialize(){
-            inputText.value = '';
-            setMin(initMin);
-            setMax(initMax);
-            answer = getRandomIntInclusive(1, 100);
-            setDisabled(false);
-        }
-
-        function setMax(num){
-            max = num;
-            upperBound.innerHTML = max;
-        }
-
-        function setMin(num){
-            min = num;
-            lowerBound.innerHTML = num;
-        }
-
-        function getRandomIntInclusive(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1) + min);
-        }
-
-        function setDisabled(bool){
-            btnsAndInputs.forEach(x => x.disabled = bool);
-
-        }
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>

@@ -1,0 +1,108 @@
+
+body{
+    background-color: #39c5bb0c;
+}
+.content{
+    width: 640px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+h1{
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    border-bottom: #39c5bb 2px solid;
+    color: #39c5bb;
+}
+h2, h3{
+    font-weight: bold;
+}
+h2, h3{
+    color: #344;
+}
+a{
+    color: #344;
+    display: block;
+    width: 250px;
+    margin: 15px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 20px;
+    padding: .35em 0;
+    font-weight: bold;
+    box-shadow: 0 3px 5px #3448;
+}
+.css > a{
+    background-color: #39c5bb;
+}
+.css > a:hover:not(.unfinished){
+    background-color: #39c5bb80;
+    transition: .3s;
+}
+.js > a{
+    background-color: #e38;
+}
+.js > a:hover:not(.unfinished){
+    background-color: #e388;
+    transition: .3s;
+}
+a.another-version{
+    font-weight: normal;
+    background-color: #fffeec;
+    box-sizing: border-box;
+}
+.css > .another-version{
+    border: 2px dashed #39c5bb;
+    color: #39c5bb;
+}
+.css > a.another-version:hover{
+    background-color: #cef;
+    transition: .3s;
+}
+.js > .another-version{
+    border: 2px dashed #e38;
+    color: #e38;
+}
+.js > a.another-version:hover{
+    background-color: #fce;
+    transition: .3s;
+}
+p{
+    font-size: 24px;
+    font-weight: bold;
+}
+#unfinished{
+    background-color: #344;
+    cursor: default;
+    color: #fffeec;
+}
+
+.sider-decoration{
+    position: absolute;
+    top: -200px;
+    height: 200%;
+    width: 30px;
+    background-color: #344;
+    border-bottom: #344 1px solid;
+    z-index: 1;
+}
+.inner-sider-decoration{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    height: 100%;
+    width: 10px;
+    background-color: #e38;
+    border-bottom: #e38 1px solid;
+    z-index: 2;
+}
+.right-deco{
+    right: -50px;
+}
+.left-deco{
+    left: -50px;
+}
