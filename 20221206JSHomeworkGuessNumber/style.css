@@ -82,6 +82,11 @@ button.btn:checked{
 }
 button.btn:hover{
     cursor: pointer;
+    background-color: #39c5bb80;
+}
+button.btn:active{
+    cursor: pointer;
+    background-color: #39c5bb;
 }
 
 /*  <裝飾性物件區>  */
