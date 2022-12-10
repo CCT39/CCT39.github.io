@@ -129,6 +129,9 @@ a{
     left: -105px;
 }
 
+.content .item .btnPlay:hover .icon-play{
+    background-color: #d22;
+}
 .content .item .icon-play{
     position: absolute;
     background-color: #b00;
