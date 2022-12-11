@@ -9,30 +9,30 @@ a{
     width: 960px;
     margin: auto;
 }
-.content .item{
-    padding: 200px 0;
+.item{
+    padding: 100px 0 400px;
     height: 80vh;
 }
-.content .item .img{
+.item .img{
     width: 695px;
     height: 430px;
     position: relative;
     z-index: 0;
     margin-left: 160px;
 }
-.content .item .img img{
+.item .img img{
     width: 100%;
     height: 100%;
     display: block;
 }
-.content .item .appeal{
+.item .appeal{
     width: 320px;
     height: auto;
     top: 0;
     position: absolute;
     z-index: 1;
 }
-.content .item .appeal .title{
+.item .appeal .title{
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -44,11 +44,11 @@ a{
     transform: translate(0, -100%);
     color: #fff;
 }
-.content .item .appeal .title > p{
+.item .appeal .title > p{
     transform: rotate(90deg);
     font-size: 7rem;
 }
-.content .item .appeal .txt{
+.item .appeal .txt{
     width: 100%;
     background-color: #000;
     color: #fff;
@@ -58,44 +58,44 @@ a{
     box-sizing: border-box;
     line-height: 2;
 }
-.content .item:nth-child(odd) .appeal{
+.item:nth-child(odd) .appeal{
     left: -160px;
 }
-.content .item:nth-child(even) .appeal{
+.item:nth-child(even) .appeal{
     right: -160px;
 }
-.content .item:nth-child(odd) .appeal .title{
+.item:nth-child(odd) .appeal .title{
     flex-direction: row-reverse;
     padding-right: 10px;
 }
-.content .item:nth-child(even) .appeal .title{
+.item:nth-child(even) .appeal .title{
     padding-left: 10px;
 }
 
-.content .item .explain{
+.item .explain{
     position: relative;
     background-color: #eee;
     padding: 20px;
     font-size: 16px;
     top: -10%;
 }
-.content .item .explain .title{
+.item .explain .title{
     color: #b00;
     font-weight: 900;
     display: flex;
 }
-.content .item .explain .title > p{
+.item .explain .title > p{
     flex-grow: 1;
     clip-path: polygon(0% 48%, 100% 48%, 100% 52%, 0% 52%);
     background-color: #b00;
 }
-.content .item:nth-child(odd) .explain{
+.item:nth-child(odd) .explain{
     left: -160px;
 }
-.content .item:nth-child(even) .explain{
+.item:nth-child(even) .explain{
     right: -160px;
 }
-.content .item .explain .inno-item h3{
+.item .explain .inno-item h3{
     background-color: #000;
     color: #fff;
     padding: 7px;
@@ -103,36 +103,35 @@ a{
     display: inline-block;
     border-radius: 5px;
 }
-.content .item .explain .inno-item p{
+.item .explain .inno-item p{
     line-height: 1.2;
     padding-left: 1.2em;
     text-indent: -1em;
 }
-.content .item .explain .inno-item p::before{
+.item .explain .inno-item p::before{
     content: '・';
     color: #b00;
     font-weight: 900;
 }
 
-.content .item .grey{
+.item .gray{
     width: 439px;
     height: 290px;
     background-color: #eee;
-    position: absolute;
-    z-index: -1;
-    top: -100px;
+    position: relative;
+    top: 180px;
 }
-.content .item:nth-child(odd) .grey{
-    right: -105px;
+.item:nth-child(odd) .gray{
+    margin-left: auto;
 }
-.content .item:nth-child(even) .grey{
-    left: -105px;
+.item:nth-child(even) .gray{
+    margin-right: auto;
 }
 
-.content .item .btnPlay:hover .icon-play{
+.item .btnPlay:hover .icon-play{
     background-color: #d22;
 }
-.content .item .icon-play{
+.item .icon-play{
     position: absolute;
     background-color: #b00;
     width: 60px;
@@ -140,16 +139,16 @@ a{
     border-radius: 15%;
     top: calc(50% - 20px);
 }
-.content .item .icon-play .triangle{
+.item .icon-play .triangle{
     clip-path: polygon(28.34936% 25%, 28.34936% 75%, 78.34936% 50%);
     width: 40px;
     height: 100%;
     background-color: #fff;
     margin: auto;
 }
-.content .item:nth-child(odd) .icon-play{
+.item:nth-child(odd) .icon-play{
     right: -10px;
 }
-.content .item:nth-child(even) .icon-play{
+.item:nth-child(even) .icon-play{
     left: -10px;
 }
