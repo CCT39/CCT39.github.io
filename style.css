@@ -13,11 +13,16 @@ body{
 }
 .content{
     width: 640px;
+    padding: 0 60px;
     margin: auto;
     display: flex;
     justify-content: space-evenly;
     position: relative;
     z-index: 1;
+}
+.main-title{
+    margin: auto;
+    width: 760px;
 }
 h1{
     width: 600px;
@@ -113,8 +118,8 @@ p{
 
 .outer-sider-decoration{
     position: absolute;
-    top: -200px;
-    height: 150%;
+    top: -65px;
+    height: calc(100vh + 65px);
     width: 50px;
     background-color: var(--miku-color);
     border-bottom: var(--miku-color) 1px solid;
@@ -141,8 +146,8 @@ p{
     z-index: 3;
 }
 .right-deco{
-    right: -50px;
+    right: 10px;
 }
 .left-deco{
-    left: -50px;
+    left: 10px;
 }
