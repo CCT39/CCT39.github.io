@@ -46,7 +46,7 @@ h2{
         width: calc(100% - 10px);
     }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1200px) {
     .col{
         --col-count: 4;
     }
