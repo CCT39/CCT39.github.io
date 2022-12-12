@@ -1,6 +1,6 @@
 # CCT39's Front-end Homeworks
   
-<p>最後更新：2022.12.10（六）00:42（UTC+8）</p>  
+<p>最後更新：2022.12.12（一）19:04（UTC+8）</p>  
 <strong>此處收錄本人即 CCT39 於 Build School 所練習之前端程式設計作業。</strong>  
   
 <h1>目前作業清單以及所花費時間：</h1>  
@@ -38,6 +38,13 @@
     <h2>2022.12.08</h2>  
     <ul>  
       <li>HTML/CSS 作業（Toyota指定頁面切版）：6 小時</li>
+    </ul>
+  </li> 
+  
+  <li>
+    <h2>2022.12.12</h2>  
+    <ul>  
+      <li>HTML/CSS 作業（RWD練習）：1 小時</li>
     </ul>
   </li> 
 </ul>
