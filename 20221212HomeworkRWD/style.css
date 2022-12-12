@@ -51,7 +51,7 @@ h2{
         --col-count: 4;
     }
     .col:nth-child(-n+2){
-        width: calc(50% - 10px);
+        width: 50%;
         margin-left: auto;
         margin-right: auto;
     }
