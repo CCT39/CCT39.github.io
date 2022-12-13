@@ -18,6 +18,7 @@ h2{
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 .item .txt, .item .img{
     box-sizing: border-box;
