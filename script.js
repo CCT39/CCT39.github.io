@@ -1,13 +1,12 @@
 
 
 let introForm = document.querySelector('.question');
-let btns = document.querySelectorAll('.btn:not(button[disabled="true"])');
+//let btns = document.querySelectorAll('.btn:not(button[disabled="true"])');
 let questionMsg = document.querySelector('#msg');
 
 function focusMain(){
     introForm.style.display = 'none';
     questionMsg.innerHTML = '';
-    btns.forEach(x => x.disabled = false);
 }
 
 function focusWindow(date){
