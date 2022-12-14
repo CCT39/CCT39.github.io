@@ -31,7 +31,7 @@ function checkBound(num){
     } else if( guess < min || guess > max){
         alert('請輸入範圍內的數字！');
     } else if (guess == answer){
-        winMsg.innerHTML = `<p>你贏了！，答案是 ${answer} </p>`;
+        winMsg.innerHTML = `<p>你贏了！答案是 ${answer} </p>`;
         winWindow.style.display = 'flex';
         setDisabled(true);
         setMax(guess);
