@@ -166,12 +166,16 @@ li a{
     }
     .main-item:hover{
         cursor: pointer;
+        background-color: var(--miku-varient);
     }
     .main-item:hover .sub-nav{
         right: 0;
         width: 640px;
         transition: .2s;
         opacity: 1;
+    }
+    .main-item:active{
+        background-color: var(--miku-red);
     }
     .main-item{
         width: 20%;
