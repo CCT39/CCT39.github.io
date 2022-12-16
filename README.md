@@ -47,4 +47,11 @@
       <li>HTML/CSS 作業（RWD練習）：1 小時</li>
     </ul>
   </li> 
+  
+  <li>
+    <h2>2022.12.15</h2>  
+    <ul>  
+      <li>HTML/CSS 作業（雙層選單）：5 小時</li>
+    </ul>
+  </li> 
 </ul>
