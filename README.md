@@ -1,6 +1,6 @@
 # CCT39's Front-end Homeworks
   
-<p>最後更新：2022.12.16（五）22:13（UTC+8）</p>  
+<p>最後更新：2022.12.17（六）14:45（UTC+8）</p>  
 <strong>此處收錄本人即 CCT39 於 Build School 所練習之前端程式設計作業。</strong>  
   
 <h1>目前作業清單以及所花費時間：</h1>  
@@ -51,7 +51,7 @@
   <li>
     <h2>2022.12.15</h2>  
     <ul>  
-      <li>HTML/CSS 作業（雙層選單）：5 小時</li>
+      <li>HTML/CSS 作業（雙層選單）：5 小時 （ + 2 小時 JavaScript版本）</li>
     </ul>
   </li> 
 </ul>
