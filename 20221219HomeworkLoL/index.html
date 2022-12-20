@@ -2174,6 +2174,7 @@
             btnCreateHeroArray = document.getElementById("createhero");
             btnListHero = document.getElementById("listhero");
             btnTableHero = document.getElementById("tablehero");
+            result = document.getElementById('result');
 
             btnCreateHeroArray.addEventListener("click", function () {
                 //alert("從DOM建立英雄人物陣列資料後清除container");
@@ -2218,7 +2219,7 @@
                 heroArray.forEach(x => {
                     let texts = document.createElement('p');
                     texts.innerHTML = `index: ${x.index}, id: ${x.enName}, title:${x.zhName}, text: ${x.text}, url: ${x.url}`;
-                    container.append(texts);
+                    result.append(texts);
                 })
                 
             });
@@ -2250,7 +2251,7 @@
                     tbody.append(tbodyTR);
                 })
                 table.append(tbody);
-                container.append(table);
+                result.append(table);
 
                 // 路徑、索引、中文名、英文名、描述、標籤
 
