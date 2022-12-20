@@ -2236,13 +2236,21 @@
                 let tbody = document.createElement('tbody');
                 
                 table.setAttribute('class', 'table table-bordered table-striped table-dark');
-
+                
+                let titleArray = []
+                Object.keys(heroArray[0]).forEach(x => titleArray.push(x));
+                let theadTR = document.createElement('tr');
+                titleArray.forEach(title => {
+                    let th = document.createElement('th');
+                    th.innerHTML = title;
+                    theadTR.append(th);
+                })
+                tbody.append(theadTR);
 
                 heroArray.forEach(hero => {
                     
-                    let tbodyTR =  document.createElement('tr');
+                    let tbodyTR = document.createElement('tr');
                     let heroDatas = Object.keys(hero).map(key => hero[key]);
-                    console.log(heroDatas);
                     heroDatas.forEach(data => {
                         let td = document.createElement('td');
                         td.innerHTML = data;
