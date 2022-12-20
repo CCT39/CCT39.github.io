@@ -42,6 +42,41 @@
 .container .kv .post {
   right: 10%;
 }
+.container .switches {
+  display: flex;
+  justify-content: center;
+}
+.container .switches .switch {
+  width: 100px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.container .switches .switch span {
+  font-size: 12px;
+}
+.container .switches .switch.local {
+  background-color: rgba(225, 40, 133, 0.8352941176);
+}
+.container .switches .switch.internet {
+  background-color: rgba(55, 59, 62, 0.8352941176);
+  color: #fffeec;
+}
+.container .switches .switch:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+.container .switches .switch:active {
+  opacity: 1;
+}
+.container .switches #local, .container .switches #internet {
+  display: none;
+}
 
 @media screen and (max-width: 960px) {
   .prev {
