@@ -60,10 +60,10 @@
 .container .switches .switch span {
   font-size: 12px;
 }
-.container .switches .switch.local {
+.container .switches .switch.red {
   background-color: rgba(225, 40, 133, 0.8352941176);
 }
-.container .switches .switch.internet {
+.container .switches .switch.grey {
   background-color: rgba(55, 59, 62, 0.8352941176);
   color: #fffeec;
 }
@@ -74,7 +74,7 @@
 .container .switches .switch:active {
   opacity: 1;
 }
-.container .switches #local, .container .switches #internet {
+.container .switches #red, .container .switches #grey {
   display: none;
 }
 

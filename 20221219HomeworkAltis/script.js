@@ -1,13 +1,13 @@
-let carImagesViaInternet = [], carImagesViaLocal = [];
+let carImagesGrey = [], carImagesRed = [];
 let mainImg, prevBtn, postBtn, btns, viaLocal, viaInternet, interval;
-let isViaInternet = false;
+let isGrey = false;
 let presentImgIndex = 0;
 
 window.onload = function (){
     getElements();
     generateCarImages();
     setEventListeners();
-    mainImg.src = carImagesViaLocal[presentImgIndex];
+    mainImg.src = carImagesRed[presentImgIndex];
 }
 
 function getElements(){
@@ -15,14 +15,14 @@ function getElements(){
     prevBtn = document.querySelector('.prev');
     postBtn = document.querySelector('.post');
     btns = document.querySelectorAll('.btn');
-    viaLocal = document.getElementById('local');
-    viaInternet = document.getElementById('internet');
+    viaLocal = document.getElementById('red');
+    viaInternet = document.getElementById('grey');
 }
 
 function generateCarImages(){
     for(let i = 1; i < 61; i++){
-        carImagesViaInternet.push(`https://hotaicdn.azureedge.net/toyotaweb/360EXT_1_18_${i}.png`);
-        carImagesViaLocal.push(`./AltisImg/AltisRed/360EXT_1_22_${i}.png`);
+        carImagesGrey.push(`./AltisImg/Gray/360EXT_1_18_${i}.png`);
+        carImagesRed.push(`./AltisImg/AltisRed/360EXT_1_22_${i}.png`);
     }
 }
 
@@ -34,27 +34,27 @@ function setEventListeners(){
     prevBtn.addEventListener('mouseup', function(){clearInterval(interval);})
     postBtn.addEventListener('mouseup', function(){clearInterval(interval);})
     viaLocal.addEventListener('change', function(){
-        isViaInternet = false;
+        isGrey = false;
         changeColour();
     })
     viaInternet.addEventListener('change', function(){
-        isViaInternet = true;
+        isGrey = true;
         changeColour();
     })
 }
 
 function changeColour(){
-    if (isViaInternet){
-        mainImg.src = carImagesViaInternet[presentImgIndex];
+    if (isGrey){
+        mainImg.src = carImagesGrey[presentImgIndex];
     } else {
-        mainImg.src = carImagesViaLocal[presentImgIndex];
+        mainImg.src = carImagesRed[presentImgIndex];
     }
 }
 
 function changeImgs(num){
-    let imgArray = carImagesViaLocal;
-    if (isViaInternet){
-        imgArray = carImagesViaInternet;
+    let imgArray = carImagesRed;
+    if (isGrey){
+        imgArray = carImagesGrey;
     }
     
     let int = parseInt(num, 10);

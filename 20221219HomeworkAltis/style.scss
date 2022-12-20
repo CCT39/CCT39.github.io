@@ -56,10 +56,10 @@
             span{
                 font-size: 12px;
             }
-            &.local{
+            &.red{
                 background-color: #e12885d5;
             }
-            &.internet{
+            &.grey{
                 background-color: #373b3ed5;
                 color: #fffeec;
             }
@@ -71,7 +71,7 @@
                 opacity: 1;
             }
         }
-        #local, #internet{
+        #red, #grey{
             display: none;
         }
         
