@@ -132,12 +132,13 @@ a.unfinished::before{
     right: 0;
     top: 0;
     bottom: 0;
+    padding: 2px 0;
     margin: auto;
     background-color: var(--miku-red);
     color: var(--miku-white);
     font-size: 10px;
     width: 30%;
-    height: 50%;
+    height: fit-content;
     transform: rotate(-15deg);
 }
 .magenta{
@@ -229,7 +230,7 @@ a.unfinished::before{
 .outer-sider-decoration{
     position: absolute;
     top: -200px;
-    height: 200%;
+    height: 120%;
     width: 25px;
     background-color: var(--miku-color);
     border-bottom: var(--miku-color) 1px solid;
