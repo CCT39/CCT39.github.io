@@ -54,7 +54,7 @@ a{
 }
 a:not(.in-question){
     display: block;
-    width: 220px;
+    width: 240px;
     border-radius: 20px;
     margin: 15px;
     box-shadow: 0 3px 3px var(--miku-black);
@@ -83,14 +83,14 @@ li{
 .css > a{
     background-color: var(--miku-color);
 }
-.css > a:hover:not(#unfinished){
+.css > a:hover:not(.unfinished){
     background-color: var(--miku-varient);
     transition: .3s;
 }
 .js > a{
     background-color: var(--miku-red);
 }
-.js > a:hover:not(#unfinished){
+.js > a:hover:not(.unfinished){
     background-color: #e388;
     transition: .3s;
 }
@@ -119,10 +119,26 @@ p{
     font-size: 24px;
     font-weight: bold;
 }
-#unfinished{
+a.unfinished{
     background-color: var(--miku-black);
     cursor: default;
     color: var(--miku-gray);
+    position: relative;
+}
+a.unfinished::before{
+    content: '未完成';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: var(--miku-red);
+    color: var(--miku-white);
+    font-size: 10px;
+    width: 30%;
+    height: 50%;
+    transform: rotate(-15deg);
 }
 .magenta{
     color: var(--miku-red);
@@ -140,17 +156,17 @@ p{
     left: 0;
     right: 0;
     margin: auto;
+    background-color: #fffeec;
+    color: var(--miku-black);
+    font-size: 24px;
     width: 100%;
+    height: fit-content;
     max-width: 640px;
     max-height: 80vh;
-    height: fit-content;
-    font-size: 24px;
-    color: var(--miku-black);
     font-weight: bold;
     display: none;
     flex-direction: column;
     justify-content: center;
-    background-color: #fffeec;
     z-index: 8;
     border: 3px solid var(--miku-color);
     box-sizing: border-box;
@@ -166,7 +182,7 @@ p{
     top: 0;
     left: 0;
     z-index: 7;
-    background-color: var(--miku-black);
+    background-color: var(--miku-dark);
     opacity: .5;
 }
 .question .question-msg{
@@ -192,7 +208,7 @@ p{
     border: 1px solid var(--miku-color);
     background-color: #39c5bb1a;
     height: 30px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     box-sizing: border-box;
     border-radius: 5px;
