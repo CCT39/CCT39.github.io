@@ -23,12 +23,8 @@ function getElements(){
 
 function preLoadCarPics(){
     preLoadImgs = document.createElement('div');
-    carImagesGrey.forEach(img => { 
-        preLoadAPic(img);
-    })
-    carImagesRed.forEach(img => {
-        preLoadAPic(img);
-    })
+    carImagesGrey.forEach(img => { preLoadAPic(img); })
+    carImagesRed.forEach(img => { preLoadAPic(img); })
     // preLoadImgs.setAttribute('id', 'preload-element');
     preLoadImgs.style.display = 'none';
     container.append(preLoadImgs);
