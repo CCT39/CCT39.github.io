@@ -1,13 +1,16 @@
 let carImagesGrey = [], carImagesBlack = [], carImagesDeepGrey = [];
 let carImagesSilver = [], carImagesRed = [], carImagesWhite = [];
 let carImages = [];
-let mainImg, prevBtn, postBtn, radios, viaLocal, viaInternet, interval, preLoadImgs;
+let mainImg, prevBtn, postBtn, radios, interval, preLoadImgs;
 let currentColour, presentImgIndex;
+
+// Colour: 0~5 (G, B, D, S, R, W), ImgIndex: 0~59.
+const beginningColourAndImgIndex = [4, 0];
 
 window.onload = function (){
     getElements();
-    generateCarImages();
     setEventListeners();
+    generateCarImages();
     initCarPics();
     changeColour();
 }
@@ -25,13 +28,13 @@ function getElements(){
     prevBtn = document.querySelector('.prev');
     postBtn = document.querySelector('.post');
     radios = document.querySelectorAll('[type="radio"]');
-    viaLocal = document.getElementById('red');
-    viaInternet = document.getElementById('grey');
 }
 
 function generateCarImages(){
-    presentImgIndex = 0;
-    currentColour = 4;
+    currentColour = beginningColourAndImgIndex[0];
+    presentImgIndex = beginningColourAndImgIndex[1];
+
+    radios[currentColour].checked = true;
     carImages = [carImagesGrey, carImagesBlack, carImagesDeepGrey, carImagesSilver, carImagesRed, carImagesWhite];
     const beginningIndex = 18;
     
