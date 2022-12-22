@@ -1,14 +1,22 @@
-let carImagesGrey = [], carImagesRed = [];
-let mainImg, prevBtn, postBtn, btns, viaLocal, viaInternet, interval, preLoadImgs;
-let isGrey = false;
-let presentImgIndex = 0;
+let carImagesGrey = [], carImagesBlack = [], carImagesDeepGrey = [];
+let carImagesSilver = [], carImagesRed = [], carImagesWhite = [];
+let carImages = [];
+let mainImg, prevBtn, postBtn, radios, viaLocal, viaInternet, interval, preLoadImgs;
+let currentColour, presentImgIndex;
 
 window.onload = function (){
     getElements();
     generateCarImages();
     setEventListeners();
+    initCarPics();
+    changeColour();
+}
+
+function initCarPics(){
+    preLoadImgs = document.createElement('div');
     preLoadCarPics();
-    mainImg.src = carImagesRed[presentImgIndex];
+    preLoadImgs.setAttribute('class', 'hidden');
+    container.append(preLoadImgs);
 }
 
 function getElements(){
@@ -16,30 +24,21 @@ function getElements(){
     mainImg = document.getElementById('main-img');
     prevBtn = document.querySelector('.prev');
     postBtn = document.querySelector('.post');
-    btns = document.querySelectorAll('.btn');
+    radios = document.querySelectorAll('[type="radio"]');
     viaLocal = document.getElementById('red');
     viaInternet = document.getElementById('grey');
 }
 
-function preLoadCarPics(){
-    preLoadImgs = document.createElement('div');
-    carImagesGrey.forEach(img => { preLoadAPic(img); })
-    carImagesRed.forEach(img => { preLoadAPic(img); })
-    // preLoadImgs.setAttribute('id', 'preload-element');
-    preLoadImgs.style.display = 'none';
-    container.append(preLoadImgs);
-}
-
-function preLoadAPic(url){
-    let pic = document.createElement('img');
-    pic.src = url;
-    preLoadImgs.append(pic);
-}
-
 function generateCarImages(){
-    for(let i = 1; i < 61; i++){
-        carImagesGrey.push(`./AltisImg/Gray/360EXT_1_18_${i}.png`);
-        carImagesRed.push(`./AltisImg/AltisRed/360EXT_1_22_${i}.png`);
+    presentImgIndex = 0;
+    currentColour = 4;
+    carImages = [carImagesGrey, carImagesBlack, carImagesDeepGrey, carImagesSilver, carImagesRed, carImagesWhite];
+    const beginningIndex = 18;
+    
+    for (let i = beginningIndex; i <= 23; i++){
+        for (let j = 1; j < 61; j++){
+            carImages[i - beginningIndex].push(`./AltisImg/360EXT_1_${i}_${j}.png`);
+        }
     }
 }
 
@@ -50,30 +49,32 @@ function setEventListeners(){
     postBtn.addEventListener('mousedown', function(){interval = window.setInterval(changeImgs, 100, 1);})
     prevBtn.addEventListener('mouseup', function(){clearInterval(interval);})
     postBtn.addEventListener('mouseup', function(){clearInterval(interval);})
-    viaLocal.addEventListener('change', function(){
-        isGrey = false;
-        changeColour();
-    })
-    viaInternet.addEventListener('change', function(){
-        isGrey = true;
-        changeColour();
-    })
+    radios.forEach((radio, index) => {
+        radio.addEventListener('change', function(){
+            currentColour = index;
+            changeColour();
+            preLoadCarPics();
+        });
+    });
+}
+
+function preLoadCarPics(){
+    carImages[currentColour].forEach(img => { preLoadAPic(img); })
+}
+
+function preLoadAPic(url){
+    let pic = document.createElement('img');
+    pic.src = url;
+    preLoadImgs.append(pic);
 }
 
 function changeColour(){
-    if (isGrey){
-        mainImg.src = carImagesGrey[presentImgIndex];
-    } else {
-        mainImg.src = carImagesRed[presentImgIndex];
-    }
+    mainImg.src = carImages[currentColour][presentImgIndex];
 }
 
 function changeImgs(num){
-    let imgArray = carImagesRed;
-    if (isGrey){
-        imgArray = carImagesGrey;
-    }
-    
+    let imgArray = carImages[currentColour];    
+
     let int = parseInt(num, 10);
     presentImgIndex += int;
     if (presentImgIndex < 0) {

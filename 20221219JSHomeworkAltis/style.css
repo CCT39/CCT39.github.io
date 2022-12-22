@@ -4,6 +4,9 @@
   text-align: center;
   color: #373b3e;
 }
+.container .hidden {
+  display: none;
+}
 .container h1 {
   font-size: 36px;
   font-weight: bold;
@@ -60,12 +63,28 @@
 .container .switches .switch span {
   font-size: 12px;
 }
+.container .switches .switch.black {
+  background-color: rgba(0, 0, 0, 0.8352941176);
+  color: #fffeec;
+}
 .container .switches .switch.red {
   background-color: rgba(225, 40, 133, 0.8352941176);
+  color: #000000;
 }
 .container .switches .switch.grey {
   background-color: rgba(55, 59, 62, 0.8352941176);
   color: #fffeec;
+}
+.container .switches .switch.deep-grey {
+  background-color: rgba(39, 43, 46, 0.8352941176);
+  color: #fffeec;
+}
+.container .switches .switch.silver {
+  background-color: rgba(169, 169, 169, 0.8352941176);
+  color: #fffeec;
+}
+.container .switches .switch.white {
+  outline: 1px solid rgba(55, 59, 62, 0.8352941176);
 }
 .container .switches .switch:hover {
   opacity: 0.8;
