@@ -2224,6 +2224,8 @@
                 
             });
 
+            let hddd = [];
+
             btnTableHero.addEventListener("click", function(){
                 if(heroArray.length==0){
                     alert("請先建立陣列資料");
@@ -2250,6 +2252,10 @@
                 heroArray.forEach(hero => {
                     
                     let tbodyTR = document.createElement('tr');
+
+                    hddd = Array.from(hero);
+                    console.log(hero);
+
                     let heroDatas = Object.keys(hero).map(key => hero[key]);
                     heroDatas.forEach(data => {
                         let td = document.createElement('td');
