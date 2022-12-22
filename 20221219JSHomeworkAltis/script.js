@@ -1,5 +1,5 @@
 let carImagesGrey = [], carImagesRed = [];
-let mainImg, prevBtn, postBtn, btns, viaLocal, viaInternet, interval;
+let mainImg, prevBtn, postBtn, btns, viaLocal, viaInternet, interval, preLoadImgs;
 let isGrey = false;
 let presentImgIndex = 0;
 
@@ -7,16 +7,37 @@ window.onload = function (){
     getElements();
     generateCarImages();
     setEventListeners();
+    preLoadCarPics();
     mainImg.src = carImagesRed[presentImgIndex];
 }
 
 function getElements(){
+    container = document.querySelector('.container');
     mainImg = document.getElementById('main-img');
     prevBtn = document.querySelector('.prev');
     postBtn = document.querySelector('.post');
     btns = document.querySelectorAll('.btn');
     viaLocal = document.getElementById('red');
     viaInternet = document.getElementById('grey');
+}
+
+function preLoadCarPics(){
+    preLoadImgs = document.createElement('div');
+    carImagesGrey.forEach(img => { 
+        preLoadAPic(img);
+    })
+    carImagesRed.forEach(img => {
+        preLoadAPic(img);
+    })
+    // preLoadImgs.setAttribute('id', 'preload-element');
+    preLoadImgs.style.display = 'none';
+    container.append(preLoadImgs);
+}
+
+function preLoadAPic(url){
+    let pic = document.createElement('img');
+    pic.src = url;
+    preLoadImgs.append(pic);
 }
 
 function generateCarImages(){
