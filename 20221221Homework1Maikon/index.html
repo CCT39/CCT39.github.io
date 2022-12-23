@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Until 2022.12.23 15:40 ~11hrs -->
+    <!-- Until 2022.12.24 04:42 ~15hrs -->
     
     <header class="main-header">
         <div class="wrap">
@@ -18,13 +18,15 @@
                 <img src="./imgsMaikon/logo.png" alt="">
             </h1>
             <nav class="main-nav">
-                <div class="HB">
+                <label for="hamburger" class="HB">
                     <span></span>
                     <span></span>
                     <span></span>
-                </div>
+                </label>
+                <input type="radio" name="list-switch" id="hamburger" class="hidden">
+                <input type="radio" name="list-switch" id="close-list" class="hidden">
                 <ul>
-                    <div class="xmark"><i class="fa-solid fa-xmark"></i></div>
+                    <label for="close-list" class="xmark"><i class="fa-solid fa-xmark"></i></label>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Service</a></li>
@@ -264,7 +266,6 @@
                     <a href="#" class="btn-green">All projects</a>
                 </div>
                 <div class="cards">
-                    <!-- TODO: Set the card texts position absolute and display none when not be hovered -->
                     <article class="card">
                         <img src="./imgsMaikon/project-1.jpg" alt="">
                         <div class="card-text">
@@ -352,7 +353,6 @@
                 <h3>Our Social Networks</h3>
                 <p>Join us in the social networks and keep up on the latest news.</p>
                 <div class="icons">
-                    <!-- TODO: Add 4 icons: YT, FB, IG, Twitter in order -->
                     <a href="#" class="icon"><i class="fa-brands fa-youtube"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#" class="icon"><i class="fa-brands fa-instagram"></i></a>
@@ -362,7 +362,7 @@
         </div>  
         <div class="sub-footer">
             <div class="copy">
-                <p>Copyright © 2018 Wordpress Maikon. All Rights Reserved. | Theme design by <span class="highlight">Zemez</span></p>
+                <p>Copyright © 2018 Worфress Maikøn. All Rights Reserved. | Theme design by <span class="highlight">Zêmez</span></p>
             </div>
             <div class="faq">
                 <a href="#">Privacy & Policy</a>
@@ -372,8 +372,7 @@
     </footer>
 
     <div class="to-top">
-        <!-- TODO: Add arrow and set position absolute -->
+        <a href="#"><i class="fa-solid fa-chevron-up"></i></a>
     </div>
-    
 </body>
 </html>
