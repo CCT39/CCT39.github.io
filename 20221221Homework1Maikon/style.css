@@ -1,56 +1,55 @@
-:root {
-  font-family: "Roboto", Sans-serif, "Times New Roman";
-}
-
-.mute {
-  color: #aaa;
-}
-
-img {
-  vertical-align: middle;
-}
-
-h2 {
-  font-size: 42px;
-}
-
-section {
-  padding: 60px 0;
-}
-
-a[class^=btn-], .view-site, .read-more {
+:root a[class^=btn-], :root .view-site, :root .read-more {
   text-transform: uppercase;
 }
 
-a {
+:root {
+  font-family: "Roboto", Sans-serif, "Times New Roman";
+}
+:root .mute {
+  color: #aaa;
+}
+:root img {
+  vertical-align: middle;
+}
+:root h2 {
+  font-size: 42px;
+  line-height: 1.3;
+}
+:root section {
+  padding: 60px 0;
+}
+:root a {
   text-decoration: none;
   color: #767d8d;
   vertical-align: middle;
 }
-a[class^=btn-] {
+:root a[class^=btn-] {
   display: inline-block;
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 5px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-a[class^=btn-].btn-green {
+:root a[class^=btn-].btn-green {
   background-color: #1fde82;
   border: 1px solid #1fde82;
   color: #fff;
   box-shadow: 0 0 15px #1fde82;
 }
-a[class^=btn-].btn-green:hover {
+:root a[class^=btn-].btn-green:hover {
   background-color: #3b3d42;
   border: 1px solid #3b3d42;
   color: #fff;
   box-shadow: none;
 }
-a[class^=btn-].btn-transparent {
+:root a[class^=btn-].btn-transparent {
   background-color: transparent;
   border: 1px solid #767d8d;
   color: #3b3d42;
 }
-a[class^=btn-].btn-transparent:hover {
+:root a[class^=btn-].btn-transparent:hover {
   background-color: #1fde82;
   border: 1px solid #1fde82;
   color: #fff;
@@ -65,12 +64,12 @@ a[class^=btn-].btn-transparent:hover {
   background-color: #fff;
 }
 .main-header .wrap {
+  box-sizing: border-box;
+  padding: 10px 10px 10px 10px;
   display: flex;
   height: 100%;
   width: 100%;
   max-width: 1200px;
-  box-sizing: border-box;
-  padding: 10px;
   margin: auto;
   justify-content: space-between;
 }
@@ -108,30 +107,30 @@ a[class^=btn-].btn-transparent:hover {
 }
 
 @media screen and (width < 768px) {
-  .main-nav .HB {
+  header .main-nav .HB {
+    box-sizing: border-box;
+    padding: 5px 5px 5px 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
     cursor: pointer;
     background-color: #1fde82;
     justify-content: space-evenly;
-    padding: 5px;
     width: 40px;
     height: 40px;
     border-radius: 5px;
   }
-  .main-nav .HB span {
+  header .main-nav .HB span {
     width: 100%;
     height: 3px;
     background-color: #fff;
     opacity: 1;
     transition: 0.3s;
   }
-  .main-nav .btn-transparent {
+  header .main-nav .btn-transparent {
     display: none;
   }
-  .main-nav ul {
+  header .main-nav ul {
     position: absolute;
     width: 75%;
     height: 100vh;
@@ -141,12 +140,12 @@ a[class^=btn-].btn-transparent:hover {
     top: 0;
     box-shadow: -1px 0 5px #ccc;
   }
-  .main-nav ul li {
+  header .main-nav ul li {
     width: 100%;
     display: block;
     padding: 5px 10px;
   }
-  .main-nav ul .xmark {
+  header .main-nav ul .xmark {
     font-size: 24px;
     padding: 3px;
     margin-right: 0;
@@ -154,34 +153,31 @@ a[class^=btn-].btn-transparent:hover {
   }
 }
 @media screen and (width >= 768px) {
-  .main-nav ul {
+  header .main-nav ul {
     width: 480px;
   }
-  .main-nav ul .xmark {
-    display: none;
-  }
-  .main-nav ul li {
+  header .main-nav ul li {
     margin-right: 20px;
   }
-  .main-nav .HB {
+  header .main-nav ul .xmark {
     display: none;
   }
-  .article-container section.graphic .wrap .text, .article-container .section-kv .main-slogan .text {
+  .article-container .section-datas .wrap .describe .text, .article-container section.graphic .wrap .text, .article-container .section-kv .main-slogan .text {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  .article-container section.graphic .wrap .text > :first-child, .article-container .section-kv .main-slogan .text > :first-child {
+  .article-container .section-datas .wrap .describe .text > :first-child, .article-container section.graphic .wrap .text > :first-child, .article-container .section-kv .main-slogan .text > :first-child {
     margin-bottom: 20px;
     max-width: 500px;
   }
-  .article-container section.graphic .wrap .text > :nth-child(2), .article-container .section-kv .main-slogan .text > :nth-child(2) {
+  .article-container .section-datas .wrap .describe .text > :nth-child(2), .article-container section.graphic .wrap .text > :nth-child(2), .article-container .section-kv .main-slogan .text > :nth-child(2) {
     max-width: 400px;
   }
-  .article-container section.graphic .wrap .text > :last-child, .article-container .section-kv .main-slogan .text > :last-child {
+  .article-container .section-datas .wrap .describe .text > :last-child, .article-container section.graphic .wrap .text > :last-child, .article-container .section-kv .main-slogan .text > :last-child {
     margin: 40px 0;
   }
-  .article-container section.graphic .wrap .text > :last-child a, .article-container .section-kv .main-slogan .text > :last-child a {
+  .article-container .section-datas .wrap .describe .text > :last-child a, .article-container section.graphic .wrap .text > :last-child a, .article-container .section-kv .main-slogan .text > :last-child a {
     margin-right: 30px;
   }
   .article-container .section-kv, .article-container section > .wrap {
@@ -189,10 +185,10 @@ a[class^=btn-].btn-transparent:hover {
     margin: auto;
   }
   .article-container .section-kv {
+    box-sizing: border-box;
+    padding: 40px 0 80px 0;
     margin-top: 90px;
     display: flex;
-    padding: 40px 0 80px;
-    box-sizing: border-box;
   }
   .article-container .section-kv .main-slogan {
     width: 50%;
@@ -231,11 +227,11 @@ a[class^=btn-].btn-transparent:hover {
     height: 400px;
   }
   .article-container .section-provide .wrap .card-row .card {
-    width: 30%;
     box-sizing: border-box;
+    padding: 40px 35px 40px 35px;
+    width: 30%;
     background-color: #fff;
     border-radius: 10px;
-    padding: 40px 35px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -248,5 +244,159 @@ a[class^=btn-].btn-transparent:hover {
     line-height: 2;
     color: #aaa;
     font-size: 14px;
+  }
+  .article-container .section-datas {
+    background-color: #2570ff;
+    color: #fff;
+  }
+  .article-container .section-datas .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .article-container .section-datas .wrap .statistics {
+    width: 48%;
+  }
+  .article-container .section-datas .wrap .statistics .item-row {
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    height: 50%;
+  }
+  .article-container .section-datas .wrap .statistics .item-row .item {
+    box-sizing: border-box;
+    padding: 40px 30px 40px 30px;
+    width: 45%;
+    border-radius: 10px;
+    background-color: #3f81ff;
+  }
+  .article-container .section-datas .wrap .statistics .item-row .item p strong {
+    display: block;
+    font-size: 58px;
+  }
+  .article-container .section-datas .wrap .describe {
+    width: 48%;
+  }
+  .article-container .section-datas .wrap .describe .text a.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    margin-right: auto;
+  }
+  .article-container .section-datas .wrap .describe .text a.btn-transparent:hover {
+    background-color: #1fde82;
+    border: 1px solid #1fde82;
+    color: #fff;
+  }
+  .article-container .section-steps .wrap .steps .step {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 40px 0;
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(odd) {
+    margin-right: 15%;
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(odd) .pic {
+    order: -1;
+    text-align: right;
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(even) {
+    margin-left: 15%;
+  }
+  .article-container .section-steps .wrap .steps .step .order {
+    width: 180px;
+    text-align: right;
+  }
+  .article-container .section-steps .wrap .steps .step .step-text {
+    box-sizing: border-box;
+    padding: 15px 15px 15px 15px;
+    width: 35%;
+  }
+  .article-container .section-steps .wrap .steps .step .step-text h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .article-container .section-steps .wrap .steps .step .step-text p {
+    line-height: 2;
+  }
+  .article-container .section-steps .wrap .steps .step .pic {
+    flex-grow: 1;
+  }
+  .article-container .section-steps .wrap .steps .step:not(:last-child)::after {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(50%);
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(1)::after {
+    content: url("./imgsMaikon/arrow-1.svg");
+    right: calc(110px + 35%);
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(2)::after {
+    content: url("./imgsMaikon/arrow-2.svg");
+    right: calc(250px + 35%);
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(3)::after {
+    content: url("./imgsMaikon/arrow-3.svg");
+    right: calc(70px + 35%);
+    bottom: -20px;
+  }
+  .article-container .section-steps .wrap .steps .step:nth-child(4)::after {
+    content: url("./imgsMaikon/arrow-4.svg");
+    right: calc(220px + 35%);
+  }
+  .article-container .section-projects .wrap .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 40px;
+  }
+  .article-container .section-projects .wrap .title h2 {
+    max-width: 500px;
+  }
+  .article-container .section-projects .wrap .cards {
+    display: flex;
+    justify-content: space-around;
+  }
+  .article-container .section-projects .wrap .cards .card {
+    position: relative;
+  }
+  .article-container .section-projects .wrap .cards .card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .article-container .section-projects .wrap .cards .card .card-text {
+    box-sizing: border-box;
+    padding: 15px 15px 15px 15px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #1fde82;
+    z-index: -1;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .article-container .section-projects .wrap .cards .card .card-text p {
+    font-size: 42px;
+    line-height: 1.3;
+    flex-grow: 1;
+    padding-top: 70px;
+  }
+  .article-container .section-projects .wrap .cards .card .card-text a {
+    display: block;
+    height: 30%;
+    color: #fff;
+  }
+  .article-container .section-projects .wrap .cards .card:hover .card-text {
+    z-index: 1;
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */

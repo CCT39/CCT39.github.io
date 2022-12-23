@@ -1,57 +1,74 @@
-$main-color: #1fde82;
+$main-colour: #1fde82;
 $section-datas-bgc: #2570ff;
-$none-btn-a-font-color: #767d8d;
+$none-btn-a-font-colour: #767d8d;
 $btn-black: #3b3d42;
+    
+%upper-case{ text-transform: uppercase; }
 
-@mixin Button($bgc, $bdc, $color){
+@mixin Button($bgc, $bdc, $colour){
     background-color: $bgc;
     border: 1px solid $bdc;
-    color: $color;
+    color: $colour;
 }
 
-:root{ font-family: "Roboto", Sans-serif, "Times New Roman"; }
-
-.mute{ color: #aaa; }
-
-img{ vertical-align: middle; }
-
-h2{ font-size: 42px; }
-
-section{ padding: 60px 0;}
-
-%upper-case{
-    text-transform: uppercase;
-}
-.read-more{
-    @extend %upper-case;
-} 
-.view-site{
-    @extend %upper-case;
-}
-
-a{
-    text-decoration: none;
-    color: $none-btn-a-font-color;
-    vertical-align: middle;
-
-    &[class^="btn-"]{
-        @extend %upper-case;
-        display: inline-block;
-        text-transform: uppercase;
-        padding: 10px 20px;
-        border-radius: 5px;
-        &.btn-green{
-            @include Button($main-color, $main-color, #fff);
-            box-shadow: 0 0 15px $main-color;
-            &:hover{
-                @include Button($btn-black, $btn-black, #fff);
-                box-shadow: none;
+@mixin BorderBoxedPaddings($p1, $p2: null, $p3: null, $p4: null, $switch: false){
+    @if $switch == true {
+        box-sizing: border-box;
+        padding: $p1 $p2 $p3 $p4;
+    } @else {@if $p4 != null {
+            @include BorderBoxedPaddings($p1, $p2, $p3, $p4, true);
+        } @else {@if $p3 != null {
+                @include BorderBoxedPaddings($p1, $p2, $p3, $p2, true);
+            } @else {@if $p2 != null {
+                    @include BorderBoxedPaddings($p1, $p2, $p1, $p2, true);
+                } @else {
+                    @include BorderBoxedPaddings($p1, $p1, $p1, $p1, true);
+                }
             }
         }
-        &.btn-transparent{
-            @include Button(transparent, $none-btn-a-font-color, $btn-black);
-            &:hover{
-                @include Button($main-color, $main-color, #fff);
+    }
+}
+
+:root{ 
+    font-family: "Roboto", Sans-serif, "Times New Roman"; 
+
+    .mute{ color: #aaa; }
+    
+    img{ vertical-align: middle; }
+    
+    h2{ font-size: 42px; line-height: 1.3; }
+    
+    section{ padding: 60px 0; }
+
+    .read-more{ @extend %upper-case; } 
+
+    .view-site{ @extend %upper-case; }
+    
+    a{
+        text-decoration: none;
+        color: $none-btn-a-font-colour;
+        vertical-align: middle;
+    
+        &[class^="btn-"]{
+            @extend %upper-case;
+            display: inline-block;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 5px;
+            height: fit-content;
+            &.btn-green{
+                @include Button($main-colour, $main-colour, #fff);
+                box-shadow: 0 0 15px $main-colour;
+                &:hover{
+                    @include Button($btn-black, $btn-black, #fff);
+                    box-shadow: none;
+                }
+            }
+            &.btn-transparent{
+                @include Button(transparent, $none-btn-a-font-colour, $btn-black);
+                &:hover{
+                    @include Button($main-colour, $main-colour, #fff);
+                }
             }
         }
     }
@@ -65,12 +82,11 @@ a{
     top: 0;
     background-color: #fff;
     .wrap{
+        @include BorderBoxedPaddings(10px);
         display: flex;
         height: 100%;
         width: 100%;
         max-width: 1200px;
-        box-sizing: border-box;
-        padding: 10px;
         margin: auto;
         justify-content: space-between;
         .main-nav{
@@ -94,8 +110,6 @@ a{
     padding-left: 20px;
 }
 
-
-
 .icons{
     display: flex;
     .icon{
@@ -114,16 +128,15 @@ a{
 
 @media screen and (width < 768px) {
     
-    .main-nav{
+    header .main-nav{
         .HB{
+            @include BorderBoxedPaddings(5px);
             display: flex;
             flex-direction: column;
             align-items: center;
-            box-sizing: border-box;
             cursor: pointer;
-            background-color: $main-color;
+            background-color: $main-colour;
             justify-content: space-evenly;
-            padding: 5px;
             width: 40px;
             height: 40px;
             border-radius: 5px;
@@ -164,18 +177,15 @@ a{
 
 @media screen and (width >= 768px) {
     
-    .main-nav{
+    header .main-nav{
         ul{
-            .xmark{
-                display: none;
-            }
             width: 480px;
             li{
                 margin-right: 20px;
             }
-        }
-        .HB{
-            display: none;
+            .xmark{
+                display: none;
+            }
         }
     }
     .article-container{
@@ -201,15 +211,15 @@ a{
             max-width: 1200px;
             margin: auto;
         }
+
         section > .wrap{
             @extend %max-width;
         }
         .section-kv{
             @extend %max-width;
+            @include BorderBoxedPaddings(40px, 0, 80px);
             margin-top: 90px;
             display: flex;
-            padding: 40px 0 80px;
-            box-sizing: border-box;
             .main-slogan{
                 width: 50%;
                 .text{
@@ -253,11 +263,10 @@ a{
                     padding: 20px 0;
                     height: 400px;
                     .card{
+                        @include BorderBoxedPaddings(40px, 35px);
                         width: 30%;
-                        box-sizing: border-box;
                         background-color: #fff;
                         border-radius: 10px;
-                        padding: 40px 35px;
                         display: flex;
                         justify-content: space-between;
                         flex-direction: column;
@@ -270,6 +279,166 @@ a{
                             color: #aaa;
                             font-size: 14px;
                         }
+                    }
+                }
+            }
+        }
+
+        .section-datas{
+            background-color: $section-datas-bgc;
+            color: #fff;
+            .wrap{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .statistics{
+                    width: 48%;
+                    .item-row{
+                        @include BorderBoxedPaddings(10px, 0);
+                        display: flex;
+                        justify-content: space-evenly;
+                        height: 50%;
+                        .item{
+                            @include BorderBoxedPaddings(40px, 30px);
+                            width: 45%;
+                            border-radius: 10px;
+                            background-color: #3f81ff;
+                            p{
+                                strong{
+                                    display: block;
+                                    font-size: 58px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .describe{
+                    width: 48%;
+                    .text{
+                        @extend %pattern-large-small-btn;
+                        a.btn-transparent{
+                            @include Button(transparent, #fff, #fff);
+                            margin-right: auto;
+                            &:hover{
+                                @include Button($main-colour, $main-colour, #fff);
+                            }
+                        }
+                    } 
+                }
+            }
+        }
+
+        .section-steps .wrap .steps{
+            .step{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                margin: 40px 0;
+
+                &:nth-child(odd){
+                    margin-right: 15%;
+                    .pic{
+                        order: -1;
+                        text-align: right;
+                    }
+                }
+                &:nth-child(even){
+                    margin-left: 15%;
+                }
+                .order{
+                    width: 180px;
+                    text-align: right;
+                }
+                .step-text{
+                    @include BorderBoxedPaddings(15px);
+                    width: 35%;
+                    h3{
+                        font-size: 22px;
+                        margin-bottom: 15px;
+                    }
+                    p{
+                        line-height: 2;
+                    }
+                }
+                .pic{
+                    flex-grow: 1;
+                }
+                
+                &:not(:last-child)::after{
+                    position: absolute;
+                    bottom: 0;
+                    transform: translateY(50%);
+                }
+                &:nth-child(1)::after{
+                    content: url('./imgsMaikon/arrow-1.svg');
+                    right: calc(110px + 35%);
+                }
+                &:nth-child(2)::after{
+                    content: url('./imgsMaikon/arrow-2.svg');
+                    right: calc(250px + 35%);
+                }
+                &:nth-child(3)::after{
+                    content: url('./imgsMaikon/arrow-3.svg');
+                    right: calc(70px + 35%);
+                    bottom: -20px;
+                }
+                &:nth-child(4)::after{
+                    content: url('./imgsMaikon/arrow-4.svg');
+                    right: calc(220px + 35%);
+                }
+            }
+        }
+
+        .section-projects .wrap{
+            .title{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 0 20px 40px;
+                h2{
+                    max-width: 500px;
+                }
+            }
+            .cards{
+                display: flex;
+                justify-content: space-around;
+                .card{
+                    position: relative;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                    .card-text{
+                        @include BorderBoxedPaddings(15px);
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        border-radius: 10px;
+                        color: #fff;
+                        background-color: $main-colour;
+                        z-index: -1;
+                        opacity: 0;
+                        display: flex;
+                        flex-direction: column;
+                        p{
+                            font-size: 42px;
+                            line-height: 1.3;
+                            flex-grow: 1;
+                            padding-top: 70px;
+                        }
+                        a{
+                            display: block;
+                            height: 30%;
+                            color: #fff;
+                        }
+                    }
+                    &:hover .card-text{
+                        z-index: 1;
+                        opacity: 1;
                     }
                 }
             }
