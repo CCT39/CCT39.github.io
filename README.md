@@ -67,7 +67,7 @@
     <h2>2022.12.21</h2>  
     <ul>  
       <li>HTML/CSS 作業1（Maikon切版）：19 小時</li>
-      <li>HTML/CSS 作業2（以Bootstrap切Whoscall）：13 小時</li>
+      <li>HTML/CSS 作業2（以Bootstrap切Whoscall）：14 小時</li>
     </ul>
   </li> 
   
