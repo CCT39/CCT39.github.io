@@ -1,0 +1,67 @@
+:root {
+    --primary-colour: #00c300;
+    --secondary-colour: #2c323f;
+}
+
+/* <此處大多是因顏色等原因而調整> */
+body { padding-top: 57px; }
+.navbar-brand img { width: 100px; }
+.highlight{ vertical-align: top; background-image: linear-gradient(transparent 50%, #cfc 50%); }
+.personalized-btn-primary { background-color: var(--primary-colour); color: #fff; }
+.personalized-btn-primary:hover { background-color: #20e320; color: #fff; }
+.personalized-btn-primary:active { background-color: #00a300; color: #fff; }
+.personalized-text-primary { color: var(--primary-colour); }
+.personalized-border-primary { border-color: var(--primary-colour)!important; }
+.personalized-bg-primary { background-color: var(--primary-colour); }
+.personalized-bg-secondary { background-color: var(--secondary-colour); }
+.personalized-translateY-neg100 { transform: translateY(-100%); }
+.personalized-translateY{ transform: translateY(200%); font-size: 14px; }
+.personalized-btn-group{ min-width: 180px }
+.personalized-list-style{ list-style: disc inside; }
+.accordion-button::after{ display: none; }
+.accordion-button:not(.collapsed)::after{ display: none; }
+.accordion-button.collapsed .fa-minus{ display: none; }
+.accordion-button:not(.collapsed) .fa-plus{ display: none; }
+/* </此處大多是因顏色等原因而調整> */
+
+.coin{
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+    overflow: visible;
+}
+.position-absolute:has(.coin)::before{
+    content: '......';
+    background-image: url('./imgsWhoscall/coin-3ffc8bfd93e83fa0612deb213f216a6f.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    color: transparent;
+    position: absolute;
+    left: 0;
+    overflow: visible;
+    z-index: 1;
+}
+.accordion-button:focus{
+    box-shadow: none;
+    background-color: transparent;
+    color: #000;
+}
+.download-now{
+    background-image: url(./imgsWhoscall/index-download-bg-5bd89e0a1a23f9a40199d29577cd911b.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (width >= 768px) {
+    .wrap{ width: fit-content; }
+    .personalized-translateY{ transform: translateY(100%); }
+}
+
+@media screen and (width >= 992px) {
+    .dropdown { max-width: 160px; }
+}
+
+@media screen and (width >= 1024px) {
+    .navbar-brand img { width: 140px; }
+    .personalized-translateY{ transform: translateY(200%); }
+}

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,31 +7,15 @@
     <link rel="stylesheet" href="./reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <style>
-        body{
-            padding-top: 57px;
-        }
-        .navbar-brand img{
-            width: 100px;
-        }
-        .btn-primary{
-            background-color: #00c300;
-        }
-
-        @media screen and (width >= 1024px) {
-            .navbar-brand img{
-                width: 140px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-    <!-- Until 2022.12.25 01:39 ~4hrs -->
+    <!-- Until 2022.12.26 01:39 ~13hrs -->
 
     <header class="navbar navbar-expand-lg navbar-light bg-light w-100 fixed-top px-5">
         <nav class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./imgsWhoscall/logo-1ac05e55a23c9d1d8319e8ec752b8f98.svg" alt=""></a>
+            <a class="navbar-brand" href="#"><h1><img src="./imgsWhoscall/logo-1ac05e55a23c9d1d8319e8ec752b8f98.svg" alt=""></h1></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -41,23 +24,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Whoscall 進階版</a>
+                        <a class="nav-link active" aria-current="page" href="#">Whos€all 進階版</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Whoscall 認證號碼</a>
+                        <a class="nav-link" href="#">Whos€all 認證號碼</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">認識 Whoscall</a>
+                        <a class="nav-link" href="#">認識 Whos€all</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Whoscall 專欄</a>
+                        <a class="nav-link" href="#">Whos€all 專欄</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">常見問題</a>
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <button type="button" class="btn btn-primary px-4 border-0 rounded-pill">免費下載</button>
+                    <button type="button" class="btn personalized-btn-primary px-4 border-0 rounded-pill">免費下載</button>
                 </form>
             </div>
         </nav>
@@ -67,12 +50,14 @@
         <section id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./imgsWhoscall/premium_hero-1500.png.webp" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-block text-dark text-start w-50 top-50 start-50 translate-middle">
-                        <h2 class="fs-1 fw-bold">Whoscall 進階版</h2>
+                    <img src="./imgsWhoscall/premium_hero-1500.png.webp" class="d-none d-md-block w-100" alt="...">
+                    <img src="./imgsWhoscall/premium_hero_mobile-400.png.webp" class="d-md-none w-100" alt="">
+                    <div class="carousel-caption d-block text-dark text-start w-75 top-50 start-50 translate-middle">
+                        <h2 class="fs-1 fw-bold">Whos€all 進階版</h2>
                         <p><strong class="fs-4">4 大防護功能，360 度守護你的通訊生活</strong><br>
-                            <span class="fs-5">每月 NT$ 50 起，銅板價格享受全方位安全防護。</span></p>
-                        <button type="button" class="btn btn-primary px-4 border-0 rounded-pill">瞭解方案</button>
+                            <span class="fs-5">每月 NT$ 50 起，銅板價格享受全方位安全防護。</span>
+                        </p>
+                        <button type="button" class="btn personalized-btn-primary px-4 border-0 rounded-pill">瞭解方案</button>
                     </div>
                 </div>
             </div>
@@ -82,9 +67,9 @@
             <div class="row">
                 <div class="col-12 text-center m-auto mb-5">
                     <h3 class="fs-1 my-5 fw-bold">強化通訊防護力，進階功能一次享有</h3>
-                    <div class="btn-group w-25 text-center border-5 mb-5" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary px-4 border-0 w-50 fw-bold">iOS</button>
-                        <button type="button" class="btn btn-secondary px-4 border-0 w-50 fw-bold">Android</button>
+                    <div class="btn-group personalized-btn-group w-25 text-center mb-5" role="group" aria-label="Basic example">
+                        <button type="button" class="btn personalized-btn-primary px-3 border border-5 personalized-border-primary w-50 fw-bold">iOS</button>
+                        <button type="button" class="btn btn-light px-3 border border-5 personalized-border-primary w-50 fw-bold personalized-text-primary">Android</button>
                     </div>
                 </div>
             </div>
@@ -92,16 +77,46 @@
                 <div class="col-9 m-auto">
                     <div class="card mb-3 border-0">
                         <div class="row g-0 justify-content-between align-items-center">
-                            <div class="col-md-5">
-                                <img src="./imgsWhoscall/w900_webp_26097102-23c5-42ac-b186-51deb004a10a.png" class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-6 px-2">
+                                <img src="./imgsWhoscall/w900_webp_26097102-23c5-42ac-b186-51deb004a10a.png"
+                                    class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6 px-2">
                                 <div class="card-body">
-                                    <h4 class="card-title fs-1">自動封鎖騷擾號碼</h4>
-                                    <p class="card-text fs-5">掛不斷的騷擾電話交給 Whoscall 幫你阻擋，把時間留給重要的人</p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">  <span>免費版：手動封鎖</span></p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">  <span>進階版：自動封鎖</span></p>
-                                    <p class="card-text"><small class="text-muted">了解更多</small></p>
+                                    <h4 class="card-title fs-1 personalized-text-primary fw-bold">自動封鎖騷擾號碼</h4>
+                                    <p class="card-text fs-5">掛不斷的騷擾電話交給 Whos€all 幫你阻擋，<span class="highlight">把時間留給重要的人</span></p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">免費版：手動封鎖</span>
+                                    </p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">進階版：自動封鎖</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small>
+                                            <button type="button" class="btn ps-0 personalized-text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                                了解更多→
+                                            </button>
+                                        </small>
+                                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5 class="modal-title personalized-text-primary fs-1 mb-4" id="exampleModalLabel">自動封鎖騷擾號碼</h5>
+                                                        <p class="fw-bold fs-5">Whos€all 的自動封鎖功能會幫您封鎖哪些騷擾號碼呢？ Whos€all 會定期<span class="highlight">統計並驗證最新、最高頻被回報的詐騙與騷擾號碼</span>，例如：「假冒商家詐騙」、「保險推銷」、「一接就掛」等等，並整合內政部警政署 165 提供的詐騙電話，每週更新於特定清單中。<br><br>只要開啟自動封鎖騷擾號碼，即可自動阻擋這些高頻騷擾電話，對方也不會察覺已被封鎖，將會聽到「您撥的電話忙線中」。</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -112,16 +127,56 @@
                 <div class="col-9 m-auto">
                     <div class="card mb-3 border-0">
                         <div class="row g-0 justify-content-between align-items-center flex-row-reverse">
-                            <div class="col-md-5">
-                                <img src="./imgsWhoscall/w900_webp_5b86b4c0-65be-4113-8b71-2b8a31acb306.png" class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-6 px-2">
+                                <img src="./imgsWhoscall/w900_webp_5b86b4c0-65be-4113-8b71-2b8a31acb306.png"
+                                    class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6 px-2">
                                 <div class="card-body">
-                                    <h4 class="card-title fs-1">自動更新號碼資料庫</h4>
-                                    <p class="card-text fs-5">詐騙電話隨時在變，定期更新掌握資訊，常保高效辨識率</p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">  <span>免費版：手動更新</span></p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">  <span>進階版：自動更新</span></p>
-                                    <p class="card-text"><small class="text-muted">了解更多</small></p>
+                                    <h4 class="card-title fs-1 personalized-text-primary fw-bold">自動更新號碼資料庫</h4>
+                                    <p class="card-text fs-5">詐騙電話隨時在變，定期更新掌握資訊，常保<span class="highlight">高效辨識率</span></p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">免費版：手動更新</span>
+                                    </p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">進階版：自動更新</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small>
+                                            <button type="button" class="btn ps-0 personalized-text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                                了解更多→
+                                            </button>
+                                        </small>
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5 class="modal-title personalized-text-primary fs-1 mb-4" id="exampleModalLabel">自動更新號碼資料庫</h5>
+                                                        <p class="fw-bold fs-5"><span class="highlight">「更新號碼資料庫」</span>和<span class="highlight">「來電辨識」</span>的精準度有著密不可分的關係。詐騙、推銷騷擾號碼會不斷新增或更換，開啟<span class="highlight">自動更新號碼資料庫</span>功能，定期第一時間更新資料庫，才是維持高品質辨識率正解！</p>
+                                                        <ul class="ps-0">
+                                                            <h6 class="fw-bold fs-5">號碼資料庫四大來源：</h6>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">攜手各國政府</span>整合詐騙資訊</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">AI 人工智慧</span>預測詐騙號碼</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">用戶主動回報</span>號碼來電資訊</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">號碼審查小組</span>雙重驗證</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-start mb-5">
+                                                        <h5 class="modal-title personalized-text-primary fs-1 mb-4" id="exampleModalLabel">相關文章</h5>
+                                                        <p class="fw-bold fs-6">延伸閱讀：<a href="#" class="personalized-text-primary">網友好評使用中！全新進階功能【iOS 自動更新號碼資料庫】超詳解， 6 大QA一次看！</a></p>
+                                                        <p class="fw-bold fs-6">延伸閱讀：<a href="#" class="personalized-text-primary">非更新不可？一定要每週更新 Ｗhos€all 號碼資料庫的 3 大理由！</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -132,16 +187,57 @@
                 <div class="col-9 m-auto">
                     <div class="card mb-3 border-0">
                         <div class="row g-0 justify-content-between align-items-center">
-                            <div class="col-md-5">
-                                <img src="./imgsWhoscall/w900_webp_59e24bb1-762f-418c-95ff-36d3709409df.png" class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-6 px-2">
+                                <img src="./imgsWhoscall/w900_webp_59e24bb1-762f-418c-95ff-36d3709409df.png"
+                                    class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6 px-2">
                                 <div class="card-body">
-                                    <h4 class="card-title fs-1">智慧簡訊管家</h4>
-                                    <p class="card-text fs-5">再也不用問「這個簡訊可以點嗎？」，釣魚簡訊釣不到你</p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">  <span>免費版：無過濾簡訊</span></p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">  <span>進階版：自動過濾簡訊</span></p>
-                                    <p class="card-text"><small class="text-muted">了解更多</small></p>
+                                    <h4 class="card-title fs-1 personalized-text-primary fw-bold">智慧簡訊管家</h4>
+                                    <p class="card-text fs-5">再也不用問「這個簡訊可以點嗎？」，<span class="highlight">釣魚簡訊釣不到你</span></p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">免費版：無過濾簡訊</span>
+                                    </p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">進階版：自動過濾簡訊</span>
+                                    </p>
+                                    <p class="card-text">
+                                        <small>
+                                            <button type="button" class="btn ps-0 personalized-text-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                                了解更多→
+                                            </button>
+                                        </small>
+                                        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <h5 class="modal-title personalized-text-primary fs-1 mb-4" id="exampleModalLabel">智慧簡訊管家</h5>
+                                                        <p class="fw-bold fs-5">智慧簡訊管家幫您把關每一封陌生簡訊，透過 AI 智慧辨識文字與連結，自動將訊息分類為一般訊息、垃圾訊息、交易訊息、促銷訊息，把讓人眼花撩亂的各種簡訊分門別類整理好，不須擔心錯過重要訊息。</p>
+                                                        <ul class="ps-0">
+                                                            <h6 class="fw-bold fs-5">訊息分類：</h6>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">一般訊息</span>：非以下三類的簡訊</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">垃圾訊息</span>：詐騙、釣魚簡訊</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">交易訊息</span>：交易驗證碼的簡訊</li>
+                                                            <li class="fw-bold fs-6 personalized-list-style"><span class="highlight">促銷訊息</span>：推銷類型的簡訊</li>
+                                                        </ul>
+                                                        <p class="text-muted fw-bold">*由於 iOS 系統限制，一般訊息須於「所有訊息」匣中查看。</p>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-start mb-5">
+                                                        <h5 class="modal-title personalized-text-primary fs-1 mb-2" id="exampleModalLabel">相關文章</h5>
+                                                        <p class="fw-bold fs-6">延伸閱讀：<a href="#" class="personalized-text-primary">iOS 新功能登場！為你的 iPhone 聘請專屬「智慧簡訊管家」，自動過濾垃圾簡訊！</a></p>
+                                                        <p class="fw-bold fs-6">延伸閱讀：<a href="#" class="personalized-text-primary">人稱垃圾簡訊の天敵！Android 智慧簡訊管家登場～檢查連結、過濾簡訊一手包辦！</a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -152,17 +248,168 @@
                 <div class="col-9 m-auto">
                     <div class="card mb-3 border-0">
                         <div class="row g-0 justify-content-between align-items-center flex-row-reverse">
-                            <div class="col-md-5">
-                                <img src="./imgsWhoscall/w900_webp_c971977c-c78c-4806-80ee-fb6f37c818fd.png" class="img-fluid rounded-start" alt="...">
+                            <div class="col-md-6 px-2">
+                                <img src="./imgsWhoscall/w900_webp_c971977c-c78c-4806-80ee-fb6f37c818fd.png"
+                                    class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-5">
+                            <div class="col-md-6 px-2">
                                 <div class="card-body">
-                                    <h4 class="card-title fs-1">移除廣告</h4>
-                                    <p class="card-text fs-5">和廣告說掰掰，清爽介面，使用更順暢</p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">  <span>免費版：有廣告</span></p>
-                                    <p class="card-text fs-6"><img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">  <span>進階版：無廣告</span></p>
+                                    <h4 class="card-title fs-1 personalized-text-primary fw-bold">移除廣告</h4>
+                                    <p class="card-text fs-5">和廣告說掰掰，清爽介面，<span class="highlight">使用更順暢</span></p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">免費版：有廣告</span>
+                                    </p>
+                                    <p class="card-text fs-6">
+                                        <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg"
+                                            alt="" class="d-inline-block me-1">
+                                        <span class="d-inline-block">進階版：無廣告</span>
+                                    </p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-5 pb-5 m-auto">
+                    <h3 class="fs-1 fw-bold text-center my-5">用戶好評回饋</h3>
+                    <img src="./imgsWhoscall/ic-quote-right-b3c33582abf798c038fff02bc7d71b20.svg" alt="" style="transform: rotateY(180deg);">
+                    <p class="fs-3 fw-bold">用戶好評回饋這段<span class="highlight">不用做</span>。</p>
+                    <p class="text-muted text-end fw-bold">—— by Am○s 先生</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid bg-light py-4">
+            <div class="row">
+                <h3 class="col-12 fs-1 fw-bold m-auto text-center my-5">進階版方案比較</h3>
+            </div>
+            <div class="row justify-content-center my-4">
+                <div class="col-9 col-md-3 my-4">
+                    <div class="card h-100 rounded-0 border-0">
+                        <div class="card-body">
+                            <h4 class="card-title mb-5">
+                                <strong class="fs-6">免費版</strong>
+                                <span class="text-uppercase d-block personalized-text-primary fw-bold mb-3">Free</span>
+                                <span class="fw-bold">NT$ 0</span>
+                                <span class="text-muted fs-6 fw-bold">/月</span>
+                            </h4>
+                            <!-- Use ::before to add imgs -->
+                            <p class="card-text fw-bold fs-5 border-top pt-4">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">反查號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">陌生來電辨識</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">
+                                <span class="d-inline-block ms-1">自動封鎖騷擾號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">
+                                <span class="d-inline-block ms-1">自動更新號碼資料庫</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">
+                                <span class="d-inline-block ms-1">智慧簡訊管家</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-circle-231f6057885a15db7eae56cb6a73a121.svg" alt="">
+                                <span class="d-inline-block ms-1">移除廣告</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-md-3 my-4">
+                    <div class="card h-100 rounded-0 border-0">
+                        <div class="card-body">
+                            <h4 class="card-title mb-5">
+                                <strong class="fs-6">進階版 - 月方案</strong>
+                                <span class="d-block personalized-text-primary fw-bold mb-3">Premium</span>
+                                <span class="fw-bold">NT$ 60</span>
+                                <span class="text-muted fs-6 fw-bold">/月</span>
+                            </h4>
+                            <!-- Use ::before to add imgs -->
+                            <p class="card-text fw-bold fs-5 border-top pt-4">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">反查號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">陌生來電辨識</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">自動封鎖騷擾號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">自動更新號碼資料庫</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">智慧簡訊管家</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">移除廣告</span>
+                            </p>
+                            <a href="#"
+                                class="btn personalized-btn-primary border-0 rounded-pill w-100 fs-6 fw-bold py-3 mt-4">立即免費試用</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-md-3 my-4">
+                    <div class="card h-100 rounded-0 border-0 position-relative">
+                        <p class="position-absolute text-center personalized-bg-primary w-100 left-0 text-white top-0 py-1 fw-bold personalized-translateY-neg100">
+                            最熱門方案
+                        </p>
+                        <div class="card-body">
+                            <h4 class="card-title mb-5 position-relative">
+                                <strong class="fs-6">進階版 - 年方案</strong>
+                                <span class="d-block personalized-text-primary fw-bold mb-3">Premium</span>
+                                <span class="fw-bold">NT$ 600</span>
+                                <span class="text-muted fs-6 fw-bold">/年</span>
+                                <span class="position-absolute personalized-translateY text-center text-white start-0 fw-bold">
+                                    <span class="coin personalized-bg-primary py-1 px-4">
+                                        一年最多省NT$ 120 元
+                                    </span>
+                                </span>
+                            </h4>
+                            <!-- Use ::before to add imgs -->
+                            <p class="card-text fw-bold fs-5 border-top pt-4">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">反查號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">陌生來電辨識</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">自動封鎖騷擾號碼</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">自動更新號碼資料庫</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">智慧簡訊管家</span>
+                            </p>
+                            <p class="card-text fw-bold fs-5">
+                                <img src="./imgsWhoscall/icon-check-circle-d90dd7899946d502a56ffe2be299abfb.svg" alt="">
+                                <span class="d-inline-block ms-1">移除廣告</span>
+                            </p>
+                            <a href="#"
+                                class="btn personalized-btn-primary border-0 rounded-pill w-100 fs-6 fw-bold py-3 mt-4">立即免費試用</a>
                         </div>
                     </div>
                 </div>
@@ -171,230 +418,206 @@
 
         <section class="container-lg">
             <div class="row">
-                <h3 class="col-12">
-                </h3>
+                <h3 class="col-9 m-auto fs-1 fw-bold text-center py-5">常見問題</h3>
             </div>
             <div class="row">
-                <div class="col-12 col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>
-                                <p></p>
-                                <p class="title-en"></p>
+                <div class="col-9 m-auto">
+                    <article class="accordion accordion-flush" id="accordionPanelsStayOpenExample">
+                        <section class="accordion-item border-top border-secondary">
+                            <h4 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button class="accordion-button d-flex justify-content-between collapsed fw-bold fs-5 border-0" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    Q. 進階版是否有試用期？是否會自動續訂？
+                                    <i class="fa-solid fa-plus personalized-text-primary"></i>
+                                    <i class="fa-solid fa-minus personalized-text-primary"></i>
+                                </button>
                             </h4>
-                            <p><span class="mute"></span></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Use ::before to add imgs -->
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <div class="btn">
-                                <a href="#"></a>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingOne">
+                                <p class="accordion-body">
+                                    購買進階版都將享有 7 天的試用期，並於試用期結束後自動續訂。若想暫停自動續訂，須自行至商店設定取消訂閱。
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>
-                                <p></p>
-                                <p class="title-en highlight"></p>
+                        </section>
+                        <section class="accordion-item border-bottom border-secondary">
+                            <h4 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                <button class="accordion-button d-flex justify-content-between collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    Q. 我只想要試用，為什麼被收費了？
+                                    <i class="fa-solid fa-plus personalized-text-primary"></i>
+                                    <i class="fa-solid fa-minus personalized-text-primary"></i>
+                                </button>
                             </h4>
-                            <p><span class="mute"></span></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Use ::before to add imgs -->
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <div class="btn">
-                                <a href="#"></a>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingTwo">
+                                <p class="accordion-body">
+                                    試用期間結束後將會自動續訂，若想暫停自動續訂，須自行至商店設定取消訂閱。若沒在試用期到期前取消，則會被視同同意續訂而進行扣款。
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <h4>
-                                <p></p>
-                                <p class="title-en highlight"></p>
+                        </section>
+                        <section class="accordion-item border-bottom border-secondary">
+                            <h4 class="accordion-header" id="panelsStayOpen-headingThree">
+                                <button class="accordion-button d-flex justify-content-between collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    Q. 使用自動封鎖騷擾號碼功能後，就不會接到騷擾號碼了嗎？
+                                    <i class="fa-solid fa-plus personalized-text-primary"></i>
+                                    <i class="fa-solid fa-minus personalized-text-primary"></i>
+                                </button>
                             </h4>
-                            <p><span class="mute"></span></p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Use ::before to add imgs -->
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <p></p>
-                            <div class="btn">
-                                <a href="#"></a>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingThree">
+                                <p class="accordion-body">
+                                    Whos€all 會定期統計並驗證最新、最高頻被回報的詐騙與騷擾號碼，例如：「假冒商家詐騙」、「保險推銷」、「一接就掛」等等，並整合內政部警政署 165 提供的詐騙電話，每週更新於特定清單中。只要開啟自動封鎖騷擾號碼，即可自動阻擋這些高頻騷擾電話。<br><br>而不在自動封鎖號碼特定清單中的騷擾來電，仍會透過警示符號給予提醒，由用戶決定是否接聽與封鎖。
+                                </p>
                             </div>
-                        </div>
-                    </div>
+                        </section>
+                        <section class="accordion-item border-bottom border-secondary">
+                            <h4 class="accordion-header" id="panelsStayOpen-headingFour">
+                                <button class="accordion-button d-flex justify-content-between collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseFour">
+                                    Q. 請問進階版可以跨系統/裝置使用嗎？例如我原先使用 iPhone，想改使用 Android 系統。
+                                    <i class="fa-solid fa-plus personalized-text-primary"></i>
+                                    <i class="fa-solid fa-minus personalized-text-primary"></i>
+                                </button>
+                            </h4>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingFour">
+                                <p class="accordion-body">
+                                    由於 Whos€all 進階版訂購的平台分別為 Google Play 與 App Store 且服務功能不同，因此服務內容與方案無法進行轉移的。
+                                </p>
+                            </div>
+                        </section>
+                        <section class="accordion-item border-bottom border-secondary">
+                            <h4 class="accordion-header" id="panelsStayOpen-headingFive">
+                                <button class="accordion-button d-flex justify-content-between collapsed fw-bold fs-5" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+                                    aria-controls="panelsStayOpen-collapseFive">
+                                    Q. Whos€all 進階版團購組合的序號可於何處進行兌換？
+                                    <i class="fa-solid fa-plus personalized-text-primary"></i>
+                                    <i class="fa-solid fa-minus personalized-text-primary"></i>
+                                </button>
+                            </h4>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+                                aria-labelledby="panelsStayOpen-headingFive">
+                                <p class="accordion-body">
+                                    請前往 <a href="https://youtu.be/dQw4w9WgXcQ">https://redeem.whos€all.com/zh-Hant/</a> 。登入 Whos€all 帳號成功後，輸入代碼即可完成兌換。
+                                </p>
+                            </div>
+                        </section>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <div class="container-lg">
-            <div class="row">
-                <h3 class="col-12"></h3>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="accordion" id="accordionExample">
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Accordion Item #1
-                                </button>
-                            </h4>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the first item's accordion body.</strong> It is shown by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Accordion Item #2
-                                </button>
-                            </h4>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="accordion-item">
-                            <h4 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Accordion Item #3
-                                </button>
-                            </h4>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                                data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                                    until the collapse plugin adds the appropriate classes that we use to style each
-                                    element. These classes control the overall appearance, as well as the showing and
-                                    hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                                    our default variables. It's also worth noting that just about any HTML can go within
-                                    the <code>.accordion-body</code>, though the transition does limit overflow.
-                                </div>
+        <div class="container-fluid download-now mt-5 py-5">
+            <div class="row justify-content-center text-white">
+                <div class="col-12 col-md-5 text-center text-md-end">
+                    <img src="./imgsWhoscall/download-app-icon-74ea8cde13dea4ba553e8b99e7ecfe59.svg" alt="">
+                </div>
+                <div class="col-12 col-md-7">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="wrap">
+                                <p class="text-center">
+                                    <strong class="d-block fs-1">Download Now</strong>
+                                    <span class="fs-4">你的陌生來電辨識 APP</span>
+                                </p>
+                                <p class="text-center">
+                                    <img class="d-inline-block me-md-4" src="./imgsWhoscall/app-store-badge-f0b2da6ae624c644b0ad82d76dc94191.svg" alt="">
+                                    <img src="./imgsWhoscall/google-play-badge-6719dbfca6574b355c1bdf1bff049459.svg" alt="">
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container-md">
-            <div class="row">
-                <div class="col-12 col-md-4"></div>
-                <div class="col-12 col-md-8"></div>
-            </div>
-        </div>
     </article>
 
-    <footer class="container">
-        <div class="row">
+    <footer class="container-fluid px-5 personalized-bg-secondary text-white">
+        <section class="row p-5 pb-1">
             <div class="col-12 col-md-2">
-                <h3></h3>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                <h3 class="fs-6 fw-bold">Whos€all</h3>
+                <ul class="ps-0">
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">認識 Whos€all</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">Whos€all 進階版</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">Whos€all 專欄</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">Whos€all 認證號碼</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-2">
-                <h3></h3>
-                <ul>
-                    <li><a href="#"></a></li>
+                <h3 class="fs-6 fw-bold">公司</h3>
+                <ul class="ps-0">
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">工作機會</a></li>
                 </ul>
-                <h3></h3>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                <h3 class="fs-6 fw-bold">媒體中心</h3>
+                <ul class="ps-0">
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">最新消息</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">品牌識別</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-2">
-                <h3></h3>
-                <ul>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
+                <h3 class="fs-6 fw-bold">客戶服務</h3>
+                <ul class="ps-0">
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">安全性</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">常見問題</a></li>
+                    <li class="py-2"><a class="text-decoration-none text-white-50" href="#">聯絡我們</a></li>
                 </ul>
             </div>
             <div class="col-12 col-md-3"> <!-- Nothing --> </div>
             <div class="col-12 col-md-3">
                 <div class="row">
-                    <div class="col-12"></div>
+                    <div class="col-12">
+                        <h3 class="fs-6 fw-bold">追蹤我們</h3>
+                        <p class="pt-3">
+                            <a class="pe-3" href="#"><i class="fa-brands fa-instagram fa-xl text-white-50"></i></a>
+                            <a class="pe-3" href="#"><i class="fa-brands fa-square-facebook fa-xl text-white-50"></i></a>
+                            <a class="pe-3" href="#"><i class="fa-brands fa-twitter fa-xl text-white-50"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube fa-xl text-white-50"></i></a>
+                        </p>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
-                        <p></p>
+                        <p class="pt-3">
+                            <span>Powered by</span>
+                            <span class="d-block fs-3">Gogoløok</span>
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <p></p>
-                <div class="links">
-                    <a href="#"></a>
-                    <a href="#"></a>
-                </div>
+        </section>
+        <section class="row px-5 py-2 flex-column-reverse flex-lg-row border-top border-secondary">
+            <div class="col-12 col-lg-8">
+                <p>
+                    <span class="d-sm-block d-lg-inline-block me-4 my-2">© 2022 Gogoløok. All Rights Reserved.</span>
+                    <a class="d-inline-block me-2 text-decoration-none text-white-50" href="#">服務條款</a>
+                    <a class="d-inline-block me-2 text-decoration-none text-white-50" href="#">隱私權政策</a>
+                </p>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            <div class="col-12 col-lg-4">
+                <div class="dropdown me-5 ms-auto">
+                    <a class="btn btn-secondary dropdown-toggle w-100 bg-transparent border-0 text-start d-flex justify-content-between align-items-center me-5 ms-auto" href="#" role="button" id="dropdownMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
+                        <span>中文</span>
                     </a>
-
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">中文</a></li>
+                        <li><a class="dropdown-item" href="#">English</a></li>
+                        <li><a class="dropdown-item" href="#">日本語</a></li>
+                        <li><a class="dropdown-item" href="#">อักษรไทย</a></li>
+                        <li><a class="dropdown-item" href="#">Bahasa Melayu</a></li>
+                        <li><a class="dropdown-item" href="#">馬來西亞（中文）</a></li>
+                        <li><a class="dropdown-item" href="#">한국어</a></li>
+                        <li><a class="dropdown-item" href="#">Português brasileiro</a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </section>
     </footer>
 
 
