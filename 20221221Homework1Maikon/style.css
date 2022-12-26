@@ -487,6 +487,7 @@ footer .sub-footer a {
   }
   .article-container .section-datas .wrap .describe .text > :nth-child(2), .article-container section.graphic .wrap .text > :nth-child(2), .article-container .section-kv .main-slogan .text > :nth-child(2) {
     max-width: 400px;
+    line-height: 1.7;
   }
   .article-container .section-datas .wrap .describe .text > :last-child, .article-container section.graphic .wrap .text > :last-child, .article-container .section-kv .main-slogan .text > :last-child {
     margin: 40px 0;
