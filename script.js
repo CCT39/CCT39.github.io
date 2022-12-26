@@ -2,10 +2,7 @@ let introForm, questionMsg, btnClose, body, background;
 
 window.onload = function(){
     getElements();
-    btnClose.addEventListener('click', function(){
-        setWindowAndBackAndScroll('none', 'none', 'scroll');
-        questionMsg.innerHTML = '';
-    })
+    setEventListeners();
 }
 function getElements(){
     introForm = document.querySelector('.question');
@@ -13,6 +10,14 @@ function getElements(){
     questionMsg = document.querySelector('#msg');
     btnClose = document.querySelector('.close');
     body = document.querySelector('body');
+    btns = document.querySelectorAll('.btn:not(.close)');
+}
+function setEventListeners(){
+    btnClose.addEventListener('click', function(){
+        setWindowAndBackAndScroll('none', 'none', 'scroll');
+        questionMsg.innerHTML = '';
+    })
+    btns.forEach(x => { x.addEventListener('click', focusWindow.bind(this, x.id)); });
 }
 function focusWindow(date){
     setWindowAndBackAndScroll('flex', 'block', 'hidden');

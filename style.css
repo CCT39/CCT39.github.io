@@ -1,5 +1,5 @@
 :root{
-    --miku-color: #39c5bb;
+    --miku-colour: #39c5bb;
     --miku-red: #e12885;
     --miku-black: #373b3e;
     --miku-white: #fffeec;
@@ -32,7 +32,7 @@ h1{
     margin: auto;
     padding: 10px;
     text-align: center;
-    border-bottom: var(--miku-color) 2px solid;
+    border-bottom: var(--miku-colour) 2px solid;
     color: var(--miku-dark);
 }
 h2{
@@ -54,11 +54,12 @@ a{
 }
 a:not(.in-question){
     display: block;
-    width: 240px;
+    width: 180px;
     border-radius: 20px;
-    margin: 15px;
+    margin: 15px 45px;
     box-shadow: 0 3px 3px var(--miku-black);
     padding: .35em 0;
+    font-size: 12px;
 }
 a.in-question{
     display: inline-block;
@@ -76,12 +77,12 @@ li{
     list-style-position: inside;
 }
 .hightlight{
-    background-image: linear-gradient(transparent 80%, var(--miku-color) 80%);
+    background-image: linear-gradient(transparent 80%, var(--miku-colour) 80%);
     vertical-align: bottom;
     -webkit-text-stroke: var(--miku-white) .5px;
 }
 .css > a{
-    background-color: var(--miku-color);
+    background-color: var(--miku-colour);
 }
 .css > a:hover:not(.unfinished){
     background-color: var(--miku-varient);
@@ -100,7 +101,7 @@ a.another-version{
     box-sizing: border-box;
 }
 .css > .another-version{
-    border: 2px dashed var(--miku-color);
+    border: 2px dashed var(--miku-colour);
     color: var(--miku-dark);
 }
 .css > a.another-version:hover{
@@ -146,9 +147,33 @@ a.unfinished::before{
     -webkit-text-stroke: var(--miku-black) .2px;
 }
 .cyan{
-    color: var(--miku-color);
+    color: var(--miku-colour);
     -webkit-text-stroke: var(--miku-black) .2px;
 }
+/*
+.HW{
+    position: relative;
+}
+.HW::before{
+    content: '';
+}
+.HW::after{
+    content: '';
+    clip-path: polygon(0% 0%, 0% 5%, 100% 5%, 100% 0%);
+    display: block;
+    position: absolute;
+    height: 50px;
+    width: 220px;
+    top: 0;
+    left: 10px;
+    z-index: 1;
+}
+.css > .HW::after, .css > .HW::before{
+    background-color: var(--miku-red);
+}
+.js > .HW::after, .js > .HW::before{
+    background-color: var(--miku-colour);
+}*/
 
 .question{
     position: fixed;
@@ -169,7 +194,7 @@ a.unfinished::before{
     flex-direction: column;
     justify-content: center;
     z-index: 8;
-    border: 3px solid var(--miku-color);
+    border: 3px solid var(--miku-colour);
     box-sizing: border-box;
     padding: 10px;
     box-shadow: 2px 2px 10px var(--miku-gray);
@@ -206,7 +231,7 @@ a.unfinished::before{
 
 .btn{
     margin: 3px;
-    border: 1px solid var(--miku-color);
+    border: 1px solid var(--miku-colour);
     background-color: #39c5bb1a;
     height: 30px;
     font-size: 14px;
@@ -224,7 +249,7 @@ a.unfinished::before{
 }
 .btn:active:not(button[disabled="true"]){
     cursor: pointer;
-    background-color: var(--miku-color);
+    background-color: var(--miku-colour);
 }
 
 .outer-sider-decoration{
@@ -232,8 +257,8 @@ a.unfinished::before{
     top: -200px;
     height: 120%;
     width: 25px;
-    background-color: var(--miku-color);
-    border-bottom: var(--miku-color) 1px solid;
+    background-color: var(--miku-colour);
+    border-bottom: var(--miku-colour) 1px solid;
     z-index: 1;
 }
 .sider-decoration{
@@ -271,6 +296,11 @@ a.unfinished::before{
     }
     .main-title{
         max-width: 960px;
+    }
+    a:not(.in-question){
+        font-size: 16px;
+        width: 240px;
+        margin: 15px;
     }
     .outer-sider-decoration{
         width: 50px;
