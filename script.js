@@ -1,6 +1,8 @@
 let introForm, questionMsg, btnClose, body, background, btns, qContents, maxOfTimes, sumOfTimes, styleSheet;
 let datas = [];
 
+const maxWidthOfTimeSpendingBar = '220px';
+
 window.onload = function(){
     getElements();
     createPersonalizedStyleSheet();
@@ -80,7 +82,7 @@ function setTimeSpendingBars(item, times){
     for (let i = 0; i < times.length; i++){
         let btn = `#${item.id} .HW:nth-of-type(${i + 1})`
         styleSheet.innerHTML += `${btn}::before{content: '花費時間：${times[i]}小時';}`
-        styleSheet.innerHTML += `${btn}::after{width: calc(220px * ${times[i]} / ${maxOfTimes});}`;
+        styleSheet.innerHTML += `${btn}::after{width: calc(${maxWidthOfTimeSpendingBar} * ${times[i]} / ${maxOfTimes});}`;
     }
 }
 
