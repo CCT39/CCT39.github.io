@@ -54,7 +54,7 @@ body { padding-top: 57px; }
 
 @media screen and (width >= 768px) {
     .wrap{ width: fit-content; }
-    .personalized-translateY{ transform: translateY(100%); }
+    .personalized-translateY{ transform: translateY(180%); }
 }
 
 @media screen and (width >= 992px) {

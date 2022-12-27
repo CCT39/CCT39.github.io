@@ -1,4 +1,4 @@
-let introForm, questionMsg, btnClose, body, background;
+let introForm, questionMsg, btnClose, body, background, btns;
 
 window.onload = function(){
     getElements();
