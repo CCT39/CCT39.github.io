@@ -128,7 +128,7 @@
 }
 .article-container .section-provide .wrap .card-row .card h3 {
   font-size: 22px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 .article-container .section-provide .wrap .card-row .card p {
   line-height: 2;
@@ -525,10 +525,12 @@ footer .sub-footer a {
   .article-container .section-provide .wrap .card-row {
     display: flex;
     justify-content: space-evenly;
-    height: 400px;
   }
   .article-container .section-provide .wrap .card-row .card {
     width: 30%;
+  }
+  .article-container .section-provide .wrap .card-row .card .card-text p {
+    margin-bottom: 20px;
   }
   .article-container .section-about .wrap {
     flex-direction: row-reverse;
