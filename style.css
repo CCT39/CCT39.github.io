@@ -6,10 +6,15 @@
     --miku-dark: #137a7f;
     --miku-light: #c3e5e7;
     --miku-varient: #86cecb;
-    --miku-gray: #bec8d1;
+    --miku-grey: #bec8d1;
+
+    --time-bar: 0;
 }
 body{
     background-color: var(--miku-light);
+}
+.hidden{
+    display: none;
 }
 .content{
     width: 100%;
@@ -18,7 +23,7 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -28,7 +33,7 @@ body{
     width: 100%;
 }
 h1{
-    width: calc(100% - 160px);
+    width: calc(100% - 80px);
     margin: auto;
     padding: 10px;
     text-align: center;
@@ -38,13 +43,25 @@ h1{
 h2{
     font-weight: bold;
     text-align: center;
-    width: 250px;
+    width: 300px;
     color: var(--miku-black);
 }
 h3{
     display: inline-block;
     color: var(--miku-black);
     margin-block-end: 0;
+}
+h5{
+    margin-bottom: 0;
+}
+h6{
+    font-size: 14px;
+}
+span, code{
+    vertical-align: middle;
+}
+.pic > img{
+    width: 100%;
 }
 a{
     color: var(--miku-black);
@@ -56,7 +73,7 @@ a:not(.in-question){
     display: block;
     width: 180px;
     border-radius: 20px;
-    margin: 15px 45px;
+    margin: 20px auto;
     box-shadow: 0 3px 3px var(--miku-black);
     padding: .35em 0;
     font-size: 12px;
@@ -67,14 +84,23 @@ a.in-question{
     border-radius: 5px;
     margin: 0 5px;
     padding: 0 .35em;
-    border: #373b3e 1px solid;
+    border: var(--miku-black) 1px solid;
+}
+p{
+    font-size: 14px;
 }
 ul{
     padding: 0;
 }
-li{
+ul.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+li.item{
     list-style: upper-roman;
     list-style-position: inside;
+    padding: 0 10px 20px;
 }
 .hightlight{
     background-image: linear-gradient(transparent 80%, var(--miku-colour) 80%);
@@ -92,7 +118,7 @@ li{
     background-color: var(--miku-red);
 }
 .js > a:hover:not(.unfinished){
-    background-color: #e388;
+    background-color: #e1288580;
     transition: .3s;
 }
 a.another-version{
@@ -116,14 +142,10 @@ a.another-version{
     background-color: #fce;
     transition: .3s;
 }
-p{
-    font-size: 24px;
-    font-weight: bold;
-}
 a.unfinished{
     background-color: var(--miku-black);
     cursor: default;
-    color: var(--miku-gray);
+    color: var(--miku-grey);
     position: relative;
 }
 a.unfinished::before{
@@ -150,30 +172,43 @@ a.unfinished::before{
     color: var(--miku-colour);
     -webkit-text-stroke: var(--miku-black) .2px;
 }
-/*
+.column{
+    padding: 20px;
+}
+
 .HW{
     position: relative;
 }
-.HW::before{
+.HW::before, .HW::after{
     content: '';
-}
-.HW::after{
-    content: '';
-    clip-path: polygon(0% 0%, 0% 5%, 100% 5%, 100% 0%);
-    display: block;
     position: absolute;
-    height: 50px;
-    width: 220px;
-    top: 0;
     left: 10px;
     z-index: 1;
 }
-.css > .HW::after, .css > .HW::before{
+.HW::before{
+    top: 0%;
+    transform: translateY(-100%);
+    font-size: 12px;
+}
+.HW::after{
+    display: block;
+    top: 0;
+    clip-path: polygon(0% 0%, 0% 5%, 100% 5%, 100% 0%);
+    height: 50px;
+    width: calc(220px * var(--time-bar));
+}
+.css > .HW::after{
     background-color: var(--miku-red);
 }
-.js > .HW::after, .js > .HW::before{
-    background-color: var(--miku-colour);
-}*/
+.js > .HW::after{
+    background-color: var(--miku-dark);
+}
+.css > .HW::before{
+    color: var(--miku-red);
+}
+.js > .HW::before{
+    color: var(--miku-dark);
+}
 
 .question{
     position: fixed;
@@ -197,7 +232,7 @@ a.unfinished::before{
     border: 3px solid var(--miku-colour);
     box-sizing: border-box;
     padding: 10px;
-    box-shadow: 2px 2px 10px var(--miku-gray);
+    box-shadow: 2px 2px 10px var(--miku-grey);
 }
 .question-background{
     display: none;
@@ -259,7 +294,7 @@ a.unfinished::before{
     width: 25px;
     background-color: var(--miku-colour);
     border-bottom: var(--miku-colour) 1px solid;
-    z-index: 1;
+    z-index: -4;
 }
 .sider-decoration{
     position: absolute;
@@ -269,7 +304,7 @@ a.unfinished::before{
     width: 15px;
     background-color: var(--miku-black);
     border-bottom: var(--miku-black) 1px solid;
-    z-index: 2;
+    z-index: -3;
 }
 .inner-sider-decoration{
     position: absolute;
@@ -279,7 +314,7 @@ a.unfinished::before{
     width: 5px;
     background-color: var(--miku-red);
     border-bottom: var(--miku-red) 1px solid;
-    z-index: 3;
+    z-index: -2;
 }
 .right-deco{
     right: 10px;
@@ -300,7 +335,7 @@ a.unfinished::before{
     a:not(.in-question){
         font-size: 16px;
         width: 240px;
-        margin: 15px;
+        margin: 20px auto;
     }
     .outer-sider-decoration{
         width: 50px;
