@@ -1,4 +1,5 @@
-let introForm, questionMsg, btnClose, body, background, btns, qContents, maxOfTimes, sumOfTimes, styleSheet;
+let introForm, questionMsg, btnClose, body, background, btns, qContents, styleSheet;
+let numOfTimes, maxOfTimes, sumOfTimes;
 let datas = [];
 
 const maxWidthOfTimeSpendingBar = '220px';
@@ -19,6 +20,7 @@ function getElements(){
     btns = document.querySelectorAll('.btn:not(.close)');
     qContents = document.querySelectorAll('.q-content');
     items = document.querySelectorAll('.item');
+    numOfTimes = document.querySelectorAll('.time-cost>strong');
 }
 function createPersonalizedStyleSheet(){
     styleSheet = document.createElement('style');
@@ -27,8 +29,9 @@ function createPersonalizedStyleSheet(){
 }
 function initVariables(){
     let timeArray = [];
-    document.querySelectorAll('.time-cost>strong').forEach(x => timeArray.push(x.innerHTML));
+    numOfTimes.forEach(x => timeArray.push(x.innerHTML));
 
+    // 'sumOfTimes' is not be used yet, but... just in case.
     maxOfTimes = timeArray.reduce(function(a, b) {return Math.max(a, b);}, -Infinity);
     sumOfTimes = timeArray.reduce(function(a, b) {return parseInt(a) + parseInt(b);}, 0);
 }
