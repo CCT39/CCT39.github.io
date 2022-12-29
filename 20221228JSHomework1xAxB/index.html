@@ -27,16 +27,6 @@
                     <button type="button" class="btn btn-info bg-miku" id="gimme-answer" disabled="true" data-bs-toggle="modal" data-bs-target="#watch-answer">看答案</button>
                 </div>
                 <ul class="list-group" id="history">
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
-                    <li class="list-group-item text-white">_</li>
                 </ul>
                 <div class="input-group my-3">
                     <input type="text" class="form-control" id="input" placeholder="猜答案" disabled="true" aria-label="Recipient's username" aria-describedby="basic-addon2">
@@ -59,21 +49,20 @@
                 </div>
                 <div class="modal-body">
                     <ul class="ps-0">
-                        <h3>遊戲內容</h3>
                         <li class="px-3">
-                            <h4>遊戲目標</h4>
+                            <h3>遊戲目標</h3>
                             <p>為了在這場四位數字猜謎中勝出，我們必須猜中四位數字的每一個數字。</p>
                             <p>本遊戲並無失敗條件 —— 理論上試10,000次以內總試得出來！</p>
                         </li>
                         <li class="px-3">
-                            <h4>遊戲提示</h4>
+                            <h3>遊戲提示</h3>
                             <p>在猜數字的過程中，每猜一次都會收到不同的提示，以數字搭配A或B表示：<br>
                                 若你的答案與本場遊戲的正確答案之間比較，<strong>若有一個數字其號碼與位置均相同則記作1A</strong>，而若是兩個數字均相符，則記作2A，以此類推；
                                 而<strong>若有一個數字僅有號碼相同，而位置卻不同，此時記作1B</strong>，兩個數字則為2B，以此類推。
                                 利用幾A幾B的提示，可以幫助我們一步一步接近答案。</p>
                         </li>
                         <li class="px-3">
-                            <h4>遊戲設計</h4>
+                            <h3>遊戲設計</h3>
                             <p>本遊戲將隨機生成不重複的四位數字作為當次遊戲的答案。
                                 獲勝、放棄重來，或是看答案，均會結束當次遊戲，開始新遊戲後則會重置答案。</p>
                             <p><strong>作者的美感奇差，Bootstrap稀飯罐頭版是我的好夥伴。</strong></p>

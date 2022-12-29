@@ -14,10 +14,6 @@ h3{
     @extend h1;
     background-image: linear-gradient(transparent 70%, $miku-colour 90%);
 }
-h4{
-    @extend h1;
-    background-image: linear-gradient(transparent 70%, $miku-varient 90%); 
-}
 .btn:not([disabled]){
     box-shadow: 2px 2px 1px .5px $miku-dark;
     &#guess{
@@ -37,24 +33,30 @@ h4{
         border: 1px solid $miku-grey;
     }
 }
-.li-has-content, .bg-miku-light{
+.bg-miku-light{
     background-color: $miku-light;
 }
+.li-has-content{
+    @extend .bg-miku-light;
+}
 .li-newest{
+    @extend p;
     background-color: lighten($miku-red, 20%);
-    color: $miku-black;
     font-weight: bold;
 }
 .modal-body ul li p{
     text-indent: 2em;
 }
-.bg-miku, #btn-rule{
-    color: $miku-black;
+.bg-miku{
+    @extend p;
     background-color: $miku-colour;
 }
+#btn-rule{
+    @extend .bg-miku;
+}
 #guess{
+    @extend p;
     background-color: lighten($miku-red, 10%);
-    color: $miku-black;
 }
 .show-answer{
     color: $miku-colour;
@@ -66,8 +68,9 @@ h4{
     }
 }
 
+// <裝飾物件>
 .container-fluid.deco{
-    background-color: $miku-colour;
+    @extend .bg-miku;
     .row.deco{
         background-color: $miku-black;
         .col-12.deco{
@@ -75,3 +78,4 @@ h4{
         }
     }
 }
+// </裝飾物件>

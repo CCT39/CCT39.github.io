@@ -6,6 +6,7 @@ const maxOfHistoryListItems = 10;
 window.onload = function(){
     getElements();
     setEventListeners();
+    setEmptyListItems();
 }
 
 function getElements(){
@@ -26,7 +27,10 @@ function setEventListeners(){
         setEmptyListItems();
         toggleDisabledOfBtns();
     })
-    btnGiveUp.addEventListener('click', toggleDisabledOfBtns);
+    btnGiveUp.addEventListener('click', () => {
+        textAreaOfAnsWindow.innerHTML = getTheAnswer().join('');
+        toggleDisabledOfBtns();
+    });
     btnGuess.addEventListener('click', () => {
         judgeInput(checkPattern());
         input.value = '';
