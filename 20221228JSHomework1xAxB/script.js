@@ -1,4 +1,4 @@
-let btnGetStart, btnGiveUp, btnGimmeAnswer, btnGuess, input, textAreaOfAnsWindow, history, victory, inputAndBtns;
+let btnGetStart, btnGiveUp, btnGimmeAnswer, btnGuess, input, visits, textAreaOfAnsWindow, history, victory, inputAndBtns;
 let getTheAnswer;
 
 const maxOfHistoryListItems = 10;
@@ -23,7 +23,6 @@ function getElements(){
 function setEventListeners(){
     btnGetStart.addEventListener('click', () => {
         getTheAnswer = jaameJam();
-        textAreaOfAnsWindow.innerHTML = getTheAnswer().join('');
         setEmptyListItems();
         toggleDisabledOfBtns();
     })
@@ -31,6 +30,9 @@ function setEventListeners(){
     btnGuess.addEventListener('click', () => {
         judgeInput(checkPattern());
         input.value = '';
+    })
+    btnGimmeAnswer.addEventListener('click', () => {
+        textAreaOfAnsWindow.innerHTML = gimmeAnswerLah();
     })
 }
 
@@ -67,12 +69,13 @@ function judgeInput(inputString){
         return;
     }
 
-    // 確定A和B的數量
+    // 給定需要的值
     let countA = 0;
     let countB = 0;
     const ansArray = getTheAnswer().map(x => x.toString());
     const inputValueArray = Array.from(inputString);
 
+    // 確定A和B的數量
     if (ansArray.join('') == inputString){
         countA = 4;
 
@@ -138,10 +141,25 @@ function changeBgcOfBadges(badge){
     }
 }
 
-// 把答案封在裡面
+function gimmeAnswerLah(){
+    visits += ('b' + 'a' + + 'k' + 'a').toLowerCase();
+    const ans = getTheAnswer().join('');
+    if (visits.length > 33){
+        visits = visits.substring(0, 39);
+        return ans;
+    } else if (visits.length > 27){
+        return `好啦，答案是 ${ans}`;
+    } else if (visits.length > 15){
+        return `提示：末位數字是 ${ans.substring(3)}`;
+    } else {
+        return '不給你看答案';
+    }
+}
+
+
 const jaameJam = () => {
     let ans = generateAns();
-    return () => { // 想用console.log()看答案嗎？試試看ㄚ！
+    return () => { // 想用console.log()偷看答案嗎？試試看ㄚ！
         return ans
     };
 }
@@ -154,5 +172,5 @@ const generateAns = () => {
     return temp;
 }
 const randomSort = (array) => {
-    return array.sort((a, b) => {return 0.5 - Math.random()});
+    return array.sort(() => {return 0.5 - Math.random()});
 }
