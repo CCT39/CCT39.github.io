@@ -1,0 +1,67 @@
+@import 'favo-colours.scss';
+%mainShadow{
+    border: 1px solid $miku-varient;
+    box-shadow: 2px 2px 20px $miku-varient;
+}
+
+body{
+    background-color: lighten($miku-light, 10%);
+}
+p{ color: $miku-black; }
+h1{ color: $miku-dark; }
+h2{ @extend h1; }
+h3{
+    @extend h1;
+    background-image: linear-gradient(transparent 70%, $miku-colour 90%);
+}
+h4{
+    @extend h1;
+    background-image: linear-gradient(transparent 70%, $miku-varient 90%); 
+}
+.btn:not([disabled]){
+    box-shadow: 2px 2px 1px .5px $miku-dark;
+    &#guess{
+        box-shadow: 2px 2px 1px .5px $miku-red;
+    }
+}
+#input{
+    @extend %mainShadow;
+    &:focus{
+        box-shadow: 0 0 1px 2px $miku-red;
+        border: 1px solid $miku-black;
+    }
+}
+.list-group{
+    @extend %mainShadow;
+    .list-group-item{
+        border: 1px solid $miku-grey;
+    }
+}
+.li-has-content, .bg-miku-light{
+    background-color: $miku-light;
+}
+.li-newest{
+    background-color: lighten($miku-red, 20%);
+    color: $miku-black;
+    font-weight: bold;
+}
+.modal-body ul li p{
+    text-indent: 2em;
+}
+.bg-miku, #btn-rule{
+    color: $miku-black;
+    background-color: $miku-colour;
+}
+#guess{
+    background-color: lighten($miku-red, 10%);
+    color: $miku-black;
+}
+.show-answer{
+    color: $miku-colour;
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    #ans{
+        color: $miku-red;
+    }
+}

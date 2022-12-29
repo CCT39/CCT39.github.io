@@ -1,0 +1,113 @@
+[
+    {
+        "id": "Nov21",
+        "date": "2022.11.21",
+        "homeworkList": [
+            {
+                "title": "作業 指定版型切版",
+                "timeCosts": "2"
+            }
+        ],
+        "qContent": "\n                    <p>下方排圖片的區塊是強制賦予明確的高度值，再令大圖的高度值是 <code>100%</code> 。原是以此來解決圖片寬度可能超格而蓋住左右各三欄的情形；但如此可能難以適應整體高度的改變（例如將內容由三欄變成五欄，而間距維持原樣），反而是高度會超格。目前完成的畫面在固定寬高之視窗下，外觀雖然大致接近預期，但可能不靈活，難以適應版面內容的改動。</p>\n                    <ul>\n                        <h4>指定版型切版</h4>\n                        <li>\n                            <h5>問題1： <code>.item</code> 設定 <code>flex</code> 之後圖片被拉伸</h5>\n                            <p>解決方案：將 <code>h3</code> 和 <code>p</code> 預設的 <code>margin</code> 設為 <code>0</code> ，高度即恢復預期（可推測其隨著文字內容被拉伸）</p>\n                        </li>\n                        <li>\n                            <h5>問題2： <code>.item</code> 設定 <code>space-evenly</code> 之後無法拓開間隔</h5>\n                            <p>解決方案：在外層的 <code>.box</code> 設定 <code>space-evenly</code> （因此是選取到錯誤的物件）</p>\n                        </li>\n                        <li>\n                            <h5>問題3： <code>.container</code> （整體）的寬度固定，拉動視窗時（毫不意外地）會在螢幕寬時不美觀</h5>\n                            <p>解決方案： <code>width: 100%;</code> 其餘寬度盡量改成比例</p>\n                        </li>\n                        <li>\n                            <h5>問題4：寬度改成比例之後，小圓圖會被文字拉伸</h5>\n                            <p>解決方案：設定小圓圖的 <code>max-width</code> 和 <code>max-height</code> </p>\n                        </li>\n                        <li>\n                            <h5>問題5：小物件的 <code>title</code> 和 <code>p</code> 隔太開</h5>\n                            <p>解決方案： <code>title</code> 的 <code>margin-bottom</code> 和 <code>p</code> 的 <code>margin-top: 0;</code> </p>\n                        </li>\n                        <li>\n                            <h5>衍生的問題：由於 <code>title</code> 和 <code>p</code> 的高度本身不一致（未reset），造成文字相對於圖片略有錯位</h5>\n                            <p>解決方案：把 <code>title</code> 和 <code>p</code> 的 <code>margin</code> 都設為 <code>0</code> ，再將 <code>.text</code> （ <code>title</code> 和 <code>p</code> 的父層）的 <code>margin</code> 設 <code>auto</code> </p>\n                        </li>\n                    </ul>\n                "
+    },
+    {
+        "id": "Nov28",
+        "date": "2022.11.28",
+        "homeworkList": [
+            {
+                "title": "作業1 建立國小課表",
+                "timeCosts": "1"
+            },
+            {
+                "title": "作業2 whoscall切版",
+                "timeCosts": "11"
+            }
+        ],
+        "qContent": "\n                    <p>整體排版依賴 <code>flex</code> ，較大程度是以個人透過電腦目視之尺寸來排版，加上有不少部分是直接將寬度或高度寫死；因此若螢幕寬度稍有不同，可能就會有比例或尺寸不符預期的情況發生。要言之，目前排版使用的方案可能較不靈活。\n                        <br>另外，由於是將整個版面切成橫向的各部分分開做，而這些部分可能有不少重複的樣式，以各自的選擇器設定樣式，因此可能有不少冗餘程式碼的問題，有待未來進一步精簡與重構。</p>\n                    <ul>\n                        <h4>建立課表以及whoscall切版</h4>\n                        <li>\n                            <h5>問題1：「正版」whoscall的 <code>&lt;footer&gt;</code> 文字列的標題 <code>.title</code> 與列表各項的文字間距不等寬，若使用 <code>flex</code> 直接排列無法直接實現。</h5>\n                            <p>解決方案：將列表各項設為 <code>&lt;li&gt;</code> 並打包成一整個 <code>&lt;ul&gt;</code> ，令 <code>flex</code> 作用於 <code>.title</code> 與 <code>&lt;ul&gt;</code> 之間，並用行高控制 <code>&lt;li&gt;</code> 各項的距離。</p>\n                        </li>\n                        <li>\n                            <h5>問題2：將 <code>&lt;footer&gt;</code> 的寬度設成100%難以調整列表物件間的間距，而若非100%則又無法填滿背景顏色。</h5>\n                            <p>解決方案：將 <code>&lt;footer&gt;</code> 設背景色且寬度設為100%，並將物件另外打包成 <code>.wrap</code> ，接著對 <code>.wrap</code> 設定適合的寬度。</p>\n                        </li>\n                        <li>\n                            <h5>問題3：引號的圖片本身與預期（即「正版」whoscall網頁中該圖的方向）左右顛倒。</h5>\n                            <p>解決方案：使用 <code>transform: rotateY(180deg);</code> 實現水平鏡像翻轉。</p>\n                        </li>\n                        <li>\n                            <h5>問題4：最上方的標題列設 <code>position: fixed; z-index: 1;</code> （老師說此處不用隨著畫面捲動，但此處還是試著做了）後，banner左上的圓弧往上移到標題列後方。</h5>\n                            <p>解決方案：設該圓弧的 <code>margin-top</code> 為標題列的高度，即80px。</p>\n                        </li>\n                        <p>（另外，其實有3個小時左右都在處理 <code>&lt;footer&gt;</code> 右側那4個icon的顏色和尺寸問題，以及如何經由Font Awesome引用那些icon。這些時間也算進了總時數）</p>\n                    </ul>\n                "
+    },
+    {
+        "id": "Dec05",
+        "date": "2022.12.05",
+        "homeworkList": [
+            {
+                "title": "作業 whoscall再次切版",
+                "timeCosts": "6"
+            }
+        ],
+        "qContent": "\n                    <ul>\n                        <h4>whoscall再次切版</h4>\n                        <li>\n                            <h5>問題1：圖文子標題 <code>.highlight</code> 的部分超格（如圖）</h5>\n                            <div class=\"pic\">\n                                <img src=\"./others/1205HW_img1.jpeg\" alt=\"\">\n                            </div>\n                            <p>解決方案： <code>h3</code> 設 <code>line-height: normal;</code> 解決（但是不清楚原因）</p>\n                        </li>\n                        <li>\n                            <h5>問題2：用戶經驗分享內文 <code>.highlight</code> 的部分稍微超格（如圖）</h5>\n                            <div class=\"pic\">\n                                <img src=\"./others/1205HW_img2.jpeg\" alt=\"\">\n                            </div>\n                            <p>解決方案：尚未解決。設定 <code>line-height</code> 無用</p>\n                        </li>\n                    </ul>\n                "
+    },
+    {
+        "id": "Dec08",
+        "date": "2022.12.08",
+        "homeworkList": [
+            {
+                "title": "作業 Toyota頁面排版",
+                "timeCosts": "6"
+            }
+        ],
+        "qContent": "\n                    <ul>\n                        <h4>Toyota頁面排版</h4>\n                        <li>\n                            <h5>問題1：黑紅底色標題區的定位問題</h5>\n                            <p>相關結構簡圖：<br>\n                                <code>\n                                    &lt;.grey /&gt;（灰色方塊）<br><br>\n                \n                                    &lt;.img&gt;（大圖區）<br>\n                                     &lt;.appeal&gt;（黑紅底色標題區）<br>\n                                      &lt;.title /&gt;（紅底標題）<br>\n                                      &lt;.txt /&gt;（黑底內文）<br>\n                                     &lt;/&gt;<br><br>\n                \n                                     &lt;.explain /&gt;（說明內文）<br>\n                                     &lt;.icon-play /&gt;（播放鍵）<br>\n                                    &lt;/&gt;\n                                </code>\n                            </p>\n                            <ul>\n                                <li>\n                                    <p>思考：將內文 <code>.txt</code> 與大圖區 <code>.img</code> 切齊，預想也許標題區 <code>.appeal</code> 會隨著子層被移動而移動</p>\n                                    <h6>問題1-1：將黑底內文 <code>.txt</code> 設絕對定位，令其 <code>top: 0;</code> 與大圖容器切齊；而紅底標題卻留在原地，沒有隨著移動</h6>\n                                    <p>發現：黑底內文 <code>.txt</code> 該層單獨脫離空間自由移動，因此必須將絕對定位設給整個黑紅底色標題區 <code>.appeal</code> ，才能同時定位</p>\n                                    <p>解決方案：設整個黑紅底色標題區 <code>.appeal</code> 為絕對定位。此時紅底標題上緣切齊大圖上緣，仍未達到目的</p>\n                                </li>\n                                <li>\n                                    <p>思考：若設 <code>.appeal</code> 絕對定位，如何將 <code>.txt</code> 黑底切齊大圖？思考利用 <code>transform</code> 將 <code>.title</code> 往上移的可能性</p>\n                                    <h6>問題1-2：將 <code>.title</code> 設定 <code>transform: translate(0, -100%);</code> 使其往上平移一段相當於自身高度的距離；但原地會留出空白</h6>\n                                    <p>發現：使用 <code>translate</code> 移動 <code>.title</code> 後，仍然佔據著原先所在的空間，造成 <code>.title</code> 與 <code>.txt</code> 間留著一段相當於 <code>.title</code> 高度的距離</p>\n                                    <p>解決方案：設定 <code>.title</code> 的 <code>position</code> 為 <code>inherit</code> （繼承），使其可以拉著內文往上跑；如此達成高度未寫死，且內容可隨意增減，畫面仍然切齊的目的</p>\n                                </li>\n                            </ul>\n                        </li>\n                        <li>\n                            <p>思考： <code>.title</code> 設定 <code>inherit</code> 實際上繼承了 <code>.appeal</code> 的絕對定位，不清楚是否算用掉1個或是2個扣打。此處假設用掉2個，只剩1個扣打</p>\n                            <h5>問題2：是否有辦法只使用1個絕對定位，便能將灰色方塊 <code>.grey</code> 、說明內文 <code>.explain</code> 和播放鍵 <code>.icon-play</code> 都移動到指定位置？</h5>\n                            <p>發現：整體寬度為960px的情況下， <code>.explain</code> 貼齊左緣，而 <code>.grey</code> 貼齊右緣。考慮定位的方便性，嘗試將該兩物件設定相對定位</p>\n                            <p>解決方案： <code>.explain</code> 設相對定位， <code>top: -10%;</code> ，左或右為 <code>-160px</code> ； <code>.grey</code> 設相對定位， <code>top: 180px;</code> ， <code>margin-left</code> 和 <code>right</code> 為 <code>auto</code> ；而 <code>.icon-play</code> 使用絕對定位。綜上所述，該三物件僅使用1個絕對定位便達成目的</p>\n                        </li>\n                        <p>最終結構：<br>\n                            <code>\n                                &lt;.grey /&gt;（相對 relative）<br><br>\n    \n                                &lt;.img&gt;（相對 relative）<br>\n                                 &lt;.appeal&gt;（絕對 absolute）<br>\n                                  &lt;.title /&gt;（繼承 inherit）<br>\n                                  &lt;.txt /&gt;<br>\n                                 &lt;/&gt;<br><br>\n            \n                                 &lt;.explain /&gt;（相對 relative）<br>\n                                 &lt;.icon-play /&gt;（絕對 absolute）<br>\n                                &lt;/&gt;\n                            </code>\n                        </p>\n                    </ul>\n                "
+    },
+    {
+        "id": "Dec12",
+        "date": "2022.12.12",
+        "homeworkList": [
+            {
+                "title": "作業 RWD練習",
+                "timeCosts": "1"
+            }
+        ],
+        "qContent": "無內容"
+    },
+    {
+        "id": "Dec15",
+        "date": "2022.12.15",
+        "homeworkList": [
+            {
+                "title": "作業 RWD雙層選單",
+                "timeCosts": "7"
+            }
+        ],
+        "qContent": "\n                    <ul>\n                        <h4>RWD雙層選單</h4>\n                        <li>\n                            <h5>問題1：將子清單的開關（ <code>checkbox</code> ）放在 <code>header</code> 外面，使得CSS程式碼過於冗長</h5>\n                            <p>解決方案：將每個 <code>checkbox</code> 放在對應的 <code>.item</code> 內，如此除了精簡CSS選取器長度以外，還可以透過選擇 <code>.sub-ctrls:checked ~ .sub-nav</code> 一次設定每個子清單的開關，而不需要個別選取並設定</p>\n                        </li>\n                        <li>\n                            <h5>問題2-1：手機版畫面時，將 <code>.main-item</code> （即主清單的每個項目）設 <code>flex</code> ，使得內部的超連結及箭頭橫排時，控制箭頭開啟 <code>.sub-nav</code> （ <code>display:none → block</code> ）後， <code>.sub-nav</code> 也加入該橫排</h5>\n                            <p>解決方案：將 <code>.main-item</code> 的超連結及箭頭（即未開啟 <code>.sub-nav</code> 時的可視部分）另外包成一個 <code>div</code> ，並改對該 <code>div</code> 設 <code>flex</code> </p>\n                        </li>\n                        <li>\n                            <h5>問題2-2：手機版畫面時，當 <code>.sub-nav</code> 開啟，其永遠出現在主清單各項目的最下方</h5>\n                            <p>解決方案：開啟後除了 <code>display:none → block</code> 以外，新增 <code>position: absolute → relative</code> ，使其占住空間，將主清單各其他項目往下推</p>\n                        </li>\n                        <li>\n                            <h5>問題3：桌機板畫面時，最右側的選單打開後，文字會超出邊緣</h5>\n                            <p>解決方案：將 <code>.sub-nav</code> 的寬度都固定，設定 <code>right: 0;</code> ，如此每個子選單出現的位置都一樣，且寬度都大致與主選單的寬度相同</p>\n                        </li>\n                    </ul>\n                "
+    },
+    {
+        "id": "Dec21",
+        "date": "2022.12.21",
+        "homeworkList": [
+            {
+                "title": "作業1 Maikon切版",
+                "timeCosts": "19"
+            },
+            {
+                "title": "作業2 以Bootstrap切版",
+                "timeCosts": "14"
+            }
+        ],
+        "qContent": "\n                    <ul>\n                        <h4>Maikon：</h4>\n                        <li>\n                            <h5>問題1： <code>.step</code> 的部分，箭頭的定位問題</h5>\n                            <p>解決方案：目前的解法是以 <code>calc()</code> ，以比例搭配寫死寬度以適應桌機以上的寬度變化；但首先寫死的寬度不一，其次在寬度為1024px左右的畫面下仍會錯位，目前尚無更佳的解決方案</p>\n                        </li>\n                        <li>\n                            <h5>問題2：WATCH VIDEO的大按鈕在768px以下的大小，原版會放大；如何重現？</h5>\n                            <p>解決方案：以 <code>transform</code> 的 <code>scale()</code> 來放大，並以 <code>translateX()</code> 移位；但可能算是硬湊位置</p>\n                        </li>\n                    </ul>\n                    <ul>\n                        <h4>Whoscall：</h4>\n                        <li>\n                            <h5>問題1：手風琴點選項目後會出現藍底</h5>\n                            <p>解決方案：設 <code>.accordion-button: focus;</code> 。惟此方法造成的問題是，若該項目在開著的情況下，而滑鼠去點開其他項目，則原項目的底色會再次出現</p>\n                        </li>\n                        <li>\n                            <h5>問題2： <code>nav</code> 設絕對定位後，內容會跑到其下方</h5>\n                            <p>解決方案：設 <code>body</code> 的 <code>padding-top: 57px;</code> 。惟此方法是寫死高度，若 <code>nav</code> 高度改變則也要跟著變，目前未有更彈性的解決方案</p>\n                        </li>\n                        <li>\n                            <h5>問題3：在 <code>container &gt; row &gt; col</code> 的格線系統下，如何做到背景色（圖）滿版，而內容寬度固定？</h5>\n                            <p>解決方案：目前的解決方案是使內容寬度不固定：以RWD做到使版面易讀的目的；至於滿版色是設定 <code>.container-fluid</code> ，但在超寬螢幕下，內容可能會過寬</p>\n                        </li>\n                    </ul>\n                "
+    },
+    {
+        "id": "Dec06",
+        "date": "2022.12.06",
+        "homeworkList": [
+            {
+                "title": "作業 猜數字遊戲",
+                "timeCosts": "12"
+            }
+        ],
+        "qContent": "無內容"
+    },
+    {
+        "id": "Dec19",
+        "date": "2022.12.19",
+        "homeworkList": [
+            {
+                "title": "作業1 Altis360度賞車",
+                "timeCosts": "3"
+            },
+            {
+                "title": "作業2 LoL角色資料",
+                "timeCosts": "4"
+            }
+        ],
+        "qContent": "\n                    <ul>\n                        <h4>Altis：</h4>\n                        <li>\n                            <h5>問題1：按轉向換圖，換了十幾張之後網頁會自動重新整理</h5>\n                            <p>解決方案：尚不清楚原因，但已不會發生該問題</p>\n                        </li>\n                        <li>\n                            <h5>問題2：如何做長按？</h5>\n                            <p>解決方案：對 <code>mousedown</code> 事件掛監聽，對換圖的方法設定 <code>setInterval()</code> ；再對 <code>mouseup</code> 事件掛監聽，使用 <code>clearInterval()</code> 清除間隔</p>\n                        </li>\n                    </ul>\n                    <ul>\n                        <h4>LoL：</h4>\n                        <li>\n                            <h5>問題1：用 <code>querySelectorAll()</code> 選到每一張 <code>.card</code> 之後，使用forEach()無法選擇其子層元素，即 <code>.card-title</code> 和 <code>.card-body</code> </h5>\n                            <p>解決方案：發現是觀念錯誤，對 <code>.card</code> 使用 <code>forEach()</code> ，選到的是每一張 <code>.card</code> 本身，與其子層無關</p>\n                        </li>\n                        <li>\n                            <h5>問題2：在對卡片的 <code>forEach()</code> 內無法使用 <code>querySelectorAll()</code> 選到每一張 <code>.card-body</code> </h5>\n                            <p>解決方案：每往下一層就用一個 <code>querySelector()</code> ；並且由於一張卡片只有一個 <code>.card-body</code> ，因此拿掉原有的 <code>All</code> 。如此可解決問題</p>\n                        </li>\n                        <li>\n                            <h5>問題3：沒有單獨一個屬性可以直接取得每張卡的中文名稱</h5>\n                            <p>解決方案：取得 <code>cardTitle.innerHTML</code> 之後，對其使用 <code>split('-')[1]</code> 分開後取得後者元素；並且由於字串冒頭留有空白，因此以 <code>trim()</code> 去除</p>\n                        </li>\n                        <li>\n                            <h5>問題4： <code>heroArray</code> 中的每個元素都是物件，如何取得其屬性做成 <code>thead</code> ，以及每個物件每個屬性的值做成 <code>tbody</code> ？</h5>\n                            <p>解決方案：首先利用 <code>Object.keys(hero).map(key =&gt; hero[key])</code> 將物件轉換成陣列，保留屬性的值（但不太懂 <code>map()</code> 內的 <code>key</code> 具體代表什麼意思），再用 <code>forEach()</code> 取值並包成 <code>tr</code> 和整個 <code>tbody</code> ；接著以 <code>heroArray[0]</code> 為例取其屬性名稱並包裝成新陣列： <code>let titleArray = []; Object.keys(heroArray[0]).forEach(x =&gt; titleArray.push(x));</code> 並將該陣列包成 <code>thead</code> </p>\n                        </li>\n                    </ul>\n                "
+    }
+]

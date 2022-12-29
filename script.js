@@ -49,6 +49,8 @@ function createHomeworkDatas(){
         homeworkList: setHomeworkLists(item),
         qContent: setquestionContents(item),
     })})
+    let json = JSON.stringify(datas);
+    console.log(json);
 }
 function setHomeworkLists(item){
     let homeworks = [];

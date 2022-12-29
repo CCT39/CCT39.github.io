@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 class="col-12 my-4 mx-auto text-center">幾A幾B？</h1>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
+                <div class="btn-group my-3 w-100" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-info bg-miku" id="get-start">開始</button>
+                    <button type="button" class="btn btn-info bg-miku" id="give-up" disabled="true" data-bs-toggle="modal" data-bs-target="#watch-answer">放棄重來</button>
+                    <button type="button" class="btn btn-info bg-miku" id="gimme-answer" disabled="true" data-bs-toggle="modal" data-bs-target="#watch-answer">看答案</button>
+                </div>
+                <ul class="list-group" id="history">
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                    <li class="list-group-item text-white">_</li>
+                </ul>
+                <div class="input-group my-3">
+                    <input type="text" class="form-control" id="input" placeholder="猜答案" disabled="true" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" id="guess" disabled="true">猜！</button>
+                        <button class="btn btn-outline-secondary" type="button" id="btn-rule" data-bs-toggle="modal" data-bs-target="#watch-rules">
+                            看規則
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="watch-rules" tabindex="-1" aria-labelledby="game-rules" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-miku-light">
+                    <h2 class="modal-title" id="game-rules">遊戲規則</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="ps-0">
+                        <h3>遊戲內容</h3>
+                        <li class="px-3">
+                            <h4>遊戲目標</h4>
+                            <p>為了在這場四位數字猜謎中勝出，我們必須猜中四位數字的每一個數字。</p>
+                            <p>本遊戲並無失敗條件 —— 理論上試10,000次以內總試得出來！</p>
+                        </li>
+                        <li class="px-3">
+                            <h4>遊戲提示</h4>
+                            <p>在猜數字的過程中，每猜一次都會收到不同的提示，以數字搭配A或B表示：<br>
+                                若你的答案與本場遊戲的正確答案之間比較，<strong>若有一個數字其號碼與位置均相同則記作1A</strong>，而若是兩個數字均相符，則記作2A，以此類推；
+                                而<strong>若有一個數字僅有號碼相同，而位置卻不同，此時記作1B</strong>，兩個數字則為2B，以此類推。
+                                利用幾A幾B的提示，可以幫助我們一步一步接近答案。</p>
+                        </li>
+                        <li class="px-3">
+                            <h4>遊戲設計</h4>
+                            <p>本遊戲將隨機生成不重複的四位數字作為當次遊戲的答案。
+                                獲勝、放棄重來，或是看答案，均會結束當次遊戲，開始新遊戲後則會重置答案。</p>
+                            <p><strong>作者的美感奇差，Bootstrap稀飯罐頭版是我的好夥伴。</strong></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="watch-answer" tabindex="-1" aria-labelledby="watch-answer-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-miku-light">
+                    <h2 class="modal-title" id="watch-answer-label">本局的答案是</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body show-answer">
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="victory" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-miku-light">
+                    <h2 class="modal-title">勝利</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body show-answer">
+                    <p>你贏了！答案是 <span id="ans"></span></p>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src="./popoverList.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
