@@ -71,4 +71,14 @@ h4 {
 }
 .show-answer #ans {
   color: #e12885;
+}
+
+.container-fluid.deco {
+  background-color: #39c5bb;
+}
+.container-fluid.deco .row.deco {
+  background-color: #373b3e;
+}
+.container-fluid.deco .row.deco .col-12.deco {
+  background-color: #e12885;
 }/*# sourceMappingURL=style.css.map */

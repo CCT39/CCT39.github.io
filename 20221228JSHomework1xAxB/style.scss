@@ -65,3 +65,13 @@ h4{
         color: $miku-red;
     }
 }
+
+.container-fluid.deco{
+    background-color: $miku-colour;
+    .row.deco{
+        background-color: $miku-black;
+        .col-12.deco{
+            background-color: $miku-red;
+        }
+    }
+}
