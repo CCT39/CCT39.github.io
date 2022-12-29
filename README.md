@@ -1,6 +1,6 @@
 # CCT39's Front-end Homeworks
   
-<p>最後更新：2022.12.26（一）01:46（UTC+8）</p>  
+<p>最後更新：2022.12.30（五）01:03（UTC+8）</p>  
 <strong>此處收錄本人即 CCT39 於 Build School 所練習之前端程式設計作業。</strong>  
   
 <h1>目前作業清單以及所花費時間：</h1>  
@@ -68,6 +68,15 @@
     <ul>  
       <li>HTML/CSS 作業1（Maikon切版）：19 小時</li>
       <li>HTML/CSS 作業2（以Bootstrap切Whoscall）：14 小時</li>
+    </ul>
+  </li> 
+  
+  <li>
+    <h2>2022.12.28</h2>  
+    <ul>  
+      <li>JavaScript 作業1（1A2B猜數字）：9 小時</li>
+      <li>JavaScript 作業2（Apple購買頁面）：未完成</li>
+      <li>JavaScript 作業3（行事曆製作）：未完成</li>
     </ul>
   </li> 
   
