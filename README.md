@@ -75,7 +75,7 @@
     <h2>2022.12.28</h2>  
     <ul>  
       <li>JavaScript 作業1（1A2B猜數字）：9 小時</li>
-      <li>JavaScript 作業2（Apple購買頁面）：未完成</li>
+      <li>JavaScript 作業2（Apple購買頁面）：12 小時</li>
       <li>JavaScript 作業3（行事曆製作）：未完成</li>
     </ul>
   </li> 
