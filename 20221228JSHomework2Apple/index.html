@@ -4,92 +4,123 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="./reset.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Until: 2022.12.30 03:47 ~1hr -->
-    <h1>Hello, world!</h1>
+    <!-- Until: 2022.12.31 01:57 ~12hr -->
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-12">
+                <h1 class="text-center">Apple 商品資料</h1>
+                <div class="d-flex justify-content-center">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary btn-products" id="iphone">iPhone 14</button>
+                        <button type="button" class="btn btn-primary btn-products" id="ipad">iPad mini</button>
+                        <button type="button" class="btn btn-primary btn-products" id="mac">MacBook Pro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row kv m-auto">
+            <div class="col-12 col-md-6">
+                <img src="./imgs/640px-Apple-logo.png" alt="" class="d-block w-100" id="main-img">
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="col-iphone">
+                    <div class="colour d-flex justify-content-center">
+                        <div class="btn-group my-2 q d-none">
+                            <button type="button" class="btn btn-primary" id="iphone_blue">藍色</button>
+                            <button type="button" class="btn btn-primary" id="iphone_purple">紫色</button>
+                            <button type="button" class="btn btn-primary" id="iphone_midnight">午夜色</button>
+                            <button type="button" class="btn btn-primary" id="iphone_starlight">星光色</button>
+                            <button type="button" class="btn btn-primary" id="iphone_product-red">紅色</button>
+                        </div>
+                    </div>
+                    <div class="storage d-flex justify-content-center q d-none">
+                        <div class="btn-group my-2">
+                            <button type="button" class="btn btn-primary" id="iphone_128GB">128GB</button>
+                            <button type="button" class="btn btn-primary" id="iphone_256GB">256GB</button>
+                            <button type="button" class="btn btn-primary" id="iphone_512GB">512GB</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="col-ipad">
+                    <div class="colour d-flex justify-content-center">
+                        <div class="btn-group my-2 q d-none">
+                            <button type="button" class="btn btn-primary" id="ipad_space-gray">太空灰</button>
+                            <button type="button" class="btn btn-primary" id="ipad_pink">粉紅色</button>
+                            <button type="button" class="btn btn-primary" id="ipad_purple">紫色</button>
+                            <button type="button" class="btn btn-primary" id="ipad_starlight">星光色</button>
+                        </div>
+                    </div>
+                    <div class="storage d-flex justify-content-center q d-none">
+                        <div class="btn-group my-2">
+                            <button type="button" class="btn btn-primary" id="ipad_64GB">64GB</button>
+                            <button type="button" class="btn btn-primary" id="ipad_256GB">256GB</button>
+                        </div>
+                    </div>
+                    <div class="network d-flex justify-content-center q d-none">
+                        <div class="btn-group my-2">
+                            <button type="button" class="btn btn-primary" id="ipad_only-Wi-Fi">僅Wi-Fi連線</button>
+                            <button type="button" class="btn btn-primary" id="ipad_with-Mobile">支援行動網路</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="col-mac">
+                    <div class="colour d-flex justify-content-center">
+                        <div class="btn-group my-2 q d-none">
+                            <button type="button" class="btn btn-primary" id="mac_spacegray">太空灰</button>
+                            <button type="button" class="btn btn-primary" id="mac_silver">銀色</button>
+                        </div>
+                    </div>
+                    <div class="size d-flex justify-content-center q d-none">
+                        <div class="btn-group my-2">
+                            <button type="button" class="btn btn-primary" id="mac_13">13吋</button>
+                            <button type="button" class="btn btn-primary" id="mac_14">14吋</button>
+                            <button type="button" class="btn btn-primary" id="mac_16">16吋</button>
+                        </div>
+                    </div>
+                    <div class="under-size">
+                        <div class="btn-group my-2 size-13 q d-none">
+                            <button type="button" class="btn btn-primary" id="mac_256GB">
+                                規格：儲存裝置256GB SSD、CPU8核心、GPU10核心、8GB統一記憶體
+                            </button>
+                            <button type="button" class="btn btn-primary" id="mac_512GB">
+                                規格：儲存裝置512GB SSD、CPU8核心、GPU10核心、8GB統一記憶體
+                            </button>
+                        </div>
+                        <div class="btn-group my-2 size-14 q d-none">
+                            <button type="button" class="btn btn-primary" id="mac_8core">
+                                規格：CPU8核心、GPU14核心、儲存裝置512GB SSD、16GB統一記憶體
+                            </button>
+                            <button type="button" class="btn btn-primary" id="mac_10core">
+                                規格：CPU10核心、GPU16核心、儲存裝置1TB SSD、16GB統一記憶體
+                            </button>
+                        </div>
+                        <div class="btn-group my-2 size-16 q d-none">
+                            <button type="button" class="btn btn-primary" id="mac_basic">
+                                規格：GPU16核心、16GB統一記憶體、儲存裝置512GB SSD、CPU10核心
+                            </button>
+                            <button type="button" class="btn btn-primary" id="mac_medium">
+                                規格：GPU16核心、16GB統一記憶體、儲存裝置1TB SSD、CPU10核心 
+                            </button>
+                            <button type="button" class="btn btn-primary" id="mac_luxury">
+                                規格：GPU32核心、32GB統一記憶體、儲存裝置1TB SSD、CPU10核心
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center fs-1">NT$ <strong class="text-danger" id="price"></strong></p>
+                <p class="text-left fs-4">產品資訊：<span class="fs-6" id="product-info"></span></p>
+            </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-    <script>
-        let colour;
-        let UrlIPadMini = `./imgs/ipad-mini-finish-select-gallery-202211-${colour}.jpg`;
-        let UrlIPhone14 = `./imgs/iphone-14-finish-select-202209-6-1inch-${colour}.jpg`;
-
-        let size; // if (size != 14 && size != 16) { size = ''; }
-        let num; // if (size == 13) { num = '202206'; } else if (size == 14 || size == 16) { num = '202110'; }
-        let UrlMacBookPro = `./imgs/mbp${size}-${colour}-select-${num}_GEO_TW.jpg`;
-
-
-        let productArray = [
-            {
-                title: 'iPhone 14', 
-                data: [
-                    { colour: 'blue', storage: '128GB', price: 27900 },
-                    { colour: 'blue', storage: '256GB', price: 31400 },
-                    { colour: 'blue', storage: '512GB', price: 38400 },
-                    { colour: 'purple', storage: '128GB', price: 27900 },
-                    { colour: 'purple', storage: '256GB', price: 31400 },
-                    { colour: 'purple', storage: '512GB', price: 38400 },
-                    { colour: 'midnight', storage: '128GB', price: 27900 },
-                    { colour: 'midnight', storage: '256GB', price: 31400 },
-                    { colour: 'midnight', storage: '512GB', price: 38400 },
-                    { colour: 'starlight', storage: '128GB', price: 27900 },
-                    { colour: 'starlight', storage: '256GB', price: 31400 },
-                    { colour: 'starlight', storage: '512GB', price: 38400 },
-                    { colour: 'product-red', storage: '128GB', price: 27900 },
-                    { colour: 'product-red', storage: '256GB', price: 31400 },
-                    { colour: 'product-red', storage: '512GB', price: 38400 }
-                ]
-            },
-
-            {
-                title: 'iPad mini',
-                data: [
-                    { colour: 'space-gray', storage: '64GB', network: 'only Wi-Fi', price: 16900 },
-                    { colour: 'space-gray', storage: '64GB', network: 'with Mobile', price: 21900 },
-                    { colour: 'space-gray', storage: '256GB', network: 'only Wi-Fi', price: 21900 },
-                    { colour: 'space-gray', storage: '256GB', network: 'with Mobile', price: 26900 },
-                    { colour: 'pink', storage: '64GB', network: 'only Wi-Fi', price: 16900 },
-                    { colour: 'pink', storage: '64GB', network: 'with Mobile', price: 21900 },
-                    { colour: 'pink', storage: '256GB', network: 'only Wi-Fi', price: 21900 },
-                    { colour: 'pink', storage: '256GB', network: 'with Mobile', price: 26900 },
-                    { colour: 'purple', storage: '64GB', network: 'only Wi-Fi', price: 16900 },
-                    { colour: 'purple', storage: '64GB', network: 'with Mobile', price: 21900 },
-                    { colour: 'purple', storage: '256GB', network: 'only Wi-Fi', price: 21900 },
-                    { colour: 'purple', storage: '256GB', network: 'with Mobile', price: 26900 },
-                    { colour: 'starlight', storage: '64GB', network: 'only Wi-Fi', price: 16900 },
-                    { colour: 'starlight', storage: '64GB', network: 'with Mobile', price: 21900 },
-                    { colour: 'starlight', storage: '256GB', network: 'only Wi-Fi', price: 21900 },
-                    { colour: 'starlight', storage: '256GB', network: 'with Mobile', price: 26900 }
-                ]
-            },
-
-            {
-                title: 'MacBook Pro',
-                data: [
-                    { size: '13', colour: 'spacegray', CPU: '8核心', GPU: '10核心', memory: '8GB', storage: '256GB', price: 39900 },
-                    { size: '13', colour: 'spacegray', CPU: '8核心', GPU: '10核心', memory: '8GB', storage: '512GB', price: 45900 },
-                    { size: '13', colour: 'silver', CPU: '8核心', GPU: '10核心', memory: '8GB', storage: '256GB', price: 39900 },
-                    { size: '13', colour: 'silver', CPU: '8核心', GPU: '10核心', memory: '8GB', storage: '512GB', price: 45900 },
-                    { size: '14', colour: 'spacegray', CPU: '8核心', GPU: '14核心', memory: '16GB', storage: '512GB', price: 59900 },
-                    { size: '14', colour: 'spacegray', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '1TB', price: 74900 },
-                    { size: '14', colour: 'silver', CPU: '8核心', GPU: '14核心', memory: '16GB', storage: '512GB', price: 59900 },
-                    { size: '14', colour: 'silver', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '1TB', price: 74900 },
-                    { size: '16', colour: 'spacegray', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '512GB', price: 74900 },
-                    { size: '16', colour: 'spacegray', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '1TB', price: 80900 },
-                    { size: '16', colour: 'spacegray', CPU: '10核心', GPU: '32核心', memory: '32GB', storage: '1TB', price: 104900 },
-                    { size: '16', colour: 'silver', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '512GB', price: 74900 },
-                    { size: '16', colour: 'silver', CPU: '10核心', GPU: '16核心', memory: '16GB', storage: '1TB', price: 80900 },
-                    { size: '16', colour: 'silver', CPU: '10核心', GPU: '32核心', memory: '32GB', storage: '1TB', price: 104900 }
-                ]
-            }
-        ]
-
-
-
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>

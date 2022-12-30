@@ -1,0 +1,359 @@
+[
+    {
+        "product": "iPhone 14",
+        "data": [
+            {
+                "colour": "blue",
+                "storage": "128GB",
+                "price": 27900,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-blue.jpg"
+            },
+            {
+                "colour": "blue",
+                "storage": "256GB",
+                "price": 31400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-blue.jpg"
+            },
+            {
+                "colour": "blue",
+                "storage": "512GB",
+                "price": 38400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-blue.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "128GB",
+                "price": 27900,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-purple.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "256GB",
+                "price": 31400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-purple.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "512GB",
+                "price": 38400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-purple.jpg"
+            },
+            {
+                "colour": "midnight",
+                "storage": "128GB",
+                "price": 27900,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-midnight.jpg"
+            },
+            {
+                "colour": "midnight",
+                "storage": "256GB",
+                "price": 31400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-midnight.jpg"
+            },
+            {
+                "colour": "midnight",
+                "storage": "512GB",
+                "price": 38400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-midnight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "128GB",
+                "price": 27900,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-starlight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "256GB",
+                "price": 31400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-starlight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "512GB",
+                "price": 38400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-starlight.jpg"
+            },
+            {
+                "colour": "product-red",
+                "storage": "128GB",
+                "price": 27900,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-product-red.jpg"
+            },
+            {
+                "colour": "product-red",
+                "storage": "256GB",
+                "price": 31400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-product-red.jpg"
+            },
+            {
+                "colour": "product-red",
+                "storage": "512GB",
+                "price": 38400,
+                "img": "./imgs/iphone-14-finish-select-202209-6-1inch-product-red.jpg"
+            }
+        ]
+    },
+    {
+        "product": "iPad mini",
+        "data": [
+            {
+                "colour": "space-gray",
+                "storage": "64GB",
+                "network": "only-Wi-Fi",
+                "price": 16900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-space-gray.jpg"
+            },
+            {
+                "colour": "space-gray",
+                "storage": "64GB",
+                "network": "with-Mobile",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-space-gray.jpg"
+            },
+            {
+                "colour": "space-gray",
+                "storage": "256GB",
+                "network": "only-Wi-Fi",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-space-gray.jpg"
+            },
+            {
+                "colour": "space-gray",
+                "storage": "256GB",
+                "network": "with-Mobile",
+                "price": 26900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-space-gray.jpg"
+            },
+            {
+                "colour": "pink",
+                "storage": "64GB",
+                "network": "only-Wi-Fi",
+                "price": 16900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-pink.jpg"
+            },
+            {
+                "colour": "pink",
+                "storage": "64GB",
+                "network": "with-Mobile",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-pink.jpg"
+            },
+            {
+                "colour": "pink",
+                "storage": "256GB",
+                "network": "only-Wi-Fi",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-pink.jpg"
+            },
+            {
+                "colour": "pink",
+                "storage": "256GB",
+                "network": "with-Mobile",
+                "price": 26900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-pink.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "64GB",
+                "network": "only-Wi-Fi",
+                "price": 16900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-purple.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "64GB",
+                "network": "with-Mobile",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-purple.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "256GB",
+                "network": "only-Wi-Fi",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-purple.jpg"
+            },
+            {
+                "colour": "purple",
+                "storage": "256GB",
+                "network": "with-Mobile",
+                "price": 26900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-purple.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "64GB",
+                "network": "only-Wi-Fi",
+                "price": 16900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-starlight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "64GB",
+                "network": "with-Mobile",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-starlight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "256GB",
+                "network": "only-Wi-Fi",
+                "price": 21900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-starlight.jpg"
+            },
+            {
+                "colour": "starlight",
+                "storage": "256GB",
+                "network": "with-Mobile",
+                "price": 26900,
+                "img": "./imgs/ipad-mini-finish-select-gallery-202211-starlight.jpg"
+            }
+        ]
+    },
+    {
+        "product": "MacBook Pro",
+        "data": [
+            {
+                "size": "13",
+                "colour": "spacegray",
+                "CPU": "8核心",
+                "GPU": "10核心",
+                "memory": "8GB",
+                "storage": "256GB",
+                "price": 39900,
+                "img": "./imgs/mbp-spacegray-select-202206_GEO_TW.jpg"
+            },
+            {
+                "size": "13",
+                "colour": "spacegray",
+                "CPU": "8核心",
+                "GPU": "10核心",
+                "memory": "8GB",
+                "storage": "512GB",
+                "price": 45900,
+                "img": "./imgs/mbp-spacegray-select-202206_GEO_TW.jpg"
+            },
+            {
+                "size": "13",
+                "colour": "silver",
+                "CPU": "8核心",
+                "GPU": "10核心",
+                "memory": "8GB",
+                "storage": "256GB",
+                "price": 39900,
+                "img": "./imgs/mbp-silver-select-202206_GEO_TW.jpg"
+            },
+            {
+                "size": "13",
+                "colour": "silver",
+                "CPU": "8核心",
+                "GPU": "10核心",
+                "memory": "8GB",
+                "storage": "512GB",
+                "price": 45900,
+                "img": "./imgs/mbp-silver-select-202206_GEO_TW.jpg"
+            },
+            {
+                "size": "14",
+                "colour": "spacegray",
+                "CPU": "8核心",
+                "GPU": "14核心",
+                "memory": "16GB",
+                "storage": "512GB",
+                "price": 59900,
+                "img": "./imgs/mbp14-spacegray-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "14",
+                "colour": "spacegray",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "1TB",
+                "price": 74900,
+                "img": "./imgs/mbp14-spacegray-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "14",
+                "colour": "silver",
+                "CPU": "8核心",
+                "GPU": "14核心",
+                "memory": "16GB",
+                "storage": "512GB",
+                "price": 59900,
+                "img": "./imgs/mbp14-silver-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "14",
+                "colour": "silver",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "1TB",
+                "price": 74900,
+                "img": "./imgs/mbp14-silver-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "spacegray",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "512GB",
+                "price": 74900,
+                "img": "./imgs/mbp16-spacegray-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "spacegray",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "1TB",
+                "price": 80900,
+                "img": "./imgs/mbp16-spacegray-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "spacegray",
+                "CPU": "10核心",
+                "GPU": "32核心",
+                "memory": "32GB",
+                "storage": "1TB",
+                "price": 104900,
+                "img": "./imgs/mbp16-spacegray-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "silver",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "512GB",
+                "price": 74900,
+                "img": "./imgs/mbp16-silver-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "silver",
+                "CPU": "10核心",
+                "GPU": "16核心",
+                "memory": "16GB",
+                "storage": "1TB",
+                "price": 80900,
+                "img": "./imgs/mbp16-silver-select-202110_GEO_TW.jpg"
+            },
+            {
+                "size": "16",
+                "colour": "silver",
+                "CPU": "10核心",
+                "GPU": "32核心",
+                "memory": "32GB",
+                "storage": "1TB",
+                "price": 104900,
+                "img": "./imgs/mbp16-silver-select-202110_GEO_TW.jpg"
+            }
+        ]
+    }
+]

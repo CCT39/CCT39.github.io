@@ -1,0 +1,22 @@
+body {
+  overflow-y: scroll;
+}
+
+p, h1 {
+  color: #373b3e;
+}
+
+.hidden {
+  opacity: 0;
+  position: absolute;
+  right: 100%;
+}
+
+.kv {
+  max-width: 1200px;
+}
+
+.btn-primary {
+  background-color: #39c5bb;
+  border: 1px solid #137a7f;
+}/*# sourceMappingURL=style.css.map */
