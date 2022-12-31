@@ -1,5 +1,5 @@
-let btnGetStart, btnGiveUp, btnGimmeAnswer, btnGuess, input, visits, textAreaOfAnsWindow, history, victory, inputAndBtns;
-let getTheAnswer;
+let btnGetStart, btnGiveUp, btnGimmeAnswer, btnGuess, input, visits;
+let textAreaOfAnsWindow, history, victory, inputAndBtns;
 
 const maxOfHistoryListItems = 10;
 
@@ -22,6 +22,8 @@ function getElements(){
 }
 
 function setEventListeners(){
+    let getTheAnswer;
+    
     btnGetStart.addEventListener('click', () => {
         getTheAnswer = jaameJam();
         setEmptyListItems();
@@ -32,11 +34,11 @@ function setEventListeners(){
         toggleDisabledOfBtns();
     });
     btnGuess.addEventListener('click', () => {
-        judgeInput(checkPattern());
+        judgeInput(checkPattern(), getTheAnswer());
         input.value = '';
     })
     btnGimmeAnswer.addEventListener('click', () => {
-        textAreaOfAnsWindow.innerHTML = gimmeAnswerLah();
+        textAreaOfAnsWindow.innerHTML = gimmeAnswerLah(getTheAnswer());
     })
 }
 
@@ -67,7 +69,7 @@ function checkPattern(){
     return inputNums.toString().padStart(4, '0');
 }
 
-function judgeInput(inputString){
+function judgeInput(inputString, answer){
     // 若輸入字串不符規格則直接結束
     if (inputString == null || inputString == undefined){
         return;
@@ -76,14 +78,14 @@ function judgeInput(inputString){
     // 給定需要的值
     let countA = 0;
     let countB = 0;
-    const ansArray = getTheAnswer().map(x => x.toString());
+    const ansArray = answer.map(x => x.toString());
     const inputValueArray = Array.from(inputString);
 
     // 確定A和B的數量
     if (ansArray.join('') == inputString){
         countA = 4;
 
-        victory.querySelector('#ans').innerHTML = getTheAnswer().join('');
+        victory.querySelector('#ans').innerHTML = answer.join('');
         let victoryModal = new bootstrap.Modal(document.getElementById('victory'));
         victoryModal.show();
 
@@ -145,9 +147,9 @@ function changeBgcOfBadges(badge){
     }
 }
 
-function gimmeAnswerLah(){
+function gimmeAnswerLah(answer){
     visits += ('b' + 'a' + + 'k' + 'a').toLowerCase();
-    const ans = getTheAnswer().join('');
+    const ans = answer.join('');
     if (visits.length > 33){
         visits = visits.substring(0, 39);
         return ans;
