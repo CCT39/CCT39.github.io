@@ -1,0 +1,138 @@
+.table-info tr td:not(.disabled-cell), .table-info tr th {
+  box-sizing: border-box;
+  width: 14.2857142857%;
+  padding: 10px;
+}
+
+.table-info tr th, h1, p {
+  color: #b50000;
+  text-transform: uppercase;
+}
+
+:root {
+  font-family: "Constantine", "Trajan", "Cinzel", "Times New Roman";
+}
+
+body {
+  background-color: #e5e9ec;
+}
+
+h1, p {
+  line-height: 1;
+}
+h1 .spqr, p .spqr {
+  font-size: 20px;
+}
+
+.container {
+  position: relative;
+}
+.container::after, .container::before {
+  content: "";
+  background-image: url(./imgs/1516336867.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+  top: 0;
+  z-index: -114514;
+  width: 330px;
+  height: 198px;
+  display: block;
+  position: absolute;
+}
+.border-primary th, .border-primary td {
+  border: 1px solid #667c90;
+}
+
+.table-info #post, .table-info #prev {
+  position: absolute;
+  top: 30px;
+  font-size: 72px;
+  color: #373b3e;
+  z-index: 6;
+  cursor: pointer;
+}
+.table-info #post:hover, .table-info #prev:hover {
+  color: #676e74;
+}
+.table-info #post:hover i, .table-info #prev:hover i {
+  -webkit-text-stroke: 1px #b50000;
+}
+.table-info #post:active, .table-info #prev:active {
+  color: #137a7f;
+}
+.table-info tbody {
+  height: 75vh;
+}
+.table-info tr {
+  height: 14.2857142857%;
+}
+.table-info tr th {
+  line-height: 1;
+  color: #667c90;
+  background-color: #cdd5dc;
+}
+.table-info tr th .spqr {
+  font-size: 12px;
+}
+.table-info tr td:not(.disabled-cell) {
+  background-color: #ffe8e8;
+  cursor: pointer;
+  overflow-y: hidden;
+}
+.table-info tr td:not(.disabled-cell):hover {
+  background-color: white;
+}
+.table-info tr td:not(.disabled-cell):active {
+  background-color: #ff8282;
+}
+.table-info tr .disabled-cell {
+  background-color: #bec8d1;
+}
+
+@media screen and (width < 768px) {
+  .container::before {
+    left: 0;
+    right: 0;
+    opacity: 0.3;
+  }
+  .container::after {
+    opacity: 0;
+  }
+  #prev {
+    left: 0;
+  }
+  #post {
+    right: 0;
+  }
+}
+@media screen and (width >= 768px) and (width < 1200px) {
+  .container::before {
+    left: 0;
+    opacity: 0.3;
+  }
+  .container::after {
+    right: 0;
+    opacity: 0.3;
+  }
+  #prev {
+    left: 0;
+  }
+  #post {
+    right: 0;
+  }
+}
+@media screen and (width >= 1200px) {
+  .container::before {
+    left: 0;
+  }
+  .container::after {
+    right: 0;
+  }
+  #prev {
+    left: 335px;
+  }
+  #post {
+    right: 335px;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,118 @@
+@import 'favo-colours.scss';
+$spqr-colour: #b50000;
+
+%set-the-cells-same-width{
+    box-sizing: border-box;
+    width: calc(100% / 7);
+    padding: 10px;
+}
+%SPQR{
+    color: $spqr-colour;
+    text-transform: uppercase;
+}
+:root{ font-family: 'Constantine', 'Trajan', 'Cinzel', 'Times New Roman'; }
+body{ background-color: lighten($miku-grey, 13%); }
+h1, p{ 
+    @extend %SPQR; 
+    line-height: 1;
+    .spqr{ font-size: 20px; }
+    // .fa-circle-info{
+    //     font-size: 28px;
+    //     color: $miku-colour;
+    //     cursor: pointer;
+    // }
+}
+.container{
+    position: relative;
+    &%flag-decoration{
+        content: '';
+        background-image: url(./imgs/1516336867.png); 
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin: auto;
+        top: 0;
+        z-index: -114514;
+        width: 330px;
+        height: 198px;
+        display: block;
+        position: absolute;
+    }
+    &::before{ @extend %flag-decoration; }
+    &::after{ @extend %flag-decoration; }
+}
+
+.border-primary th, .border-primary td{
+    border: 1px solid darken($miku-grey, 30%);
+}
+.table-info{
+    %month-switchers{
+        position: absolute;
+        top: 30px;
+        font-size: 72px;
+        color: $miku-black;
+        z-index: 6;
+        cursor: pointer;
+        &:hover{ 
+            color: lighten($miku-black, 20%); 
+            i{ -webkit-text-stroke: 1px $spqr-colour; }
+        }
+        &:active{ color: $miku-dark; }
+    }
+    #prev{ @extend %month-switchers; }
+    #post{ @extend %month-switchers; }
+    tbody{ height: 75vh; }
+    tr{
+        height: calc(100% / 7);
+        th{
+            @extend %set-the-cells-same-width;
+            @extend %SPQR;
+            line-height: 1;
+            color: darken($miku-grey, 30%);
+            background-color: lighten($miku-grey, 5%);
+            .spqr{ font-size: 12px; }
+        }
+        td:not(.disabled-cell){
+            @extend %set-the-cells-same-width;
+            background-color: lighten($spqr-colour, 60%);
+            cursor: pointer;
+            overflow-y: hidden;
+        
+            &:hover{ background-color: lighten($spqr-colour, 65%); }
+            &:active{ background-color: lighten($spqr-colour, 40%); }
+        }
+        .disabled-cell{
+            background-color: $miku-grey;
+        }
+    }
+}
+
+@media screen and (width < 768px) {
+    .container::before{
+        left: 0;
+        right: 0;
+        opacity: .3;
+    }
+    .container::after{
+        opacity: 0;
+    }
+    #prev{ left: 0; }
+    #post{ right: 0; }
+}
+@media screen and ( width >= 768px ) and ( width < 1200px) {
+    .container::before{
+        left: 0;
+        opacity: .3;
+    } 
+    .container::after{
+        right: 0;
+        opacity: .3;
+    }
+    #prev{ left: 0; }
+    #post{ right: 0; }
+}
+@media screen and (width >= 1200px) {
+    .container::before{ left: 0; } 
+    .container::after{ right: 0; }
+    #prev{ left: 335px; }
+    #post{ right: 335px; }
+}
