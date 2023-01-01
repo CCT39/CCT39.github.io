@@ -59,7 +59,10 @@ function setEventListeners(){
         showScheduleList(dataDate);
     })})
     closeScheduleList.addEventListener('click', () => { 
-        const timeout = setTimeout(() => { btnAddSchedule.removeAttribute('id') }, 476);
+        const timeout = setTimeout(() => { 
+            btnAddSchedule.removeAttribute('id');
+            scheduleContent.innerHTML = '';
+        }, 476);
     })
     btnAddSchedule.addEventListener('click', () => {
         let thisDate = btnAddSchedule.id;
