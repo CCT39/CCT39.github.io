@@ -201,9 +201,10 @@ function setThisMonth(){
         let thisYear = 'C.E. ' + currentYear;
         if (currentYear < 1){ 
             thisYear = 'B.C.E. ' + Math.abs(currentYear - 1); 
-            console.log('caesar');
             if (venividivici == false){
-                document.querySelector('.caesar').classList.add('veni');
+                let caesar = document.querySelector('.caesar');
+                caesar.querySelector('img').classList.remove('d-none');
+                caesar.classList.add('veni');
                 venividivici = true;
             }
         }
