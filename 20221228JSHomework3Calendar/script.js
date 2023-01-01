@@ -88,6 +88,7 @@ function setEventListeners(){
 function showScheduleList(key){
     let dataArr = JSON.parse(localStorage.getItem(key));
     if (dataArr == null){ return; }
+    scheduleContent.innerHTML = '';
 
     dataArr.forEach(schedule => {
         let li = document.createElement('li');
