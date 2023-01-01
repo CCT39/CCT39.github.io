@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Until: 2022.12.31 02:58 ~7hrs -->
+    <!-- Until: 2022.12.31 15:16 ~9hrs -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 w-100 px-0">
@@ -98,19 +98,38 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="inputSchedules" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="window-for-schedules" tabindex="-1" aria-labelledby="schedule-list" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h2 class="modal-title" id="schedule-list">Modal title</h2>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
-                ...
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                    <button type="button" class="btn btn-primary">儲存變更</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-schedule">新增行程</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="add-schedule" tabindex="-1" aria-labelledby="add-new-event" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="add-new-event">新增行程</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="schedule-title" class="d-block my-3"><input type="text" name="title" id="schedule-title" placeholder="新增標題" class="w-100 border-0"></label>
+                    <label for="begin-time" class="d-inline-block m-2">起始時間：<input type="time" name="start" id="begin-time"></label>
+                    <label for="end-time" class="d-inline-block m-2">結束時間：<input type="time" name="end" id="end-time"></label>
+                    <label for="schedule-content" class="d-block my-3"> <input type="textarea" name="description" id="schedule-content" placeholder="行程描述" class="w-100"> </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">離開</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">儲存變更</button>
                 </div>
             </div>
         </div>
@@ -130,21 +149,27 @@
         // date.getDate() 取得日（1-31）
         let currentYear, currentMonth, currentDate, currentWeekday;
         let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost;
+        let windowForSchedule, btnAddSchedule, windowAddSchedule, titleScheduleList, closeScheduleList;
         let trArr = [], currDayOfMonthArr = [];
         
         window.onload = () => {
-            getElement();
+            getElements();
             initVariables();
             setEventListeners();
             initTable();
         }
-        function getElement(){
+        function getElements(){
             tbody = document.querySelector('tbody');
             allTds = document.querySelectorAll('td');
             displayYear = document.getElementById('year');
             displayMonth = document.getElementById('month');
             btnPrev = document.getElementById('prev');
             btnPost = document.getElementById('post');
+            windowForSchedule = document.getElementById('window-for-schedules');
+            windowAddSchedule = document.getElementById('add-schedule');
+            btnAddSchedule = windowForSchedule.querySelector('[data-bs-target="#add-schedule"]');
+            closeScheduleList = windowForSchedule.querySelector('[data-bs-dismiss="modal"]');
+            titleScheduleList = document.getElementById('schedule-list');
         }
         function initVariables(){
             currentYear = currentFullDate.getFullYear();
@@ -155,6 +180,24 @@
         function setEventListeners(){
             btnPrev.addEventListener('click', () => { moveMonth(false); })
             btnPost.addEventListener('click', () => { moveMonth(true); })
+            allTds.forEach(td => { td.addEventListener('click', () => {
+                let dataDate = td.dataset.date;
+                console.log(dataDate);
+                let ymdArr = dataDate.split('-');
+                let titleText = `西元${ymdArr[0]}年${parseInt(ymdArr[1]) + 1}月${ymdArr[2]}日的行程`;
+
+                if (dataDate.includes('BC')){ 
+                    titleText = `西元前${ymdArr[0].replace('BC', '')}年${parseInt(ymdArr[1]) + 1}月${ymdArr[2]}日的行程`;
+                }
+
+                titleScheduleList.innerHTML = titleText;
+                btnAddSchedule.id = dataDate;
+            })})
+            closeScheduleList.addEventListener('click', () => { btnAddSchedule.removeAttribute('id'); })
+            btnAddSchedule.addEventListener('click', () => {
+                let thisDate = btnAddSchedule.id;
+            })
+
         }
         function initTable(){
             document.querySelectorAll('.spqr').forEach(x => { x.innerHTML = x.innerHTML.replaceAll('u', 'v').replaceAll('ae', 'ӕ').replaceAll('j', 'i').replaceAll('w', 'v'); })
@@ -174,13 +217,12 @@
         function checkMonthOverflow(){
             if (currentMonth >= 0 && currentMonth <= 11){ return; }
 
-            if (currentMonth < 0){ 
-                currentMonth += 12; 
-                currentYear -= 1;
-            } else if (currentMonth > 11){
-                currentMonth -= 12; 
-                currentYear += 1;
-            }
+            let yearCarry = 1;
+            if (currentMonth < 0){ yearCarry = -1; }
+
+            currentMonth = currentMonth - (12 * yearCarry); 
+            currentYear += yearCarry;
+
             checkLeapYear();
         }
 
@@ -194,6 +236,7 @@
         }
 
         function setThisMonth(){
+
             const clearThisMonth = () => {
                 allTds.forEach(x => { 
                     x.removeAttribute('data-date');
@@ -205,14 +248,18 @@
             }
             const showTextsOnCells = () => {
                 let firstDay = new Date(currentYear, currentMonth, 01);
+                while(Math.abs(currentYear) > 9999){ currentYear %= 10000; }
+                let monthIn2Digits = currentMonth.toString().padStart(2, '0');
+                let yearIn4Digits = currentYear.toString().padStart(4, '0');
+                if(currentYear < 1){ yearIn4Digits = 'BC' + Math.abs(currentYear - 1).toString().padStart(4, '0'); }
+
                 for(let i = 0; i < currDayOfMonthArr[currentMonth]; i++){
                     let index = firstDay.getDay() + i;
                     let targetCell = allTds[index];
-                    let tempDate = (i + 1).toString().padStart(2, '0');
-                    let monthIn2Digits = currentMonth.toString().padStart(2, '0');
+                    let dateIn2Digits = (i + 1).toString().padStart(2, '0');
 
-                    targetCell.innerHTML = `<p class="text-center fw-bold">${tempDate}</p>`;
-                    targetCell.setAttribute('data-date', `${currentYear}${monthIn2Digits}${tempDate}`);
+                    targetCell.innerHTML = `<p class="text-center fw-bold">${dateIn2Digits}</p>`;
+                    targetCell.setAttribute('data-date', `${yearIn4Digits}-${monthIn2Digits}-${dateIn2Digits}`);
                 }
             }
             const setAttributesOfCells = () => {
@@ -220,12 +267,14 @@
                     if (x.dataset.date == null){ x.classList.add('disabled-cell'); }
                     else{
                         x.setAttribute("data-bs-toggle", "modal");
-                        x.setAttribute("data-bs-target", "#inputSchedules");
+                        x.setAttribute("data-bs-target", "#window-for-schedules");
                     }
                 });
             }
             const displayYearAndMonthOnTitle = () => {
-                displayYear.innerHTML = currentYear;
+                let thisYear = currentYear;
+                if (currentYear < 1){ thisYear = currentYear - 1; }
+                displayYear.innerHTML = thisYear;
                 displayMonth.innerHTML = months[currentMonth];
             }
 
