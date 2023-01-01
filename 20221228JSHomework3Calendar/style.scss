@@ -4,7 +4,7 @@ $spqr-colour: #b50000;
 %set-the-cells-same-width{
     box-sizing: border-box;
     width: calc(100% / 7);
-    padding: 10px;
+    padding: 5px 3px;
 }
 %SPQR{
     color: $spqr-colour;
@@ -84,6 +84,36 @@ h1, p{
             background-color: $miku-grey;
         }
     }
+}
+.schedule-item{
+    p{
+        line-height: 1.2;
+        margin-bottom: 0;
+    }
+}
+small{ 
+    color: $miku-dark;
+    font-size: 12px; 
+}
+.caesar{
+    img{
+        width: 100%;
+        vertical-align: middle;
+    }
+}
+.caesar.veni{
+    position: fixed;
+    right: -150%;
+    top: 0;
+    opacity: .3;
+    z-index: -17;
+    height: 100vh;
+    animation: julius 3s;
+    right: -20%;
+}
+@keyframes julius {
+    from {right: -150%;}
+    to {right: -20%;}
 }
 
 @media screen and (width < 768px) {

@@ -1,7 +1,7 @@
 .table-info tr td:not(.disabled-cell), .table-info tr th {
   box-sizing: border-box;
   width: 14.2857142857%;
-  padding: 10px;
+  padding: 5px 3px;
 }
 
 .table-info tr th, h1, p {
@@ -90,6 +90,50 @@ h1 .spqr, p .spqr {
   background-color: #bec8d1;
 }
 
+.schedule-item p {
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+small {
+  color: #137a7f;
+  font-size: 12px;
+}
+
+.caesar img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.caesar.veni {
+  position: fixed;
+  right: -150%;
+  top: 0;
+  opacity: 0.3;
+  z-index: -17;
+  height: 100vh;
+  -webkit-animation: julius 3s;
+          animation: julius 3s;
+  right: -20%;
+}
+
+@-webkit-keyframes julius {
+  from {
+    right: -150%;
+  }
+  to {
+    right: -20%;
+  }
+}
+
+@keyframes julius {
+  from {
+    right: -150%;
+  }
+  to {
+    right: -20%;
+  }
+}
 @media screen and (width < 768px) {
   .container::before {
     left: 0;

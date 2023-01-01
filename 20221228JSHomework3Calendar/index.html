@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <!-- Until: 2022.12.31 15:16 ~9hrs -->
+    <!-- Until: 2022.12.31 22:42 ~14hrs -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 w-100 px-0">
@@ -19,7 +19,7 @@
                     <caption align="top">
                         <div id="prev"><i class="fa-sharp fa-solid fa-caret-left"></i></div>
                             <h1 class="col-12 text-center my-2 py-2 position-relative">
-                                羅馬人的日曆
+                                羅馬公民日曆
                                 <!-- <sup><i class="fa-solid fa-circle-info position-absolute"></i></sup> -->
                                 <br><span class="spqr">Calendarium Populumque Romanum</span>
                             </h1>
@@ -102,10 +102,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h2 class="modal-title" id="schedule-list">Modal title</h2>
+                    <h2 class="modal-title" id="schedule-list"></h2>
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
                 <div class="modal-body">
+                    <ul></ul>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
@@ -118,7 +119,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="add-new-event">新增行程</h3>
+                    <h2 class="modal-title" id="add-new-event">新增行程</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -129,10 +130,13 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">離開</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">儲存變更</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save">儲存變更</button>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="caesar"> 
+        <img src="./imgs/800px-Julius_Caesar_Coustou_Louvre_MR1798.jpg" alt=""> 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
@@ -147,10 +151,10 @@
         // date.getFullYear() 取得4位數字西元年
         // date.getMonth() 取得月份（0-11）
         // date.getDate() 取得日（1-31）
-        let currentYear, currentMonth, currentDate, currentWeekday;
-        let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost;
+        let currentYear, currentMonth, currentDate, currentWeekday, venividivici;
+        let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost, btnSave, scheduleContent;
         let windowForSchedule, btnAddSchedule, windowAddSchedule, titleScheduleList, closeScheduleList;
-        let trArr = [], currDayOfMonthArr = [];
+        let trArr = [], currDayOfMonthArr = [], allSchedules = [];
         
         window.onload = () => {
             getElements();
@@ -169,7 +173,10 @@
             windowAddSchedule = document.getElementById('add-schedule');
             btnAddSchedule = windowForSchedule.querySelector('[data-bs-target="#add-schedule"]');
             closeScheduleList = windowForSchedule.querySelector('[data-bs-dismiss="modal"]');
+            scheduleContent = windowForSchedule.querySelector('.modal-body>ul');
             titleScheduleList = document.getElementById('schedule-list');
+            btnSave = document.getElementById('save');
+            closeAddWindowBtns = windowAddSchedule.querySelectorAll('[data-bs-dismiss="modal"]');
         }
         function initVariables(){
             currentYear = currentFullDate.getFullYear();
@@ -182,7 +189,6 @@
             btnPost.addEventListener('click', () => { moveMonth(true); })
             allTds.forEach(td => { td.addEventListener('click', () => {
                 let dataDate = td.dataset.date;
-                console.log(dataDate);
                 let ymdArr = dataDate.split('-');
                 let titleText = `西元${ymdArr[0]}年${parseInt(ymdArr[1]) + 1}月${ymdArr[2]}日的行程`;
 
@@ -192,17 +198,69 @@
 
                 titleScheduleList.innerHTML = titleText;
                 btnAddSchedule.id = dataDate;
+
+                showScheduleList(dataDate);
             })})
-            closeScheduleList.addEventListener('click', () => { btnAddSchedule.removeAttribute('id'); })
+            closeScheduleList.addEventListener('click', () => { 
+                const timeout = setTimeout(() => { btnAddSchedule.removeAttribute('id') }, 476);
+            })
             btnAddSchedule.addEventListener('click', () => {
                 let thisDate = btnAddSchedule.id;
+                btnSave.setAttribute('data-key', thisDate);
             })
+            closeAddWindowBtns.forEach(x => x.addEventListener('click', () => {
+                const timeout = setTimeout(() => { btnSave.removeAttribute('data-key'); }, 476);
+            }))
+            btnSave.addEventListener('click', () => {
+                let inputs = windowAddSchedule.querySelectorAll('input');
+                let thisKey = btnSave.dataset.key;
+                
+                let obj = {
+                    date: thisKey,
+                    title: inputs[0].value,
+                    since: inputs[1].value,
+                    until: inputs[2].value,
+                    content: inputs[3].value
+                };
 
+                setIntoLS(obj);
+
+                // document.querySelector(`[data-date="${thisKey}"]`).setAttribute('class', 'occupied');
+            })
+        }
+        function showScheduleList(key){
+            let dataArr = JSON.parse(localStorage.getItem(key));
+            if (dataArr == null){ return; }
+
+            dataArr.forEach(schedule => {
+                let li = document.createElement('li');
+
+                let string = '';
+                string += `<h3>${schedule.since}：${schedule.title}</h3>`;
+                string += `<p>預計結束時間：${schedule.until}</p>`;
+                string += `<p>行程內容：${schedule.content}</p>`;
+
+                li.classList.add('schedule-item');
+                li.innerHTML = string;
+                scheduleContent.append(li);
+            })
         }
         function initTable(){
             document.querySelectorAll('.spqr').forEach(x => { x.innerHTML = x.innerHTML.replaceAll('u', 'v').replaceAll('ae', 'ӕ').replaceAll('j', 'i').replaceAll('w', 'v'); })
             checkLeapYear();
             setThisMonth();
+            venividivici = false;
+        }
+        function setIntoLS(obj){
+            let schedulesArr = [];
+            if (localStorage.getItem(obj.date) != null){
+                schedulesArr = JSON.parse(localStorage.getItem(obj.date));
+            } 
+            schedulesArr.push(obj);
+            localStorage.setItem(obj.date, JSON.stringify(schedulesArr));
+            let targetCell = document.querySelector(`[data-date="${obj.date}"]`)
+            targetCell.querySelectorAll('p+p').forEach(x => x.remove());
+            writeTextOnCell(targetCell, obj.date);
         }
 
         function moveMonth(isForward){
@@ -234,6 +292,14 @@
             if (beginningDate.getDay() != endingDate.getDay()){ currDayOfMonthArr[1] = 29; } 
             else { currDayOfMonthArr[1] = 28; }
         }
+        function writeTextOnCell(targetCell, key){
+            if (localStorage.getItem(key) != null){
+                let dataArr = JSON.parse(localStorage.getItem(key));
+                dataArr.forEach(x => {
+                    targetCell.innerHTML += `<p class="my-0"><small>${x.since} ${x.title}</small></p>`;
+                })
+            }
+        }
 
         function setThisMonth(){
 
@@ -243,12 +309,12 @@
                     x.removeAttribute('data-bs-toggle');
                     x.removeAttribute('data-bs-target');
                     x.classList.remove('disabled-cell'); 
+                    x.classList.remove('occupied');
                     x.innerHTML = '';
                 })
             }
             const showTextsOnCells = () => {
                 let firstDay = new Date(currentYear, currentMonth, 01);
-                while(Math.abs(currentYear) > 9999){ currentYear %= 10000; }
                 let monthIn2Digits = currentMonth.toString().padStart(2, '0');
                 let yearIn4Digits = currentYear.toString().padStart(4, '0');
                 if(currentYear < 1){ yearIn4Digits = 'BC' + Math.abs(currentYear - 1).toString().padStart(4, '0'); }
@@ -257,9 +323,12 @@
                     let index = firstDay.getDay() + i;
                     let targetCell = allTds[index];
                     let dateIn2Digits = (i + 1).toString().padStart(2, '0');
+                    let key = `${yearIn4Digits}-${monthIn2Digits}-${dateIn2Digits}`;
 
-                    targetCell.innerHTML = `<p class="text-center fw-bold">${dateIn2Digits}</p>`;
-                    targetCell.setAttribute('data-date', `${yearIn4Digits}-${monthIn2Digits}-${dateIn2Digits}`);
+                    targetCell.innerHTML = `<p class="text-center fw-bold mb-1">${dateIn2Digits}</p>`;
+                    targetCell.setAttribute('data-date', key);
+
+                    writeTextOnCell(targetCell, key);
                 }
             }
             const setAttributesOfCells = () => {
@@ -272,8 +341,15 @@
                 });
             }
             const displayYearAndMonthOnTitle = () => {
-                let thisYear = currentYear;
-                if (currentYear < 1){ thisYear = currentYear - 1; }
+                let thisYear = 'C.E. ' + currentYear;
+                if (currentYear < 1){ 
+                    thisYear = 'B.C.E. ' + Math.abs(currentYear - 1); 
+                    console.log('caesar');
+                    if (venividivici == false){
+                        document.querySelector('.caesar').classList.add('veni');
+                        venividivici = true;
+                    }
+                }
                 displayYear.innerHTML = thisYear;
                 displayMonth.innerHTML = months[currentMonth];
             }
