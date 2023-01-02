@@ -93,6 +93,10 @@ h1 .spqr, p .spqr {
 li {
   position: relative;
 }
+li .schedule-item:hover {
+  background-color: #fffbb9;
+  cursor: pointer;
+}
 li .schedule-item p {
   line-height: 1.2;
   margin-bottom: 0;

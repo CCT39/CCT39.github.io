@@ -10,7 +10,7 @@ const daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 // date.getDate() 取得日（1-31）
 let currentYear, currentMonth, currentDate, currentWeekday, venividivici;
 let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost, btnAddAndSave, btnCloseAndSave;
-let scheduleContent, scheduleItems, deleteScheduleItem;
+let scheduleContent, scheduleItems, deleteScheduleItem, addWindowTitle;
 let windowForSchedule, btnAddSchedule, windowAddSchedule, titleScheduleList, closeScheduleList;
 let trArr = [], currDayOfMonthArr = [], allSchedulesOfTheDay = [];
 
@@ -29,13 +29,14 @@ function getElements(){
     btnPost = document.getElementById('post');
     windowForSchedule = document.getElementById('window-for-schedules');
     windowAddSchedule = document.getElementById('add-schedule');
-    btnAddSchedule = windowForSchedule.querySelector('[data-bs-target="#add-schedule"]');
+    btnAddSchedule = windowForSchedule.querySelector('.btn[data-bs-target="#add-schedule"]');
     closeScheduleList = windowForSchedule.querySelectorAll('[data-bs-dismiss="modal"]');
     scheduleContent = windowForSchedule.querySelector('.modal-body>ul');
     titleScheduleList = document.getElementById('schedule-list');
     btnAddAndSave = document.getElementById('add-and-save');
     btnCloseAndSave = document.getElementById('close-and-save');
     closeAddWindowBtns = windowAddSchedule.querySelectorAll('[data-bs-dismiss="modal"]');
+    addWindowTitle = document.getElementById('add-new-event');
 }
 function initVariables(){
     currentYear = currentFullDate.getFullYear();
@@ -54,7 +55,6 @@ function setEventListeners(){
         if (dataDate.includes('BC')){ 
             titleText = `西元前${ymdArr[0].replace('BC', '')}年${parseInt(ymdArr[1]) + 1}月${ymdArr[2]}日的行程`;
         }
-
         titleScheduleList.innerHTML = titleText;
         btnCloseAndSave.setAttribute('data-key', dataDate);
         btnAddSchedule.id = dataDate;
@@ -64,19 +64,28 @@ function setEventListeners(){
         const timeout = setTimeout(() => { 
             btnCloseAndSave.removeAttribute('data-key');
             btnAddSchedule.removeAttribute('id');
+            allSchedulesOfTheDay = '';
             scheduleContent.innerHTML = '';
         }, 476);
     }))
     btnAddSchedule.addEventListener('click', () => {
+        addWindowTitle.innerHTML = '修改行程';
+
         let thisDate = btnAddSchedule.id;
         btnAddAndSave.setAttribute('data-key', thisDate);
     })
     closeAddWindowBtns.forEach(x => x.addEventListener('click', () => {
-        const timeout = setTimeout(() => { btnAddAndSave.removeAttribute('data-key'); }, 476);
+        const timeout = setTimeout(() => { 
+            btnAddAndSave.removeAttribute('data-key'); 
+            btnAddAndSave.removeAttribute('data-edit'); 
+        }, 476);
     }))
     btnAddAndSave.addEventListener('click', () => {
         let inputs = windowAddSchedule.querySelectorAll('input');
         let thisKey = btnAddAndSave.dataset.key;
+        if(thisKey == null){
+            thisKey = document.querySelector('li[data-key]').dataset.key;
+        }
         
         let obj = {
             date: thisKey,
@@ -85,8 +94,9 @@ function setEventListeners(){
             until: inputs[2].value,
             content: inputs[3].value
         };
-
-        gonnaSetIntoLS(obj);
+        
+        if(btnAddAndSave.getAttribute('data-edit') != null){ editItem(obj); } 
+        else{ gonnaSetIntoLS(obj); }
     })
     btnCloseAndSave.addEventListener('click', () => {
         let arr = allSchedulesOfTheDay.filter(item => item.date != 'deleted');
@@ -94,6 +104,12 @@ function setEventListeners(){
 
         sendToLS(arr, key);
     })
+}
+function editItem(obj){
+    let index = btnAddAndSave.getAttribute('data-edit');
+    let newArray = allSchedulesOfTheDay.filter(x => x != allSchedulesOfTheDay[index]);
+    newArray.push(obj);
+    sendToLS(newArray, obj.date);
 }
 function showScheduleList(key){
     let dataArr = JSON.parse(localStorage.getItem(key));
@@ -106,7 +122,7 @@ function showScheduleList(key){
         let li = document.createElement('li');
         let item = document.createElement('div');
         li.innerHTML += `<i class="fa-regular fa-circle-xmark text-secondary" data-no="${i}" data-del="${key}"></i>`;
-        i++;
+
 
         let string = '';
         string += `<h3>${schedule.since}：${schedule.title}</h3>`;
@@ -114,7 +130,13 @@ function showScheduleList(key){
         string += `<p>行程內容：${schedule.content}</p>`;
 
         item.classList.add('schedule-item');
+        item.setAttribute('data-listid', i);
+        item.setAttribute("data-bs-toggle", "modal");
+        item.setAttribute("data-bs-target", "#add-schedule");
         item.innerHTML = string;
+
+        i++;
+        
         li.dataset.key = key;
         li.append(item);
         scheduleContent.append(li);
@@ -125,9 +147,19 @@ function setDynamicElements(){
     scheduleItems = windowForSchedule.querySelectorAll('.schedule-item');
     deleteScheduleItem = windowForSchedule.querySelectorAll('.fa-circle-xmark');
     
-    // scheduleItems.forEach(x => x.addEventListener('click', () => {
-    //     alert('hello');
-    // }))
+    scheduleItems.forEach(x => x.addEventListener('click', () => {
+        let inputs = windowAddSchedule.querySelectorAll('input');
+        let index = x.dataset.listid;
+        let currentDatas = allSchedulesOfTheDay[index];
+
+        inputs[0].value = currentDatas.title;
+        inputs[1].value = currentDatas.since;
+        inputs[2].value = currentDatas.until;
+        inputs[3].value = currentDatas.content;
+        
+        addWindowTitle.innerHTML = '修改行程';
+        btnAddAndSave.setAttribute('data-edit', index);
+    }))
     deleteScheduleItem.forEach(x => x.addEventListener('click', () => {
         dataArr = allSchedulesOfTheDay;
         dataArr[x.dataset.no].date = 'deleted';
@@ -157,7 +189,7 @@ function sendToLS(arr, key){
         localStorage.removeItem(key); 
         return; 
     }
-
+    arr = sortArrayBySince(arr);
     localStorage.setItem(key, JSON.stringify(arr));
     writeTextOnCell(targetCell, key);
 }
@@ -194,10 +226,17 @@ function checkLeapYear(){
 function writeTextOnCell(targetCell, key){
     if (localStorage.getItem(key) != null){
         let dataArr = JSON.parse(localStorage.getItem(key));
+        dataArr = sortArrayBySince(dataArr);
         dataArr.forEach(x => {
             targetCell.innerHTML += `<p class="my-0"><small>${x.since} ${x.title}</small></p>`;
         })
     }
+}
+function sortArrayBySince(arr){
+    const replaceColon = (x) => { 
+        return x.since.replace(':', '').toString(); 
+    }
+    return arr.sort((a, b) => { return replaceColon(a) - replaceColon(b); })
 }
 
 function setThisMonth(){
