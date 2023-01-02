@@ -88,10 +88,10 @@ h1, p{
 li{
     position: relative;
     .schedule-item{
-        &:hover{ 
-            background-color: darken($miku-white, 10%); 
-            cursor: pointer;
-        }
+        // &:hover{ 
+        //     background-color: darken($miku-white, 10%); 
+        //     cursor: pointer;
+        // }
         p{
             line-height: 1.2;
             margin-bottom: 0;

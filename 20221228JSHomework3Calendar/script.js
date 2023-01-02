@@ -125,9 +125,9 @@ function setDynamicElements(){
     scheduleItems = windowForSchedule.querySelectorAll('.schedule-item');
     deleteScheduleItem = windowForSchedule.querySelectorAll('.fa-circle-xmark');
     
-    scheduleItems.forEach(x => x.addEventListener('click', () => {
-        alert('hello');
-    }))
+    // scheduleItems.forEach(x => x.addEventListener('click', () => {
+    //     alert('hello');
+    // }))
     deleteScheduleItem.forEach(x => x.addEventListener('click', () => {
         dataArr = allSchedulesOfTheDay;
         dataArr[x.dataset.no].date = 'deleted';
@@ -157,7 +157,7 @@ function sendToLS(arr, key){
         localStorage.removeItem(key); 
         return; 
     }
-    
+
     localStorage.setItem(key, JSON.stringify(arr));
     writeTextOnCell(targetCell, key);
 }
