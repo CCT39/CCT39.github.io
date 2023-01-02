@@ -91,8 +91,7 @@ function setEventListeners(){
     btnCloseAndSave.addEventListener('click', () => {
         let arr = allSchedulesOfTheDay.filter(item => item.date != 'deleted');
         let key = btnCloseAndSave.dataset.key;
-        
-        if(arr.length == 0){ localStorage.removeItem(key); }
+
         sendToLS(arr, key);
     })
 }
@@ -120,6 +119,9 @@ function showScheduleList(key){
         li.append(item);
         scheduleContent.append(li);
     })
+    setDynamicElements();
+}
+function setDynamicElements(){
     scheduleItems = windowForSchedule.querySelectorAll('.schedule-item');
     deleteScheduleItem = windowForSchedule.querySelectorAll('.fa-circle-xmark');
     
@@ -148,9 +150,15 @@ function gonnaSetIntoLS(obj){
     sendToLS(schedulesArr, obj.date);
 }
 function sendToLS(arr, key){
-    localStorage.setItem(key, JSON.stringify(arr));
-    let targetCell = document.querySelector(`[data-date="${key}"]`)
+    let targetCell = document.querySelector(`[data-date="${key}"]`);
     targetCell.querySelectorAll('p+p').forEach(x => x.remove());
+
+    if(arr.length == 0){ 
+        localStorage.removeItem(key); 
+        return; 
+    }
+    
+    localStorage.setItem(key, JSON.stringify(arr));
     writeTextOnCell(targetCell, key);
 }
 
