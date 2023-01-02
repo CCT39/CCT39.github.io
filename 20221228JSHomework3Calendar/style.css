@@ -90,9 +90,31 @@ h1 .spqr, p .spqr {
   background-color: #bec8d1;
 }
 
-.schedule-item p {
+li {
+  position: relative;
+}
+li .schedule-item:hover {
+  background-color: #fffbb9;
+  cursor: pointer;
+}
+li .schedule-item p {
   line-height: 1.2;
   margin-bottom: 0;
+}
+li .fa-circle-xmark {
+  position: absolute;
+  left: -1.2em;
+  top: 0.6em;
+  z-index: 1;
+  cursor: pointer;
+  vertical-align: middle;
+}
+li .fa-circle-xmark:hover::before {
+  color: #e12885;
+}
+
+#window-for-schedules ul {
+  margin-left: 0;
 }
 
 small {

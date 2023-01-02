@@ -9,9 +9,10 @@ const daysOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 // date.getMonth() 取得月份（0-11）
 // date.getDate() 取得日（1-31）
 let currentYear, currentMonth, currentDate, currentWeekday, venividivici;
-let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost, btnSave, scheduleContent;
+let tbody, allTds, displayYear, displayMonth, btnPrev, btnPost, btnAddAndSave, btnCloseAndSave;
+let scheduleContent, scheduleItems, deleteScheduleItem;
 let windowForSchedule, btnAddSchedule, windowAddSchedule, titleScheduleList, closeScheduleList;
-let trArr = [], currDayOfMonthArr = [], allSchedules = [];
+let trArr = [], currDayOfMonthArr = [], allSchedulesOfTheDay = [];
 
 window.onload = () => {
     getElements();
@@ -29,10 +30,11 @@ function getElements(){
     windowForSchedule = document.getElementById('window-for-schedules');
     windowAddSchedule = document.getElementById('add-schedule');
     btnAddSchedule = windowForSchedule.querySelector('[data-bs-target="#add-schedule"]');
-    closeScheduleList = windowForSchedule.querySelector('[data-bs-dismiss="modal"]');
+    closeScheduleList = windowForSchedule.querySelectorAll('[data-bs-dismiss="modal"]');
     scheduleContent = windowForSchedule.querySelector('.modal-body>ul');
     titleScheduleList = document.getElementById('schedule-list');
-    btnSave = document.getElementById('save');
+    btnAddAndSave = document.getElementById('add-and-save');
+    btnCloseAndSave = document.getElementById('close-and-save');
     closeAddWindowBtns = windowAddSchedule.querySelectorAll('[data-bs-dismiss="modal"]');
 }
 function initVariables(){
@@ -54,26 +56,27 @@ function setEventListeners(){
         }
 
         titleScheduleList.innerHTML = titleText;
+        btnCloseAndSave.setAttribute('data-key', dataDate);
         btnAddSchedule.id = dataDate;
-
         showScheduleList(dataDate);
     })})
-    closeScheduleList.addEventListener('click', () => { 
+    closeScheduleList.forEach(x => x.addEventListener('click', () => { 
         const timeout = setTimeout(() => { 
+            btnCloseAndSave.removeAttribute('data-key');
             btnAddSchedule.removeAttribute('id');
             scheduleContent.innerHTML = '';
         }, 476);
-    })
+    }))
     btnAddSchedule.addEventListener('click', () => {
         let thisDate = btnAddSchedule.id;
-        btnSave.setAttribute('data-key', thisDate);
+        btnAddAndSave.setAttribute('data-key', thisDate);
     })
     closeAddWindowBtns.forEach(x => x.addEventListener('click', () => {
-        const timeout = setTimeout(() => { btnSave.removeAttribute('data-key'); }, 476);
+        const timeout = setTimeout(() => { btnAddAndSave.removeAttribute('data-key'); }, 476);
     }))
-    btnSave.addEventListener('click', () => {
+    btnAddAndSave.addEventListener('click', () => {
         let inputs = windowAddSchedule.querySelectorAll('input');
-        let thisKey = btnSave.dataset.key;
+        let thisKey = btnAddAndSave.dataset.key;
         
         let obj = {
             date: thisKey,
@@ -83,28 +86,52 @@ function setEventListeners(){
             content: inputs[3].value
         };
 
-        setIntoLS(obj);
-
-        // document.querySelector(`[data-date="${thisKey}"]`).setAttribute('class', 'occupied');
+        gonnaSetIntoLS(obj);
+    })
+    btnCloseAndSave.addEventListener('click', () => {
+        let arr = allSchedulesOfTheDay.filter(item => item.date != 'deleted');
+        let key = btnCloseAndSave.dataset.key;
+        
+        if(arr.length == 0){ localStorage.removeItem(key); }
+        sendToLS(arr, key);
     })
 }
 function showScheduleList(key){
     let dataArr = JSON.parse(localStorage.getItem(key));
     scheduleContent.innerHTML = '';
+    allSchedulesOfTheDay = dataArr;
     if (dataArr == null){ return; }
 
+    let i = 0;
     dataArr.forEach(schedule => {
         let li = document.createElement('li');
+        let item = document.createElement('div');
+        li.innerHTML += `<i class="fa-regular fa-circle-xmark text-secondary" data-no="${i}" data-del="${key}"></i>`;
+        i++;
 
         let string = '';
         string += `<h3>${schedule.since}：${schedule.title}</h3>`;
         string += `<p>預計結束時間：${schedule.until}</p>`;
         string += `<p>行程內容：${schedule.content}</p>`;
 
-        li.classList.add('schedule-item');
-        li.innerHTML = string;
+        item.classList.add('schedule-item');
+        item.innerHTML = string;
+        li.dataset.key = key;
+        li.append(item);
         scheduleContent.append(li);
     })
+    scheduleItems = windowForSchedule.querySelectorAll('.schedule-item');
+    deleteScheduleItem = windowForSchedule.querySelectorAll('.fa-circle-xmark');
+    
+    scheduleItems.forEach(x => x.addEventListener('click', () => {
+        alert('hello');
+    }))
+    deleteScheduleItem.forEach(x => x.addEventListener('click', () => {
+        dataArr = allSchedulesOfTheDay;
+        dataArr[x.dataset.no].date = 'deleted';
+        allSchedulesOfTheDay = dataArr;
+        x.parentNode.remove();
+    }))
 }
 function initTable(){
     document.querySelectorAll('.spqr').forEach(x => { x.innerHTML = x.innerHTML.replaceAll('u', 'v').replaceAll('ae', 'ӕ').replaceAll('j', 'i').replaceAll('w', 'v'); })
@@ -112,16 +139,19 @@ function initTable(){
     setThisMonth();
     venividivici = false;
 }
-function setIntoLS(obj){
+function gonnaSetIntoLS(obj){
     let schedulesArr = [];
     if (localStorage.getItem(obj.date) != null){
         schedulesArr = JSON.parse(localStorage.getItem(obj.date));
     } 
     schedulesArr.push(obj);
-    localStorage.setItem(obj.date, JSON.stringify(schedulesArr));
-    let targetCell = document.querySelector(`[data-date="${obj.date}"]`)
+    sendToLS(schedulesArr, obj.date);
+}
+function sendToLS(arr, key){
+    localStorage.setItem(key, JSON.stringify(arr));
+    let targetCell = document.querySelector(`[data-date="${key}"]`)
     targetCell.querySelectorAll('p+p').forEach(x => x.remove());
-    writeTextOnCell(targetCell, obj.date);
+    writeTextOnCell(targetCell, key);
 }
 
 function moveMonth(isForward){
