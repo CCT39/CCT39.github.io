@@ -87,16 +87,20 @@ function setEventListeners(){
         if(thisKey == null){
             thisKey = document.querySelector('li[data-key]').dataset.key;
         }
+        let ttl = 'Untitled';
         let snc = inputs[1].value;
         let utl = inputs[2].value;
+        let ctn = '沒有內容';
+        if(inputs[0].value != ''){ ttl = inputs[0].value; }
         if(inputs[1].value > inputs[2].value){
             snc = inputs[2].value;
             utl = inputs[1].value;
             alert('由於起始時間比結束時間早，因此將其調換！！');
         }
+        if( inputs[3].value != '' ){ ctn = inputs[3].value; }
         let obj = {
             date: thisKey,
-            title: inputs[0].value,
+            title: ttl,
             since: snc,
             until: utl,
             content: inputs[3].value
