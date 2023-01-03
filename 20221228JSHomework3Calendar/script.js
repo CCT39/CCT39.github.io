@@ -103,7 +103,7 @@ function setEventListeners(){
             title: ttl,
             since: snc,
             until: utl,
-            content: inputs[3].value
+            content: ctn
         };
         
         if(btnAddAndSave.getAttribute('data-edit') != null){ editItem(obj); } 
