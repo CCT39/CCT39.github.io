@@ -94,7 +94,7 @@ function judgeInput(inputString, answer){
         for (let i = 0; i < ansArray.length; i++){
             if (inputValueArray[i] == ansArray[i]){
                 countA += 1;
-            } else if (ansArray.includes(inputValueArray[i])){
+            } else if (inputValueArray.includes(ansArray[i])){
                 countB += 1;
             }
         }
