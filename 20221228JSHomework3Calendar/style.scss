@@ -76,6 +76,7 @@ h1, p{
             background-color: lighten($spqr-colour, 60%);
             cursor: pointer;
             overflow-y: hidden;
+            p, small{ pointer-events: none; }
         
             &:hover{ background-color: lighten($spqr-colour, 65%); }
             &:active{ background-color: lighten($spqr-colour, 40%); }

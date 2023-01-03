@@ -67,7 +67,7 @@ function setEventListeners(){
     }))
     btnsOfSize16.forEach(x => x.addEventListener('click', (e) => {
         let level = getTargetData(e);
-        let thisGPU, thisStorage, targetItem;
+        let thisGPU, thisStorage;
         
         if (level == 'basic'){ thisGPU = '16核心'; thisStorage = '512GB'; }
         else if (level == 'medium'){ thisGPU = '16核心'; thisStorage = '1TB'; }
@@ -205,7 +205,7 @@ function changePicAndToggleBtnArea(btnId){
     btnArr.forEach(x => x.classList.remove(hidden));
     btnArr.forEach(x => x.classList.add(hidden));
 
-    let col = `col-${btnId}`;
+    // let col = `col-${btnId}`;
     if (btnId == 'iphone'){
         mainImg.src = iPhonePic;
         btnArr[0].classList.remove(hidden);

@@ -80,6 +80,9 @@ h1 .spqr, p .spqr {
   cursor: pointer;
   overflow-y: hidden;
 }
+.table-info tr td:not(.disabled-cell) p, .table-info tr td:not(.disabled-cell) small {
+  pointer-events: none;
+}
 .table-info tr td:not(.disabled-cell):hover {
   background-color: white;
 }
