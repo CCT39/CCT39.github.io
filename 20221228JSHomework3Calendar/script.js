@@ -70,7 +70,7 @@ function setEventListeners(){
     }))
     btnAddSchedule.addEventListener('click', () => {
         windowAddSchedule.querySelectorAll('input').forEach(x => x.value = '');
-        addWindowTitle.innerHTML = '修改行程';
+        addWindowTitle.innerHTML = '新增行程';
 
         let thisDate = btnAddSchedule.id;
         btnAddAndSave.setAttribute('data-key', thisDate);
