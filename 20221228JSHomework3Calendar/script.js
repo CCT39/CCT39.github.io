@@ -69,6 +69,7 @@ function setEventListeners(){
         }, 476);
     }))
     btnAddSchedule.addEventListener('click', () => {
+        windowAddSchedule.querySelectorAll('input').forEach(x => x.value = '');
         addWindowTitle.innerHTML = '修改行程';
 
         let thisDate = btnAddSchedule.id;
@@ -86,12 +87,18 @@ function setEventListeners(){
         if(thisKey == null){
             thisKey = document.querySelector('li[data-key]').dataset.key;
         }
-        
+        let snc = inputs[1].value;
+        let utl = inputs[2].value;
+        if(inputs[1].value > inputs[2].value){
+            snc = inputs[2].value;
+            utl = inputs[1].value;
+            alert('由於起始時間比結束時間早，因此將其調換！！');
+        }
         let obj = {
             date: thisKey,
             title: inputs[0].value,
-            since: inputs[1].value,
-            until: inputs[2].value,
+            since: snc,
+            until: utl,
             content: inputs[3].value
         };
         
@@ -99,6 +106,8 @@ function setEventListeners(){
         else{ gonnaSetIntoLS(obj); }
     })
     btnCloseAndSave.addEventListener('click', () => {
+        if (allSchedulesOfTheDay == null){ return; }
+
         let arr = allSchedulesOfTheDay.filter(item => item.date != 'deleted');
         let key = btnCloseAndSave.dataset.key;
 
@@ -233,10 +242,10 @@ function writeTextOnCell(targetCell, key){
     }
 }
 function sortArrayBySince(arr){
-    const replaceColon = (x) => { 
-        return x.since.replace(':', '').toString(); 
+    const removeColon = (x) => { 
+        return x.replace(':', '').toString(); 
     }
-    return arr.sort((a, b) => { return replaceColon(a) - replaceColon(b); })
+    return arr.sort((a, b) => { return removeColon(a.since) - removeColon(b.since); })
 }
 
 function setThisMonth(){
