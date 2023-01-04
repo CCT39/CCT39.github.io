@@ -125,7 +125,7 @@ function setInputValues(e){
         content: ctn
     };
     
-    if(e.target.getAttribute('data-edit') != null){ editItem(obj); } 
+    if(e.target.getAttribute('data-edit') != null || e.target.getAttribute('data-edit') != 0){ editItem(obj); } 
     else{ gonnaSetIntoLS(obj); }
 }
 function closeAndSaveEdits(e){
@@ -141,6 +141,7 @@ function editItem(obj){
     let newArray = allSchedulesOfTheDay.filter(x => x != allSchedulesOfTheDay[index]);
     newArray.push(obj);
     sendToLS(newArray, obj.date);
+    cancelToAddSchedule();
 }
 function showScheduleList(key){
     let dataArr = JSON.parse(localStorage.getItem(key));
