@@ -82,7 +82,7 @@ function clearAttributesOfBtns(){
     setTimeout(() => { 
         btnCloseAndSave.removeAttribute('data-key');
         btnAddSchedule.removeAttribute('id');
-        allSchedulesOfTheDay = '';
+        allSchedulesOfTheDay = [];
         scheduleContent.innerHTML = '';
     }, 476);
 }
@@ -137,6 +137,7 @@ function closeAndSaveEdits(e){
     sendToLS(arr, key);
 }
 function editItem(obj){
+    if (allSchedulesOfTheDay == null){ return; }
     let index = btnAddAndSave.getAttribute('data-edit');
     let newArray = allSchedulesOfTheDay.filter(x => x != allSchedulesOfTheDay[index]);
     newArray.push(obj);
