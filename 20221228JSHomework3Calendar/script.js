@@ -97,6 +97,7 @@ function cancelToAddSchedule(){
     setTimeout(() => { 
         btnAddAndSave.removeAttribute('data-key'); 
         btnAddAndSave.removeAttribute('data-edit'); 
+        allSchedulesOfTheDay = [];
     }, 476);
 }
 function setInputValues(e){
@@ -133,6 +134,7 @@ function closeAndSaveEdits(e){
 
     let arr = allSchedulesOfTheDay.filter(item => item.date != 'deleted');
     let key = e.target.dataset.key;
+    allSchedulesOfTheDay = [];
 
     sendToLS(arr, key);
 }
