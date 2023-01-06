@@ -112,13 +112,16 @@ function setInputValues(e){
     let snc = inputs[1].value;
     let utl = inputs[2].value;
     let ctn = '沒有內容';
+    const checkTimeInputs = (time, period) => {
+        if(time.value.length < 1){ period = '00:00'; }
+    }
     if(inputs[0].value != ''){ ttl = inputs[0].value; }
-    if(inputs[1].value.length < 1){ snc = '00:00' }
-    if(inputs[2].value.length < 1){ utl = '00:00' }
+    checkTimeInputs(inputs[1], snc);
+    checkTimeInputs(inputs[2], utl);
     if(inputs[1].value > inputs[2].value){
         snc = inputs[2].value;
         utl = inputs[1].value;
-        alert('由於起始時間比結束時間早，因此將其調換！！');
+        alert('由於起始時間比結束時間早，因此將其調換！');
     }
     if( inputs[3].value != '' ){ ctn = inputs[3].value; }
     let obj = {
