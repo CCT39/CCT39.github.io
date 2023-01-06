@@ -100,6 +100,9 @@ li .schedule-item:hover {
   background-color: #fffbb9;
   cursor: pointer;
 }
+li .schedule-item h3, li .schedule-item p {
+  pointer-events: none;
+}
 li .schedule-item p {
   line-height: 1.2;
   margin-bottom: 0;

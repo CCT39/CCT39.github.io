@@ -93,7 +93,9 @@ li{
             background-color: darken($miku-white, 10%); 
             cursor: pointer;
         }
+        h3{ pointer-events: none; }
         p{
+            @extend h3;
             line-height: 1.2;
             margin-bottom: 0;
         }

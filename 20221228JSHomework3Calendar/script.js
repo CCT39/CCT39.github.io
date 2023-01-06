@@ -84,7 +84,7 @@ function clearAttributesOfBtns(){
         btnAddSchedule.removeAttribute('id');
         allSchedulesOfTheDay = [];
         scheduleContent.innerHTML = '';
-    }, 476);
+    }, 113);
 }
 function gonnaSetASchedule(e){
     scheduleInputs.forEach(x => x.value = '');
@@ -92,13 +92,14 @@ function gonnaSetASchedule(e){
 
     let thisDate = e.target.id;
     btnAddAndSave.setAttribute('data-key', thisDate);
+    btnAddAndSave.setAttribute('data-edit', '');
 }
 function cancelToAddSchedule(){
     setTimeout(() => { 
         btnAddAndSave.removeAttribute('data-key'); 
         btnAddAndSave.removeAttribute('data-edit'); 
         allSchedulesOfTheDay = [];
-    }, 476);
+    }, 113);
 }
 function setInputValues(e){
     let inputs = scheduleInputs;
@@ -112,6 +113,8 @@ function setInputValues(e){
     let utl = inputs[2].value;
     let ctn = '沒有內容';
     if(inputs[0].value != ''){ ttl = inputs[0].value; }
+    if(inputs[1].value.length < 1){ snc = '00:00' }
+    if(inputs[2].value.length < 1){ utl = '00:00' }
     if(inputs[1].value > inputs[2].value){
         snc = inputs[2].value;
         utl = inputs[1].value;
@@ -126,7 +129,7 @@ function setInputValues(e){
         content: ctn
     };
     
-    if(e.target.getAttribute('data-edit') != null || e.target.getAttribute('data-edit') != 0){ editItem(obj); } 
+    if(e.target.getAttribute('data-edit') != null && e.target.getAttribute('data-edit').length > 2){ editItem(obj); } 
     else{ gonnaSetIntoLS(obj); }
 }
 function closeAndSaveEdits(e){
@@ -140,7 +143,7 @@ function closeAndSaveEdits(e){
 }
 function editItem(obj){
     if (allSchedulesOfTheDay == null){ return; }
-    let index = btnAddAndSave.getAttribute('data-edit');
+    let index = btnAddAndSave.getAttribute('data-edit').split('-')[1];
     let newArray = allSchedulesOfTheDay.filter(x => x != allSchedulesOfTheDay[index]);
     newArray.push(obj);
     sendToLS(newArray, obj.date);
@@ -196,7 +199,7 @@ function setDynamicElements(){
         inputs[3].value = currentDatas.content;
         
         addWindowTitle.innerHTML = '修改行程';
-        btnAddAndSave.setAttribute('data-edit', index);
+        btnAddAndSave.setAttribute('data-edit', `ed-${index}`);
     }))
     deleteScheduleItem.forEach(x => x.addEventListener('click', () => {
         dataArr = allSchedulesOfTheDay;
@@ -220,7 +223,8 @@ function gonnaSetIntoLS(obj){
 }
 function sendToLS(arr, key){
     let targetCell = document.querySelector(`[data-date="${key}"]`);
-    targetCell.querySelectorAll('p+p').forEach(x => x.remove());
+    let scheduleContents = targetCell.querySelectorAll('p+p');
+    if (scheduleContents.length > 0){ scheduleContents.forEach(x => x.remove()); }
 
     if(arr.length == 0){ 
         localStorage.removeItem(key); 
