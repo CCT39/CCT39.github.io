@@ -58,7 +58,7 @@ function setEventListeners(){
 
     btnAddSchedule.addEventListener('click', gonnaSetASchedule);
 
-    closeAddWindowBtns.forEach(x => x.addEventListener('click', () => cancelToAddSchedule));
+    closeAddWindowBtns.forEach(x => x.addEventListener('click', cancelToAddSchedule));
 
     btnAddAndSave.addEventListener('click', setInputValues);
 
@@ -84,7 +84,7 @@ function clearAttributesOfBtns(){
         btnAddSchedule.removeAttribute('id');
         allSchedulesOfTheDay = [];
         scheduleContent.innerHTML = '';
-    }, 113);
+    }, 76);
 }
 function gonnaSetASchedule(e){
     scheduleInputs.forEach(x => x.value = '');
@@ -99,7 +99,7 @@ function cancelToAddSchedule(){
         btnAddAndSave.removeAttribute('data-key'); 
         btnAddAndSave.removeAttribute('data-edit'); 
         allSchedulesOfTheDay = [];
-    }, 113);
+    }, 76);
 }
 function setInputValues(e){
     let inputs = scheduleInputs;
