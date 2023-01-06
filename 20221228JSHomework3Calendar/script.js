@@ -188,10 +188,11 @@ function setDynamicElements(){
     scheduleItems = windowForSchedule.querySelectorAll('.schedule-item');
     deleteScheduleItem = windowForSchedule.querySelectorAll('.fa-circle-xmark');
     
-    scheduleItems.forEach(x => x.addEventListener('click', () => {
+    scheduleItems.forEach(x => x.addEventListener('click', (e) => {
         let inputs = scheduleInputs;
         let index = x.dataset.listid;
         let currentDatas = allSchedulesOfTheDay[index];
+        let thiskey = e.target.parentNode.dataset.key;
 
         inputs[0].value = currentDatas.title;
         inputs[1].value = currentDatas.since;
@@ -199,6 +200,7 @@ function setDynamicElements(){
         inputs[3].value = currentDatas.content;
         
         addWindowTitle.innerHTML = '修改行程';
+        btnAddAndSave.setAttribute('data-key', thiskey);
         btnAddAndSave.setAttribute('data-edit', `ed-${index}`);
     }))
     deleteScheduleItem.forEach(x => x.addEventListener('click', () => {
@@ -223,8 +225,7 @@ function gonnaSetIntoLS(obj){
 }
 function sendToLS(arr, key){
     let targetCell = document.querySelector(`[data-date="${key}"]`);
-    let scheduleContents = targetCell.querySelectorAll('p+p');
-    if (scheduleContents.length > 0){ scheduleContents.forEach(x => x.remove()); }
+    targetCell.querySelectorAll('p+p').forEach(x => x.remove());
 
     if(arr.length == 0){ 
         localStorage.removeItem(key); 
