@@ -150,7 +150,10 @@ function showScheduleList(key){
     let dataArr = JSON.parse(localStorage.getItem(key));
     scheduleContent.innerHTML = '';
     allSchedulesOfTheDay = dataArr;
-    if (dataArr == null){ return; }
+    if (dataArr == null){ 
+        allSchedulesOfTheDay = [];
+        return; 
+    }
 
     let i = 0;
     dataArr.forEach(schedule => {
