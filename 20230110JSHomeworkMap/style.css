@@ -30,6 +30,7 @@ small{
     color: #666;
 }
 .line-name{ color: #e12885; }
+.company-name{ color: #39c5bb; }
 tbody{box-shadow: 0 0 2px #888;}
 td{padding: 8px;}
 .modal-footer p:last-child small{ text-decoration: line-through; }
