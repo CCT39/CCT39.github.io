@@ -16,6 +16,7 @@ body{
     font-family: 'Times New Roman', Times, serif, 'Microsoft Jheng Hei';
 }
 #map{
+    opacity: .9;
     height: 90vh;
     width: 100%;
     border-radius: 10px;
@@ -31,3 +32,4 @@ small{
 .line-name{ color: #e12885; }
 tbody{box-shadow: 0 0 2px #888;}
 td{padding: 8px;}
+.modal-footer p:last-child small{ text-decoration: line-through; }
