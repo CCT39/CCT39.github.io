@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Taiwan Sugar Railways in 1940</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-12 col-md-6">
+                <h1 class="fs-2 py-5">1940年臺灣糖業鐵路客運營業線<sup><i class="fa-solid fa-circle-info text-primary" id="information" data-bs-toggle="modal" data-bs-target="#info"></i></sup>分布圖</h1>
+                <p class="fw-bold">
+                    營業線名稱：
+                    <strong class="line-name fs-2"></strong>
+                </p>
+                <p class="fw-bold">
+                    經營者：
+                    <strong class="company-name fs-3"></strong>
+                </p>
+                <table class="legend">
+                    <thead><h2 class="fs-3">圖例</h2></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="info" tabindex="-1" aria-labelledby="info-content" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fw-bold" id="info-content">糖業鐵路客運營業線</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>臺灣糖業鐵路對20世紀的臺灣地方交通來說至關重要。在日本統治時代初期，製糖會社、製糖工場以及製糖專用鐵路如雨後春筍般出現；這些以製糖為目的開設的鐵道路線，部分由於經過重要聚落或交通樞紐，在地方要求或企業主動決策下，以1909年05月20日，鹽水港製糖會社開辦新營至鹽水間鐵路（布袋線之前身）為肇始，各製糖會社紛紛利用其製糖鐵路兼辦客運；在陸上交通不便的年代，承擔了維持臺灣尤其是中南部聚落間交通的重任，為地方貢獻甚鉅。</p>
+                    <p>本次的地圖顯示了1940年（民國29年，昭和15年）臺灣的糖業鐵路分布圖：這些鐵路經歷了三次製糖會社大合併，除了鳳山至林園間仍由臺資新興製糖會社經營外，均落入日資四大製糖會社的手中，直到戰後四大會社在臺資產均由臺糖公司接收為止。</p>
+                </div>
+                <div class="modal-footer justify-content-start">
+                    <h3>資料來源：</h3>
+                    <p>背景圖片：《西螺車站通車上車》（年代不詳）<br>臺灣糖業股份有限公司總務課提供 <small> 非經許可不得任意轉載</small></p>
+                    <p>圖資與文獻資料：作者 <small>（拿以前寫paper的素材來用）</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img id="bgi" src="./xiluo.png" alt="">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="./dataSource.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
