@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tainan Map</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./favo_colours.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- Until: 2023.01.13 05:04 ~14hrs -->
+    <div class="container mt-2 mt-lg-5">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <div id="map"></div>
+            </div>
+            <div class="col-12 col-lg-6 d-flex flex-column-reverse d-lg-block">
+                <div class="row py-5">
+                    <div class="col-12">
+                        <h1>大臺南行政區猜謎</h1>
+                        <button type="button" class="btn btn-primary" id="btn-start">開始！</button>
+                        <p class="msg fs-3 fw-bold">37個行政區，你能猜中幾個？</p>
+                        <p>
+                            <i class="fa-regular fa-circle text-success"></i><span id="corrects">0</span>/ <span class="total-questions"></span> 題<br>
+                            <i class="fa-solid fa-xmark text-danger"></i><span id="wrongs">0</span>/ <span class="total-questions"></span> 題
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 options">
+                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="0">
+                            A.
+                            <strong class="option-content"></strong>
+                        </button>
+                    </div>
+                    <div class="col-3 options">
+                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="1">
+                            B.
+                            <strong class="option-content"></strong>
+                        </button>
+                    </div>
+                    <div class="col-3 options">
+                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="2">
+                            C.
+                            <strong class="option-content"></strong>
+                        </button>
+                    </div>
+                    <div class="col-3 options">
+                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="3">
+                            D.
+                            <strong class="option-content"></strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="guess-result" tabindex="-1" aria-labelledby="guess-model-content" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="guess-model-content">Modal title</h2>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body" id="modal-msg">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="close-guess-modal" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="end-game" tabindex="-1" aria-labelledby="end-game-content" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="end-game-content">遊戲結束</h2>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body" id="result-msg">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

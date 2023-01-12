@@ -1,0 +1,41 @@
+body{ overflow-x: hidden; }
+body, svg.leaflet-zoom-animated{ background-color: var(--miku-light); }
+.container{
+    border: 2px solid var(--miku-red);
+    outline: 3px solid var(--miku-black);
+    border-radius: 20px;
+    box-shadow: 0 0 5px 3px var(--miku-red);
+}
+.btn-primary:not([disabled]){
+    background-color: var(--miku-dark);
+    border: none;
+    box-shadow: 0 0 6px var(--miku-colour);
+}
+.btn-primary[disabled]{
+    background-color: var(--miku-grey);
+    color: var(--miku-black);
+}
+#map{
+    width: 100%;
+    height: 80vh;
+}
+.fa-circle, .fa-xmark{
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    width: 18px;
+}
+#corrects, #wrongs{
+    display: inline-block;
+    padding: 0 10px;
+    font-weight: bold;
+    font-size: 26px;
+}
+.option-content{ pointer-events: none; }
+path.leaflet-interactive{
+    pointer-events: none;
+    cursor: default;
+}
+.leaflet-control-zoom{ display: none; }
+.leaflet-zoom-animated{ background-color: #ffffffff; }
+.leaflet-interactive:nth-child(1){ color: red; }
