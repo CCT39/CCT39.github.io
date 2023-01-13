@@ -29,7 +29,7 @@ window.onload = () => {
     fetch(pathGeoJson)
         .then(resp => {
             if(resp.ok){ return resp.json(); }
-            else{ return 'error'; }
+            else{ throw new Error(`status :${resp.status}, statusText: ${resp.statusText}`) }
         })
         .then(result => { 
             polygons = result; 
