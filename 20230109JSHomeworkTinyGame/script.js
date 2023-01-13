@@ -13,13 +13,15 @@ const btnOptions = document.querySelectorAll('.btn-option');
 const optionContents = document.querySelectorAll('.option-content');
 const modalTitle = document.getElementById('guess-model-content');
 const modalMsg = document.getElementById('modal-msg');
-const btnCloseModal = document.getElementById('close-guess-modal');
 const resultMsg = document.getElementById('result-msg');
 const corrects = document.getElementById('corrects');
 const wrongs = document.getElementById('wrongs');
+const ctrlSpeed = document.getElementById('ctrl-speed');
+const modalGuessResult = document.getElementById('guess-result');
+const modalEndGame = document.getElementById('end-game');
 
 let polygons, map, countTownships, districts, currentIdx, ansIndex;
-let countCorrect, countWrong, isGameOver;
+let countCorrect, countWrong, isGameOver, initialSpeed;
 let remainDists = [], idxCorrect = [], idxWrong = [];
 
 window.onload = () => {
@@ -80,9 +82,11 @@ function initElements(){
         x.classList.add('leaflet-left');
     })
     isGameOver = true;
+    initialSpeed = 5;
 
     btnStart.addEventListener('click', getStart);
-    btnCloseModal.addEventListener('click', reStart);
+    modalGuessResult.addEventListener('hidden.bs.modal', reStart);
+    ctrlSpeed.addEventListener('change', initSpeed);
     btnOptions.forEach(x => x.addEventListener('click', setOptions));
     btnOptions.forEach(x => x.disabled = true);
     districts.forEach(d => d.setAttribute('fill', bgcDist));
@@ -100,12 +104,13 @@ function getStart(){
         initValues();
     }
     btnOptions.forEach(x => x.disabled = true);
+    ctrlSpeed.disabled = true;
 
     msg.innerHTML = '出題中……';
     btnStart.setAttribute('disabled', 'true');
     let random = Math.floor(Math.random() * remainDists.length);
 
-    let speed = 11;
+    let speed = 9;
     let allSteps = random + remainDists.length * 2;
     let steps = allSteps;
 
@@ -120,10 +125,11 @@ function getStart(){
 
         if (steps > 0){
             setTimeout(turnAround, speed); 
-            if (steps < Math.floor(allSteps / 3)){ speed += 6; }
+            if (steps < Math.floor(allSteps / 3)){ speed += initialSpeed; }
         }
         else{ 
             btnOptions.forEach(x => x.removeAttribute('disabled'));
+            ctrlSpeed.removeAttribute('disabled');
             msg.innerHTML = 'Q：這是哪個行政區？'; 
             setQuestion(remainDists[random]); 
         }
@@ -140,8 +146,12 @@ function initValues(){
     idxCorrect = [];
     idxWrong = [];
     showCorrectsAndWrongs();
-    btnCloseModal.removeAttribute('data-bs-toggle');
-    btnCloseModal.removeAttribute('data-bs-target');
+    modalGuessResult.removeAttribute('data-bs-toggle');
+    modalGuessResult.removeAttribute('data-bs-target');
+}
+
+function initSpeed(e){
+    initialSpeed = parseInt(e.target.value);
 }
 
 function setQuestion(ansIdx){
@@ -191,8 +201,8 @@ function setOptions(){
 
         if (totalPlayTimes >= maxPlayTime || remainDists <= 0){
             isGameOver = true;
-            btnCloseModal.setAttribute('data-bs-toggle', 'modal');
-            btnCloseModal.setAttribute('data-bs-target', '#end-game');
+            modalGuessResult.setAttribute('data-bs-toggle', 'modal');
+            modalGuessResult.setAttribute('data-bs-target', '#end-game');
 
             let evaluate = '';
             const correctRate = countCorrect / totalPlayTimes;
@@ -232,7 +242,7 @@ function getDistName(index){
 }
 
 function reStart(){
-    if (countCorrect + countWrong >= maxPlayTime || remainDists <= 0){ return; }
+    if (countCorrect + countWrong >= maxPlayTime || remainDists <= 0){ setTimeout(() => {}, 762); return; }
 
     setTimeout(getStart, 762);
 }

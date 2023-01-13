@@ -22,7 +22,15 @@
                 <div class="row py-5">
                     <div class="col-12">
                         <h1>大臺南行政區猜謎</h1>
-                        <button type="button" class="btn btn-primary" id="btn-start">開始！</button>
+                        <div class="select-area">
+                            <button type="button" class="btn btn-primary" id="btn-start">開始！</button>
+                            <span>選擇隨機出題的速度：</span>
+                            <select name="speed" id="ctrl-speed">
+                                <option value="0">Prestissimo 快點出題</option>
+                                <option value="4" selected>Moderato 速度中等</option>
+                                <option value="8">Adagissimo 慢慢來</option>
+                            </select>
+                        </div>
                         <p class="msg fs-3 fw-bold">37個行政區，你能猜中幾個？</p>
                         <p>
                             <i class="fa-regular fa-circle text-success"></i><span id="corrects">0</span>/ <span class="total-questions"></span> 題<br>
@@ -105,6 +113,7 @@
         crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./script.js"></script>
 </body>
 </html>
