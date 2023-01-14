@@ -1,3 +1,7 @@
+body{
+    font-family: 'Times New Roman', Times, serif, 'Microsoft Jheng Hei';
+    overflow-y: scroll;
+}
 #bgi{
     position: fixed;
     z-index: -5;
@@ -7,13 +11,13 @@
     top: 0;
     left: 0;
 }
+#information{ 
+    vertical-align: super; 
+    font-size: 24px;
+}
 #information:hover{
     opacity: .8;
     cursor: pointer;
-}
-body{
-    font-family: 'Times New Roman', Times, serif, 'Microsoft Jheng Hei';
-    overflow-y: scroll;
 }
 #map{
     opacity: .9;
@@ -23,13 +27,24 @@ body{
 }
 .select-year{ position: relative; }
 #select-year{
+    color: var(--miku-colour);
+    font-weight: bold;
     border: none;
     position: absolute;
     right: 0;
     top: 0;
     font-size: 18px;
-    border-bottom: 1px solid #373b3e;
+    border-radius: 10px;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--miku-colour);
+    border-right: 1px solid var(--miku-colour);
     cursor: pointer;
+}
+#select-year:focus{ box-shadow: 0 0 10px var(--miku-colour); }
+#select-year:disabled{ 
+    color: var(--miku-grey); 
+    border-bottom: 2px solid var(--miku-grey);
+    border-right: 1px solid var(--miku-grey);
 }
 .mouseover{
     outline: 3px dashed #39c5bba0;
@@ -39,8 +54,10 @@ small{
     font-size: 12px;
     color: #666;
 }
-.line-name{ color: #e12885; }
-.company-name{ color: #39c5bb; }
-tbody{box-shadow: 0 0 2px #888;}
-td{padding: 8px;}
+.legend{ 
+    border-radius: 20px;
+    box-shadow: 0 0 6px var(--miku-colour); 
+}
+.line-name{ color: var(--miku-colour); }
+td{ padding: 8px; }
 .modal-footer p:last-child small{ text-decoration: line-through; }

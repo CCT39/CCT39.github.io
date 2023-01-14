@@ -1,5 +1,5 @@
-let mainMap, legend, showLineName, showCompanyName;
-let showThisYear, showThisYearInModal, thisYear, yearSelector;
+let mainMap, legend, legendTbody, showLineName, showCompanyName;
+let showThisYear, showThisYearInModal, thisYear, yearSelector, spinner;
 let companySources = [], dataArr = [], yearNamesArr = [];
 
 const initYear = 1910;
@@ -7,8 +7,8 @@ const mikuColour = '#39c5bb';
 
 const generateCompanyObj = (data) => {
     let tempName = data.name.split('_');
-
-    const thisCompany = companyArr.filter(x => x.company.toLowerCase() == tempName[1].toLowerCase())[0];
+    
+    const thisCompany = companyArr.find(x => x.company == tempName[1]);
     return {
         type: tempName[0],
         id: tempName[1],
@@ -50,7 +50,7 @@ const companyArr = [
 ]
 
 window.onload = function(){
-    let temp = [], prmsArr = [];
+    let prmsArr = [];
     companyArr.forEach(co => {
         co.dataPeriods.forEach(yr => {
             const f = fetch(`https://raw.githubusercontent.com/CCT39/CCT39.github.io/main/20230110JSHomeworkMap/json/line_${co.company}_${yr}.geojson`);
@@ -60,10 +60,10 @@ window.onload = function(){
 
     Promise.all(prmsArr)
         .then(resp => {
-            if(resp.status != 404){ return Promise.all(resp.map(x => x.json())); }
+            return Promise.all(resp.map(x => x.json()));
         })
         .then(result => {
-            return result.map(x => generateCompanyObj(x))
+            return result.map(x => generateCompanyObj(x));
         })
         .then(result => {
             initVariables(result);
@@ -80,10 +80,14 @@ function initVariables(sourceData){
     showThisYear = document.getElementById('this-year');
     yearSelector = document.getElementById('select-year');
     legend = document.querySelector('.legend');
+    legendTbody = legend.querySelector('tbody');
     showThisYearInModal = document.querySelector('.this-year-in-modal');
+    spinner = document.getElementById('spinner');
 
     companySources = sourceData;
     yearNamesArr = Object.keys(sourceData.groupBy('year'));
+    spinner.classList.remove('d-flex');
+    spinner.classList.add('d-none');
 }
 
 function initYearSelector(){
@@ -105,6 +109,7 @@ function initYearSelector(){
 function setThisYear(theYear){
     showThisYear.innerHTML = theYear;
     showThisYearInModal.innerHTML = `${theYear}年（${getVarientYear(theYear)}）`;
+
     let thisYearArray = companySources.filter(x => x.year == theYear);
     setLegend(thisYearArray);
     drawLinesOfEachCompany(thisYearArray);
@@ -112,7 +117,7 @@ function setThisYear(theYear){
 }
 
 function setLegend(thisYearArr){
-    legend.querySelector('tbody').innerHTML = '';
+    legendTbody.innerHTML = '';
     thisYearArr.forEach(company => {
         let tr = document.createElement('tr');
         let colourTd = document.createElement('td');
@@ -131,7 +136,7 @@ function setLegend(thisYearArr){
 
         tr.append(colourTd);
         tr.append(nameTd);
-        legend.querySelector('tbody').append(tr);
+        legendTbody.append(tr);
     })
 }
 
@@ -161,21 +166,21 @@ function drawLines(coData){
     const coName = coData.name;
 
     let lineWeight = 5;
-    if (coData.id == 'Gov'){ lineWeight = 3; }
+    if (coData.id == 'Gov'){ lineWeight = 2; }
 
     for (let i = 0; i < lines.length; i++){
+        const nameOfLine = lines[i].lineName;
         const rails = lines[i].geometry;
         const polyline = L.polyline(rails, {
             color: colour, 
             clickable: true,
             weight: lineWeight
         });
-        const nameOfLine = lines[i].lineName;
 
-        polyline.bindPopup(`<strong>${nameOfLine}（${coName}）</strong>`);
+        polyline.bindPopup(`<i class="fas fa-circle" style="color: ${colour};"></i> <strong>${nameOfLine}（${coName}）</strong>`);
         polyline.addEventListener('click', function(){
             showLineName.innerHTML = nameOfLine;
-            showCompanyName.innerHTML = coData.name;
+            showCompanyName.innerHTML = `<span style="color: ${colour};">${coName}<span>`;
         })
         polyline.addTo(mainMap);
     }
