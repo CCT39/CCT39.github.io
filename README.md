@@ -1,6 +1,6 @@
 # CCT39's Front-end Homeworks
   
-<p>最後更新：2023.01.10（二）23:27（UTC+8）</p>  
+<p>最後更新：2023.01.14（六）12:16（UTC+8）</p>  
 <strong>此處收錄本人即 CCT39 於 Build School 所練習之前端程式設計作業。</strong>  
   
 <h1>目前作業清單以及所花費時間：</h1>  
@@ -83,14 +83,14 @@
   <li>
     <h2>2023.01.09</h2>  
     <ul>  
-      <li>JavaScript 作業（小瑪莉衍伸之小遊戲）：未完成</li>
+      <li>JavaScript 作業（小瑪莉衍伸之小遊戲）：14 小時</li>
     </ul>
   </li> 
   
   <li>
     <h2>2023.01.10</h2>  
     <ul>  
-      <li>JavaScript 作業（地圖練習）：5 小時</li>
+      <li>JavaScript 作業（地圖練習）：5 小時 （+ 8 小時升級版）</li>
     </ul>
   </li> 
   
