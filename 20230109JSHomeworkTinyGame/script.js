@@ -4,7 +4,7 @@ const getPureIndexArray = (arr) => arr.map((x, index) => index);
 
 const maxPlayTime = 10;
 const pathGeoJson = './json/TOWN_MOI_1111118_GeoJson.json';
-const bgcDist = 'var(--miku-colour)';
+const mikuColour = 'var(--miku-colour)';
 const mikuBlack = 'var(--miku-black)';
 
 const btnStart = document.getElementById('btn-start');
@@ -20,12 +20,11 @@ const ctrlSpeed = document.getElementById('ctrl-speed');
 const modalGuessResult = document.getElementById('guess-result');
 const modalEndGame = document.getElementById('end-game');
 
-let polygons, map, countTownships, districts, currentIdx, ansIndex;
+let polygons, map, districts, currentIdx, ansIndex;
 let countCorrect, countWrong, isGameOver, initialSpeed;
 let remainDists = [], idxCorrect = [], idxWrong = [];
 
 window.onload = () => {
-
     fetch(pathGeoJson)
         .then(resp => {
             if(resp.ok){ return resp.json(); }
@@ -51,7 +50,6 @@ function initMap(data){
         center: [23.15, 120.35],
         zoom: 10
     })
-    countTownships = data.length;
 
     const osmUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     let osm = new L.TileLayer(osmUrl, { minZoom: 10, maxZoom: 10 })
@@ -89,7 +87,7 @@ function initElements(){
     ctrlSpeed.addEventListener('change', initSpeed);
     btnOptions.forEach(x => x.addEventListener('click', setOptions));
     btnOptions.forEach(x => x.disabled = true);
-    districts.forEach(d => d.setAttribute('fill', bgcDist));
+    districts.forEach(d => d.setAttribute('fill', mikuColour));
 }
 
 function getStart(){
@@ -100,7 +98,7 @@ function getStart(){
     }
     if(isGameOver){
         isGameOver = false;
-        districts.forEach(d => { setDistAttributes(d, bgcDist, 0.5, 0.2); });
+        districts.forEach(d => { setDistAttributes(d, mikuColour, 0.5, 0.2); });
         initValues();
     }
     btnOptions.forEach(x => x.disabled = true);
@@ -116,7 +114,7 @@ function getStart(){
 
     currentIdx = 0;
     const turnAround = () => {
-        setDistAttributes(districts[remainDists[currentIdx]], bgcDist, 0.5, 0.2);
+        setDistAttributes(districts[remainDists[currentIdx]], mikuColour, 0.5, 0.2);
         currentIdx++;
 
         if (currentIdx >= remainDists.length){ currentIdx -= remainDists.length; }

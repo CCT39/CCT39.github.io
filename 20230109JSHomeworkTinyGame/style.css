@@ -9,7 +9,7 @@ body, svg.leaflet-zoom-animated{ background-color: var(--miku-light); }
 .btn-primary:not([disabled]){
     background-color: var(--miku-dark);
     border: none;
-    box-shadow: 0 0 6px var(--miku-colour);
+    box-shadow: 0 0 20px var(--miku-colour);
 }
 .btn-primary[disabled]{
     background-color: var(--miku-grey);
@@ -23,6 +23,10 @@ body, svg.leaflet-zoom-animated{ background-color: var(--miku-light); }
     background-color: var(--miku-light);
     border: none;
     border-bottom: 1px solid var(--miku-dark);
+    cursor: pointer;
+}
+#ctrl-speed:focus{
+    box-shadow: 0 0 5px 3px var(--miku-colour);
 }
 .select-area{
     padding: 20px 0;
@@ -52,3 +56,7 @@ path.leaflet-interactive{
 .leaflet-control-zoom{ display: none; }
 .leaflet-zoom-animated{ background-color: #ffffffff; }
 .leaflet-interactive:nth-child(1){ color: red; }
+
+@media screen and (width < 768px){
+    .btn-option{ font-size: 14px; }
+}

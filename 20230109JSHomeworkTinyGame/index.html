@@ -16,7 +16,13 @@
     <div class="container mt-2 mt-lg-5">
         <div class="row">
             <div class="col-12 col-lg-6">
-                <div id="map"></div>
+                <div id="map">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-12 col-lg-6 d-flex flex-column-reverse d-lg-block">
                 <div class="row py-5">
@@ -40,25 +46,25 @@
                 </div>
                 <div class="row">
                     <div class="col-3 options">
-                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="0">
+                        <button type="button" disabled="true" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="0">
                             A.
                             <strong class="option-content"></strong>
                         </button>
                     </div>
                     <div class="col-3 options">
-                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="1">
+                        <button type="button" disabled="true" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="1">
                             B.
                             <strong class="option-content"></strong>
                         </button>
                     </div>
                     <div class="col-3 options">
-                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="2">
+                        <button type="button" disabled="true" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="2">
                             C.
                             <strong class="option-content"></strong>
                         </button>
                     </div>
                     <div class="col-3 options">
-                        <button type="button" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="3">
+                        <button type="button" disabled="true" class="btn btn-primary btn-option w-100 rounded-5" data-bs-toggle="modal" data-bs-target="#guess-result" data-opt="3">
                             D.
                             <strong class="option-content"></strong>
                         </button>
