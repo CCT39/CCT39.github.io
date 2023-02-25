@@ -34,7 +34,6 @@
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 5px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }

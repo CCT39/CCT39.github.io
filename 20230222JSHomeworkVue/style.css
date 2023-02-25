@@ -1,0 +1,31 @@
+body {
+  background-color: #39c5bb;
+}
+
+.cbx-list-item {
+  background-color: #fffeec;
+}
+
+p:has(#show-display-mode) {
+  vertical-align: middle;
+}
+
+.border {
+  outline: 1px solid #e12885;
+  box-shadow: 0 0 1px 2px #373b3e;
+}
+
+.container {
+  background-color: #c3e5e7;
+  border: 3px solid #373b3e;
+  outline: 3px solid #e12885;
+  box-shadow: 0 0 0 5px #373b3e;
+}
+
+[state=only-unfinished] {
+  color: #137a7f;
+}
+
+[state=show-all] {
+  color: #e12885;
+}/*# sourceMappingURL=style.css.map */

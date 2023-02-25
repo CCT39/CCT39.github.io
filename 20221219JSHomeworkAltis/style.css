@@ -51,7 +51,6 @@
 }
 .container .switches .switch {
   width: 100px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   padding: 20px;

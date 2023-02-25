@@ -140,18 +140,8 @@ small {
   opacity: 0.3;
   z-index: -17;
   height: 100vh;
-  -webkit-animation: julius 3s;
-          animation: julius 3s;
+  animation: julius 3s;
   right: -20%;
-}
-
-@-webkit-keyframes julius {
-  from {
-    right: -150%;
-  }
-  to {
-    right: -20%;
-  }
 }
 
 @keyframes julius {

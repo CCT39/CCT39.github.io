@@ -1,0 +1,17 @@
+@import 'favo-colours.scss';
+
+body{ background-color: $miku-colour; }
+.cbx-list-item{ background-color: $miku-white; }
+p:has(#show-display-mode){ vertical-align: middle; }
+.border{ 
+    outline: 1px solid $miku-red; 
+    box-shadow: 0 0 1px 2px $miku-black;
+}
+.container{
+    background-color: $miku-light; 
+    border: 3px solid $miku-black;
+    outline: 3px solid $miku-red;
+    box-shadow: 0 0 0 5px $miku-black;
+}
+[state="only-unfinished"]{ color: $miku-dark; }
+[state="show-all"]{ color: $miku-red; }
