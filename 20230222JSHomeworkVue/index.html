@@ -21,23 +21,23 @@
         <div class="row justify-content-center align-items-center px-2">
             <div class="col-12 col-lg-6 px-0 py-3 text-end">
                 <p class="d-inline-block px-3 my-0">顯示狀態：<strong id="show-display-mode" :state="colour" class="fs-5">{{ statement }}</strong></p>
-                <button @click="toggleShowMode" id="toggle-display" class="d-inline-block btn btn-info">切換顯示狀態</button>
+                <button @click="toggleShowMode" class="d-inline-block btn btn-info">切換顯示狀態</button>
             </div>
         </div>
         <div class="row justify-content-center px-2">
             <div class="col-12 col-lg-6 px-0 py-3">
                 <div class="input-group">
-                    <input type="text" v-model="newlyContent" id="input-item" class="form-control" placeholder="新增行程" aria-label="Add Schedule" aria-describedby="button-addon2">
-                    <button class="btn btn-success" type="button" id="add-item" @click="addItem">新增</button>
+                    <input type="text" v-model="newlyContent" class="form-control" placeholder="新增行程" aria-label="Add Schedule" aria-describedby="button-addon2">
+                    <button class="btn btn-success" type="button" @click="addItem">新增</button>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center px-2">
-            <ul id="to-do-list" class="col-12 col-lg-6 px-0">
+            <ul class="col-12 col-lg-6 px-0">
                 <li v-for="(item, index) in dataInLS" v-show="!item.isDone||!isOnlyShowUnfinished" class="input-group border border-1 p-2 my-2 rounded-2">
                     <div class="input-group-text">
                         <small class="d-inline-block pe-2">完成</small>
-                        <input v-model="item.isDone" @checked="" class="form-check-input mt-0 cbx-list-item border-0" type="checkbox" aria-label="Checkbox for following text input">
+                        <input v-model="item.isDone" class="form-check-input mt-0 cbx-list-item border-0" type="checkbox" aria-label="Checkbox for following text input">
                     </div>
                     <input v-model="item.data" type="text" class="form-control text-list-item" aria-label="Text input with checkbox">
                     <button @click="removeItem(index)" type="button" class="btn btn-danger btn-delete">刪除</button>
